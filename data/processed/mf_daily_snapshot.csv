@@ -15,7 +15,7 @@ date,symbol,nav,ltp,discount_pct,volume,trades,source
 2026-02-09,MMF1,9.55,8.92,-6.6,7100,27,nepse_playwright
 2026-02-09,MNMF1,10.23,9.36,-8.5,3300,19,nepse_playwright
 2026-02-09,NBF2,10.42,9.72,-6.72,105890,16,nepse_playwright
-2026-02-09,NBF3,10.2,9.4,-7.84,12200,25,nepse_playwright
+2026-02-09,NBF3,10.42,9.4,-9.79,12200,25,nepse_playwright
 2026-02-09,NIBLGF,9.77,9.82,0.51,4177,11,nepse_playwright
 2026-02-09,NICBF,10.04,9.32,-7.17,2100,3,nepse_playwright
 2026-02-09,NIBSF2,9.78,9.29,-5.01,2150,9,nepse_playwright
@@ -55,7 +55,7 @@ date,symbol,nav,ltp,discount_pct,volume,trades,source
 2026-02-10,MMF1,9.55,9.05,-5.24,19570,27,nepse_playwright
 2026-02-10,MNMF1,10.23,9.73,-4.89,77652,43,nepse_playwright
 2026-02-10,NBF2,10.42,9.58,-8.06,56232,9,nepse_playwright
-2026-02-10,NBF3,10.2,9.58,-6.08,51940,33,nepse_playwright
+2026-02-10,NBF3,10.42,9.58,-8.06,51940,33,nepse_playwright
 2026-02-10,SIGS3,10.77,10.3,-4.36,1500,6,nepse_playwright
 2026-02-10,KDBY,10.95,10.02,-8.49,14300,36,nepse_playwright
 2026-02-10,NIBLSTF,9.75,9.28,-4.82,6000,24,nepse_playwright

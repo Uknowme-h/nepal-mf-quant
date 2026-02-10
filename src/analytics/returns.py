@@ -63,7 +63,14 @@ class ReturnsCalculator:
         return df
 
     def load_all_nav(self) -> pd.DataFrame:
-        """Load all NAV CSV files into a single DataFrame."""
+        """Load all NAV CSV files into a single DataFrame.
+
+        Applies year-month deduplication: when multiple NAV entries
+        exist for the same (symbol, year-month), keeps only the latest
+        entry per month. This handles BS-to-AD date boundary duplicates
+        (e.g., Laxmi month-end dates producing two AD entries in the
+        same calendar month) and ShareSansar/provider overlaps.
+        """
         if not self.nav_dir.exists():
             logger.warning("NAV directory not found: %s", self.nav_dir)
             return pd.DataFrame(columns=["date", "symbol", "nav"])
@@ -82,6 +89,20 @@ class ReturnsCalculator:
             return pd.DataFrame(columns=["date", "symbol", "nav"])
 
         df = pd.concat(frames, ignore_index=True).sort_values(["symbol", "date"])
+        raw_count = len(df)
+
+        # Deduplicate: keep only the latest entry per (symbol, year-month)
+        df["year_month"] = df["date"].dt.to_period("M")
+        df = (
+            df.sort_values("date")
+            .drop_duplicates(subset=["symbol", "year_month"], keep="last")
+            .drop(columns=["year_month"])
+            .reset_index(drop=True)
+        )
+        deduped = raw_count - len(df)
+        if deduped > 0:
+            logger.info("NAV dedup: removed %d same-month duplicates", deduped)
+
         logger.info("Loaded NAV data for %d symbols (%d records)", df["symbol"].nunique(), len(df))
         return df
 
@@ -156,6 +177,12 @@ class ReturnsCalculator:
         """
         Compute month-over-month NAV growth per symbol.
 
+        Guards:
+        - Minimum gap of 20 days between consecutive entries to avoid
+          same-month BS/AD boundary artifacts.
+        - Extreme return filter (|change| > 40%) set to NaN to catch
+          corporate actions (splits, mergers) rather than real returns.
+
         With a single data point per fund, this returns NaN.
         Becomes useful as monthly scrapes accumulate.
         """
@@ -170,6 +197,15 @@ class ReturnsCalculator:
             grp = grp.sort_values("date").copy()
             if len(grp) >= 2:
                 grp["nav_return_1m"] = grp["nav"].pct_change() * 100
+
+                # Guard: null out returns where the gap between entries
+                # is less than 20 days (same-month duplicate artifact)
+                day_gaps = grp["date"].diff().dt.days
+                grp.loc[day_gaps < 20, "nav_return_1m"] = np.nan
+
+                # Guard: null out extreme returns likely caused by
+                # corporate actions (splits, bonus units) not real NAV moves
+                grp.loc[grp["nav_return_1m"].abs() > 40, "nav_return_1m"] = np.nan
             else:
                 grp["nav_return_1m"] = np.nan
             results.append(grp[["date", "symbol", "nav_return_1m"]])

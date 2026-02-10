@@ -84,6 +84,22 @@ class MutualFundValuation:
         
         # Sort by date for proper as-of joining
         combined_nav = combined_nav.sort_values(['symbol', 'date'])
+        raw_count = len(combined_nav)
+        
+        # Deduplicate: keep only the latest entry per (symbol, year-month)
+        # This handles BS-to-AD date boundary duplicates from Laxmi/Sanima
+        # providers and ShareSansar/provider overlaps for the same month.
+        combined_nav['year_month'] = combined_nav['date'].dt.to_period('M')
+        combined_nav = (
+            combined_nav
+            .sort_values('date')
+            .drop_duplicates(subset=['symbol', 'year_month'], keep='last')
+            .drop(columns=['year_month'])
+            .reset_index(drop=True)
+        )
+        deduped = raw_count - len(combined_nav)
+        if deduped > 0:
+            logger.info(f"  NAV dedup: removed {deduped} same-month duplicates")
         
         logger.info(f"✓ Loaded {len(combined_nav)} NAV records from {len(nav_files)} files")
         

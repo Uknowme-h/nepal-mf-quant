@@ -1,6 +1,6 @@
 # Nepal MF Quant — Full Analysis Report
 
-*Generated: 2026-02-10 14:03*
+*Generated: 2026-02-10 23:24*
 
 ## Market Overview
 
@@ -10,12 +10,12 @@
 | Funds Tracked | 41 |
 | At Discount (price < NAV) | 39 |
 | At Premium (price ≥ NAV) | 2 |
-| Deep Discount (≤ -8%) | 9 |
-| Median Discount | -6.60% |
+| Deep Discount (≤ -8%) | 10 |
+| Median Discount | -6.69% |
 | CONSIDER | 6 |
 | IGNORE | 35 |
 
-> ⚠️ **NAV Staleness Warning**: 41 fund(s) have NAV data older than 45 days. Discount calculations may be less reliable.
+> ⚠️ **NAV Staleness Warning**: 30 fund(s) have NAV data older than 45 days. Discount calculations may be less reliable.
 
 ## Discount Distribution
 
@@ -32,11 +32,11 @@
 | # | Symbol | Name | NAV | LTP | Discount | Maturity | Liquidity | Streak | Score | Trend | Risk |
 |---|--------|------|-----|-----|----------|----------|-----------|--------|-------|-------|------|
 | 1 | NICFC | NIC Asia Flexi Cap Fund | 10.02 | 9.15 | -8.68% | 3.4y | medium | 2d | 66.5 | → stable | nan |
-| 2 | PSF | Prabhu Select Fund | 12.03 | 11.18 | -7.07% | 2.4y | medium | 1d | 64.6 | ↑ narrowing | nan |
-| 3 | NBF2 | Nabil Balanced Fund - 2 | 10.42 | 9.58 | -8.06% | 3.3y | high | 2d | 63.8 | ↓ widening | nan |
-| 4 | NICBF | NIC ASIA Balanced Fund | 10.04 | 9.30 | -7.37% | 3.5y | medium | 2d | 61.7 | → stable | nan |
-| 5 | NICSF | NIC Asia Select-30 | 9.54 | 8.91 | -6.60% | 2.4y | high | 1d | 60.2 | → stable | nan |
-| 6 | RMF1 | RBB Mutual Fund 1 | 10.02 | 9.35 | -6.69% | 2.5y | medium | 2d | 48.7 | ↓ widening | high_vol |
+| 2 | PSF | Prabhu Select Fund | 12.03 | 11.18 | -7.07% | 2.4y | medium | 1d | 63.8 | ↑ narrowing | nan |
+| 3 | NBF2 | Nabil Balanced Fund - 2 | 10.42 | 9.58 | -8.06% | 3.3y | high | 2d | 63.4 | ↓ widening | nan |
+| 4 | NICBF | NIC ASIA Balanced Fund | 10.04 | 9.30 | -7.37% | 3.5y | medium | 2d | 60.9 | → stable | nan |
+| 5 | NICSF | NIC Asia Select-30 | 9.54 | 8.91 | -6.60% | 2.4y | high | 1d | 59.4 | → stable | nan |
+| 6 | RMF1 | RBB Mutual Fund 1 | 10.02 | 9.35 | -6.69% | 2.5y | medium | 2d | 47.8 | ↓ widening | high_vol |
 
 ## IGNORE Summary
 
@@ -60,6 +60,7 @@
 | NSIF2 | -8.77% | maturity:6.6y |
 | KDBY | -8.49% | maturity:6.5y |
 | KSY | -8.38% | maturity:8.1y |
+| NBF3 | -8.06% | maturity:5.6y |
 | RSY | -7.98% | maturity:9.2y |
 | LVF2 | -7.71% | liquidity:low; maturity:7.6y |
 | SIGS2 | -7.59% | liquidity:low |
@@ -69,7 +70,6 @@
 | NICGF2 | -6.80% | maturity:4.8y |
 | RMF2 | -6.72% | maturity:7.3y |
 | C30MF | -6.11% | maturity:7.3y |
-| NBF3 | -6.08% | maturity:5.6y |
 | GSY | -5.94% | maturity:8.9y |
 | MMF1 | -5.24% | maturity:5.6y |
 | KEF | -4.96% | maturity:5.1y |
@@ -94,7 +94,7 @@
 ## Data Quality
 
 - Symbols checked: 41
-- Symbols with issues: 41
+- Symbols with issues: 30
 - NAV data age: median 57 days, max 57 days
 
 ## Methodology
