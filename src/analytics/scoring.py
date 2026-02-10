@@ -28,9 +28,10 @@ logger = logging.getLogger(__name__)
 
 # Default factor weights — can be overridden in constructor
 DEFAULT_WEIGHTS = {
-    "discount_score": 0.35,
-    "liquidity_score": 0.20,
+    "discount_score": 0.30,
+    "liquidity_score": 0.15,
     "maturity_score": 0.15,
+    "nav_growth_score": 0.10,
     "momentum_score": 0.10,
     "volatility_score": 0.10,
     "disc_trend_score": 0.10,
@@ -101,15 +102,17 @@ class FundScorer:
             returns_df = pd.read_csv(self.returns_path)
             returns_df["date"] = pd.to_datetime(returns_df["date"])
             returns_latest = returns_df[returns_df["date"] == latest_date].copy()
+            ret_cols = ["symbol", "price_return_1d", "price_return_1w",
+                        "discount_change_1d", "discount_change_1w", "nav_return_1m"]
+            ret_cols = [c for c in ret_cols if c in returns_latest.columns]
             snapshot = snapshot.merge(
-                returns_latest[["symbol", "price_return_1d", "price_return_1w",
-                                "discount_change_1d", "discount_change_1w"]],
+                returns_latest[ret_cols],
                 on="symbol", how="left",
             )
             logger.info("  Returns: merged")
         else:
             logger.warning("  Returns file not found — momentum & trend scores will be NaN")
-            for col in ["price_return_1d", "price_return_1w", "discount_change_1d", "discount_change_1w"]:
+            for col in ["price_return_1d", "price_return_1w", "discount_change_1d", "discount_change_1w", "nav_return_1m"]:
                 snapshot[col] = np.nan
 
         # Risk (optional)
@@ -163,7 +166,13 @@ class FundScorer:
         # 3. Maturity score — closer to maturity (fewer days) = higher score
         df["maturity_score"] = self._percentile_rank(df["days_to_maturity"], ascending=False)
 
-        # 4. Momentum score — positive price return = higher score
+        # 4. NAV growth score — positive NAV return = higher score (fund manager performance)
+        if "nav_return_1m" in df.columns and df["nav_return_1m"].notna().any():
+            df["nav_growth_score"] = self._percentile_rank(df["nav_return_1m"], ascending=True)
+        else:
+            df["nav_growth_score"] = np.nan
+
+        # 5. Momentum score — positive price return = higher score
         #    Use 1-week return if available, fallback to 1-day
         momentum_col = "price_return_1w"
         if momentum_col not in df.columns or df[momentum_col].isna().all():
@@ -173,13 +182,13 @@ class FundScorer:
         else:
             df["momentum_score"] = np.nan
 
-        # 5. Volatility score — lower Parkinson vol = higher score (inverse)
+        # 6. Volatility score — lower Parkinson vol = higher score (inverse)
         if "parkinson_vol" in df.columns:
             df["volatility_score"] = self._percentile_rank(df["parkinson_vol"], ascending=False)
         else:
             df["volatility_score"] = np.nan
 
-        # 6. Discount trend score — narrowing discount (positive change) = higher score
+        # 7. Discount trend score — narrowing discount (positive change) = higher score
         trend_col = "discount_change_1w"
         if trend_col not in df.columns or df[trend_col].isna().all():
             trend_col = "discount_change_1d"
@@ -190,7 +199,8 @@ class FundScorer:
 
         # Log coverage
         score_cols = ["discount_score", "liquidity_score", "maturity_score",
-                      "momentum_score", "volatility_score", "disc_trend_score"]
+                      "nav_growth_score", "momentum_score", "volatility_score",
+                      "disc_trend_score"]
         for col in score_cols:
             valid = df[col].notna().sum()
             logger.info("  %s: %d/%d valid", col, valid, len(df))
@@ -256,8 +266,10 @@ class FundScorer:
             "price_return_1d", "price_return_1w",
             "discount_change_1d", "discount_change_1w",
             "parkinson_vol", "parkinson_vol_ann",
+            "nav_return_1m",
             "discount_score", "liquidity_score", "maturity_score",
-            "momentum_score", "volatility_score", "disc_trend_score",
+            "nav_growth_score", "momentum_score", "volatility_score",
+            "disc_trend_score",
             "composite_score", "rank",
         ]
 

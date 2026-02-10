@@ -400,7 +400,7 @@ class InvestmentDecisionLayer:
             df['risk_flag'] = ''
             logger.warning("  Risk file not found — risk_flag will be empty")
         
-        # --- Discount trend ---
+        # --- Discount trend & NAV growth ---
         if self.returns_path.exists():
             returns = pd.read_csv(self.returns_path)
             returns['date'] = pd.to_datetime(returns['date'])
@@ -429,8 +429,20 @@ class InvestmentDecisionLayer:
                 logger.info("  Discount trends: %s", df['discount_trend'].value_counts().to_dict())
             else:
                 df['discount_trend'] = 'unknown'
+
+            # NAV growth rate (monthly)
+            if 'nav_return_1m' in ret_latest.columns:
+                df = df.merge(
+                    ret_latest[['symbol', 'nav_return_1m']].drop_duplicates('symbol'),
+                    on='symbol', how='left',
+                )
+                nav_avail = df['nav_return_1m'].notna().sum()
+                logger.info("  NAV growth: %d symbols with monthly NAV return", nav_avail)
+            else:
+                df['nav_return_1m'] = np.nan
         else:
             df['discount_trend'] = 'unknown'
+            df['nav_return_1m'] = np.nan
             logger.warning("  Returns file not found — discount_trend will be unknown")
         
         return df
@@ -451,6 +463,7 @@ class InvestmentDecisionLayer:
             'years_to_maturity', 'days_to_maturity', 'valuation_bucket',
             'liquidity_bucket', 'decision_flag', 'ignore_reasons',
             'composite_score', 'priority_rank', 'discount_trend', 'risk_flag',
+            'nav_return_1m',
         ]
         
         # Keep only columns that exist

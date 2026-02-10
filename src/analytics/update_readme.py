@@ -213,9 +213,13 @@ class ReadmeUpdater:
         else:
             has_score = "composite_score" in consider.columns and consider["composite_score"].notna().any()
             has_trend = "discount_trend" in consider.columns
+            has_nav_growth = "nav_return_1m" in consider.columns and consider["nav_return_1m"].notna().any()
 
             header = "| # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak |"
             sep = "|---|--------|------|----------|-----|-----|----------|-----------|--------|"
+            if has_nav_growth:
+                header += " NAV Δ |"
+                sep += "-------|"
             if has_score:
                 header += " Score |"
                 sep += "-------|"
@@ -238,6 +242,8 @@ class ReadmeUpdater:
                 r += f"| {self._fmt(maturity, '.1f', 'y')} "
                 r += f"| {row.get('liquidity_bucket', '—')} "
                 r += f"| {streak_str} "
+                if has_nav_growth:
+                    r += f"| {self._fmt(row.get('nav_return_1m'), '.2f', '%')} "
                 if has_score:
                     r += f"| {self._fmt(row.get('composite_score'), '.1f')} "
                 if has_trend:
@@ -263,8 +269,9 @@ class ReadmeUpdater:
         lines.append("### Interpretation")
         lines.append("")
         lines.append("CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. "
-                      "Funds are ranked by a composite score (discount 35%, liquidity 20%, maturity 15%, "
-                      "momentum 10%, volatility 10%, trend 10%). This is rule-based screening for "
+                      "Funds are ranked by a 7-factor composite score (discount 30%, liquidity 15%, maturity 15%, "
+                      "NAV growth 10%, momentum 10%, volatility 10%, trend 10%). NAV growth reflects fund "
+                      "manager performance via month-over-month NAV returns. This is rule-based screening for "
                       "research purposes only.")
         lines.append("")
 

@@ -203,6 +203,10 @@ class ReturnsCalculator:
                 day_gaps = grp["date"].diff().dt.days
                 grp.loc[day_gaps < 20, "nav_return_1m"] = np.nan
 
+                # Guard: null out returns where the gap exceeds 90 days
+                # — data too sparse for reliable monthly metric
+                grp.loc[day_gaps > 90, "nav_return_1m"] = np.nan
+
                 # Guard: null out extreme returns likely caused by
                 # corporate actions (splits, bonus units) not real NAV moves
                 grp.loc[grp["nav_return_1m"].abs() > 40, "nav_return_1m"] = np.nan

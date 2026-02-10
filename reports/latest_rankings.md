@@ -1,6 +1,6 @@
 # Nepal MF Quant — Full Analysis Report
 
-_Generated: 2026-02-10 23:24_
+_Generated: 2026-02-10 23:58_
 
 ## Market Overview
 
@@ -29,14 +29,14 @@ _Generated: 2026-02-10 23:24_
 
 ## CONSIDER Candidates
 
-| #   | Symbol | Name                    | NAV   | LTP   | Discount | Maturity | Liquidity | Streak | Score | Trend       | Risk     |
-| --- | ------ | ----------------------- | ----- | ----- | -------- | -------- | --------- | ------ | ----- | ----------- | -------- |
-| 1   | NICFC  | NIC Asia Flexi Cap Fund | 10.02 | 9.15  | -8.68%   | 3.4y     | medium    | 2d     | 66.5  | → stable    | nan      |
-| 2   | PSF    | Prabhu Select Fund      | 12.03 | 11.18 | -7.07%   | 2.4y     | medium    | 1d     | 63.8  | ↑ narrowing | nan      |
-| 3   | NBF2   | Nabil Balanced Fund - 2 | 10.42 | 9.58  | -8.06%   | 3.3y     | high      | 2d     | 63.4  | ↓ widening  | nan      |
-| 4   | NICBF  | NIC ASIA Balanced Fund  | 10.04 | 9.30  | -7.37%   | 3.5y     | medium    | 2d     | 60.9  | → stable    | nan      |
-| 5   | NICSF  | NIC Asia Select-30      | 9.54  | 8.91  | -6.60%   | 2.4y     | high      | 1d     | 59.4  | → stable    | nan      |
-| 6   | RMF1   | RBB Mutual Fund 1       | 10.02 | 9.35  | -6.69%   | 2.5y     | medium    | 2d     | 47.8  | ↓ widening  | high_vol |
+| #   | Symbol | Name                    | NAV   | LTP   | Discount | Maturity | Liquidity | Streak | NAV Δ  | Score | Trend       | Risk     |
+| --- | ------ | ----------------------- | ----- | ----- | -------- | -------- | --------- | ------ | ------ | ----- | ----------- | -------- |
+| 1   | NICFC  | NIC Asia Flexi Cap Fund | 10.02 | 9.15  | -8.68%   | 3.4y     | medium    | 2d     | 0.00%  | 66.8  | → stable    | —        |
+| 2   | PSF    | Prabhu Select Fund      | 12.03 | 11.18 | -7.07%   | 2.4y     | medium    | 1d     | 0.00%  | 65.5  | ↑ narrowing | —        |
+| 3   | NICBF  | NIC ASIA Balanced Fund  | 10.04 | 9.30  | -7.37%   | 3.5y     | medium    | 2d     | 0.00%  | 61.8  | → stable    | —        |
+| 4   | NICSF  | NIC Asia Select-30      | 9.54  | 8.91  | -6.60%   | 2.4y     | high      | 1d     | —      | 59.2  | → stable    | —        |
+| 5   | NBF2   | Nabil Balanced Fund - 2 | 10.42 | 9.58  | -8.06%   | 3.3y     | high      | 2d     | -1.05% | 58.4  | ↓ widening  | —        |
+| 6   | RMF1   | RBB Mutual Fund 1       | 10.02 | 9.35  | -6.69%   | 2.5y     | medium    | 2d     | —      | 46.3  | ↓ widening  | high_vol |
 
 ## IGNORE Summary
 
@@ -111,9 +111,10 @@ A fund receives **CONSIDER** only if ALL three gates pass:
 
 Within CONSIDER funds, a weighted composite score ranks relative attractiveness:
 
-- Discount depth: 35% — deeper discount = higher score
-- Liquidity: 20% — higher volume = higher score
+- Discount depth: 30% — deeper discount = higher score
+- Liquidity: 15% — higher volume = higher score
 - Maturity proximity: 15% — closer maturity = higher score
+- NAV growth: 10% — positive month-over-month NAV return = higher score (fund manager quality)
 - Price momentum: 10% — positive return = higher score
 - Volatility (inverse): 10% — lower Parkinson vol = higher score
 - Discount trend: 10% — narrowing discount = higher score

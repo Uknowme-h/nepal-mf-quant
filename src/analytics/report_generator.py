@@ -213,10 +213,14 @@ class ReportGenerator:
                 has_score = "composite_score" in consider.columns and consider["composite_score"].notna().any()
                 has_trend = "discount_trend" in consider.columns
                 has_risk = "risk_flag" in consider.columns
+                has_nav_growth = "nav_return_1m" in consider.columns and consider["nav_return_1m"].notna().any()
 
                 # Build header
                 header = "| # | Symbol | Name | NAV | LTP | Discount | Maturity | Liquidity | Streak |"
                 sep = "|---|--------|------|-----|-----|----------|----------|-----------|--------|"
+                if has_nav_growth:
+                    header += " NAV Δ |"
+                    sep += "-------|"
                 if has_score:
                     header += " Score |"
                     sep += "-------|"
@@ -240,6 +244,8 @@ class ReportGenerator:
                     r += f"| {self._fmt(maturity, '.1f', 'y')} "
                     r += f"| {row.get('liquidity_bucket', '—')} "
                     r += f"| {int(row.get('consider_streak', 0))}d "
+                    if has_nav_growth:
+                        r += f"| {self._fmt(row.get('nav_return_1m'), '.2f', '%')} "
                     if has_score:
                         r += f"| {self._fmt(row.get('composite_score'), '.1f')} "
                     if has_trend:
@@ -247,7 +253,7 @@ class ReportGenerator:
                         r += f"| {self._trend_arrow(trend)} {trend} "
                     if has_risk:
                         flag = row.get("risk_flag", "")
-                        r += f"| {flag if flag else '—'} "
+                        r += f"| {flag if pd.notna(flag) and flag else '—'} "
                     r += "|"
                     lines.append(r)
 
@@ -318,9 +324,10 @@ class ReportGenerator:
         lines.append("")
         lines.append("### Composite Score")
         lines.append("Within CONSIDER funds, a weighted composite score ranks relative attractiveness:")
-        lines.append("- Discount depth: 35% — deeper discount = higher score")
-        lines.append("- Liquidity: 20% — higher volume = higher score")
+        lines.append("- Discount depth: 30% — deeper discount = higher score")
+        lines.append("- Liquidity: 15% — higher volume = higher score")
         lines.append("- Maturity proximity: 15% — closer maturity = higher score")
+        lines.append("- NAV growth: 10% — positive month-over-month NAV return = higher score (fund manager quality)")
         lines.append("- Price momentum: 10% — positive return = higher score")
         lines.append("- Volatility (inverse): 10% — lower Parkinson vol = higher score")
         lines.append("- Discount trend: 10% — narrowing discount = higher score")
@@ -372,6 +379,7 @@ class ReportGenerator:
         if not scored.empty:
             score_cols = ["symbol", "price_return_1d", "price_return_1w",
                           "discount_change_1d", "discount_change_1w",
+                          "nav_return_1m",
                           "composite_score", "rank"]
             score_cols = [c for c in score_cols if c in scored.columns]
             df = df.merge(scored[score_cols].drop_duplicates("symbol"), on="symbol", how="left")
@@ -390,6 +398,7 @@ class ReportGenerator:
             "valuation_bucket", "liquidity_bucket", "decision_flag",
             "ignore_reasons", "composite_score", "rank", "priority_rank",
             "discount_trend", "risk_flag", "consider_streak",
+            "nav_return_1m",
             "price_return_1d", "price_return_1w",
             "discount_change_1d", "discount_change_1w",
             "parkinson_vol", "parkinson_vol_ann",

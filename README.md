@@ -53,21 +53,21 @@ nepal-mf-quant/
 
 The orchestrator (`src/pipeline.py`) runs 13 steps in dependency order:
 
-| Step | Name | Cadence | Critical | Description |
-| ---- | ---- | ------- | -------- | ----------- |
-| 1 | Fund Universe | Weekly | No | Scrape fund metadata from ShareSansar |
-| 2 | NAV (ShareSansar) | Monthly | No | Fetch latest NAV from ShareSansar API |
-| 3 | NAV (Providers) | Weekly | No | Fetch historical monthly NAVs from 7 direct provider APIs |
-| 4 | Market Prices | Daily | Yes | Scrape OHLC prices from NEPSE (Playwright) |
-| 5 | Data Quality | Daily | No | Validate freshness, outliers, coverage |
-| 6 | Valuation | Daily | Yes | Join NAV + prices, calculate discounts |
-| 7 | Returns | Daily | Yes | Price returns, discount change, NAV growth |
-| 8 | Risk Metrics | Daily | Yes | Parkinson vol, drawdown, Sharpe ratio |
-| 9 | Scoring | Daily | Yes | Composite factor ranking |
-| 10 | Decisions | Daily | Yes | CONSIDER/IGNORE screening |
-| 11 | History | Daily | Yes | Append to temporal decision log |
-| 12 | Reports | Daily | No | Generate Markdown + CSV reports |
-| 13 | README | Daily | No | Update dashboard in README.md |
+| Step | Name              | Cadence | Critical | Description                                               |
+| ---- | ----------------- | ------- | -------- | --------------------------------------------------------- |
+| 1    | Fund Universe     | Weekly  | No       | Scrape fund metadata from ShareSansar                     |
+| 2    | NAV (ShareSansar) | Monthly | No       | Fetch latest NAV from ShareSansar API                     |
+| 3    | NAV (Providers)   | Weekly  | No       | Fetch historical monthly NAVs from 7 direct provider APIs |
+| 4    | Market Prices     | Daily   | Yes      | Scrape OHLC prices from NEPSE (Playwright)                |
+| 5    | Data Quality      | Daily   | No       | Validate freshness, outliers, coverage                    |
+| 6    | Valuation         | Daily   | Yes      | Join NAV + prices, calculate discounts                    |
+| 7    | Returns           | Daily   | Yes      | Price returns, discount change, NAV growth                |
+| 8    | Risk Metrics      | Daily   | Yes      | Parkinson vol, drawdown, Sharpe ratio                     |
+| 9    | Scoring           | Daily   | Yes      | Composite factor ranking                                  |
+| 10   | Decisions         | Daily   | Yes      | CONSIDER/IGNORE screening                                 |
+| 11   | History           | Daily   | Yes      | Append to temporal decision log                           |
+| 12   | Reports           | Daily   | No       | Generate Markdown + CSV reports                           |
+| 13   | README            | Daily   | No       | Update dashboard in README.md                             |
 
 ## Scoring Methodology
 
@@ -122,17 +122,17 @@ python scrapers/mappings/build_symbol_nepse_map.py
 
 ## Data Sources
 
-| Source | Data | Method |
-| ------ | ---- | ------ |
-| [NEPSE](https://nepalstock.com.np) | Daily OHLC, volume, trade count | Playwright browser automation |
-| [ShareSansar](https://sharesansar.com) | Fund universe, NAV, metadata | HTTP API / HTML scraping |
-| Laxmi Capital | LUK, LVF2, SFEF, SFMF, SBCF monthly NAV | Vue SPA REST API |
-| NMB Capital | NMB50, NSIF2, NMBHF2 monthly NAV | Vue SPA REST API |
-| NIC Asia Capital | NICBF, NICFC, NICGF2 monthly NAV | HTML table scrape |
-| Nabil Investment | NBF2, NBF3 monthly NAV | WordPress AJAX |
-| Kumari Capital | KSY monthly NAV | Directus REST API |
-| Prabhu Capital | PRSF, PSF monthly NAV | REST API |
-| Sanima Capital | SAGF monthly NAV | Vue SPA REST API |
+| Source                                 | Data                                    | Method                        |
+| -------------------------------------- | --------------------------------------- | ----------------------------- |
+| [NEPSE](https://nepalstock.com.np)     | Daily OHLC, volume, trade count         | Playwright browser automation |
+| [ShareSansar](https://sharesansar.com) | Fund universe, NAV, metadata            | HTTP API / HTML scraping      |
+| Laxmi Capital                          | LUK, LVF2, SFEF, SFMF, SBCF monthly NAV | Vue SPA REST API              |
+| NMB Capital                            | NMB50, NSIF2, NMBHF2 monthly NAV        | Vue SPA REST API              |
+| NIC Asia Capital                       | NICBF, NICFC, NICGF2 monthly NAV        | HTML table scrape             |
+| Nabil Investment                       | NBF2, NBF3 monthly NAV                  | WordPress AJAX                |
+| Kumari Capital                         | KSY monthly NAV                         | Directus REST API             |
+| Prabhu Capital                         | PRSF, PSF monthly NAV                   | REST API                      |
+| Sanima Capital                         | SAGF monthly NAV                        | Vue SPA REST API              |
 
 ## License
 
@@ -168,24 +168,24 @@ MIT
 
 ### Active CONSIDER Candidates
 
-| # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak | Score | Trend |
-|---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|
-| 1 | **NICFC** | NIC Asia Flexi Cap F | -8.68% | 10.02 | 9.15 | 3.4y | medium | 2d | 66.5 | → |
-| 2 | **PSF** | Prabhu Select Fund | -7.07% | 12.03 | 11.18 | 2.4y | medium | 1d | 63.8 | ↑ |
-| 3 | **NBF2** | Nabil Balanced Fund  | -8.06% | 10.42 | 9.58 | 3.3y | high | 2d | 63.4 | ↓ |
-| 4 | **NICBF** | NIC ASIA Balanced Fu | -7.37% | 10.04 | 9.30 | 3.5y | medium | 2d | 60.9 | → |
-| 5 | **NICSF** | NIC Asia Select-30 | -6.60% | 9.54 | 8.91 | 2.4y | high | 1d | 59.4 | → |
-| 6 | **RMF1** | RBB Mutual Fund 1 | -6.69% | 10.02 | 9.35 | 2.5y | medium | 2d | 47.8 | ↓ |
+| # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak | NAV Δ | Score | Trend |
+|---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|-------|
+| 1 | **NICFC** | NIC Asia Flexi Cap F | -8.68% | 10.02 | 9.15 | 3.4y | medium | 2d | 0.00% | 66.8 | → |
+| 2 | **PSF** | Prabhu Select Fund | -7.07% | 12.03 | 11.18 | 2.4y | medium | 1d | 0.00% | 65.5 | ↑ |
+| 3 | **NICBF** | NIC ASIA Balanced Fu | -7.37% | 10.04 | 9.30 | 3.5y | medium | 2d | 0.00% | 61.8 | → |
+| 4 | **NICSF** | NIC Asia Select-30 | -6.60% | 9.54 | 8.91 | 2.4y | high | 1d | — | 59.2 | → |
+| 5 | **NBF2** | Nabil Balanced Fund  | -8.06% | 10.42 | 9.58 | 3.3y | high | 2d | -1.05% | 58.4 | ↓ |
+| 6 | **RMF1** | RBB Mutual Fund 1 | -6.69% | 10.02 | 9.35 | 2.5y | medium | 2d | — | 46.3 | ↓ |
 
 ### Top Picks by Composite Score
 
-- **NICFC** (NIC Asia Flexi Cap Fund): -8.68% discount, score 66.5
-- **PSF** (Prabhu Select Fund): -7.07% discount, score 63.8
-- **NBF2** (Nabil Balanced Fund - 2): -8.06% discount, score 63.4
+- **NICFC** (NIC Asia Flexi Cap Fund): -8.68% discount, score 66.8
+- **PSF** (Prabhu Select Fund): -7.07% discount, score 65.5
+- **NICBF** (NIC ASIA Balanced Fund): -7.37% discount, score 61.8
 
 ### Interpretation
 
-CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Funds are ranked by a composite score (discount 35%, liquidity 20%, maturity 15%, momentum 10%, volatility 10%, trend 10%). This is rule-based screening for research purposes only.
+CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Funds are ranked by a 7-factor composite score (discount 30%, liquidity 15%, maturity 15%, NAV growth 10%, momentum 10%, volatility 10%, trend 10%). NAV growth reflects fund manager performance via month-over-month NAV returns. This is rule-based screening for research purposes only.
 
 ### Data Status
 
