@@ -70,20 +70,25 @@ nepal-mf-quant/
 ### 🔧 Configuration & Setup
 
 #### `.github/workflows/scheduled.yml`
+
 **Purpose**: GitHub Actions workflow for daily automation  
 **What it does**: Runs screening pipeline on schedule (4:00 PM NST, Mon-Fri)  
-**Triggers**: 
+**Triggers**:
+
 - Cron schedule (daily market close)
 - Manual workflow dispatch
-**Actions**:
+  **Actions**:
+
 1. Setup Python environment
 2. Install dependencies
 3. Run scraping → analytics → history → README update
 4. Commit and push results
 
 #### `requirements.txt`
+
 **Purpose**: Python package dependencies  
 **Contains**:
+
 - `pandas` - Data manipulation
 - `numpy` - Numerical operations
 - `requests` - HTTP requests
@@ -96,6 +101,7 @@ nepal-mf-quant/
 ### 📊 Data Files (Inputs)
 
 #### `data/raw/nav/*.csv` (41 files)
+
 **Purpose**: Individual NAV history per fund  
 **Format**: `date, nav, source`  
 **Example**: `C30MF.csv` contains NAV timeline for C30MF fund  
@@ -103,6 +109,7 @@ nepal-mf-quant/
 **Usage**: Loaded by `valuation.py` to calculate discounts
 
 #### `data/raw/fund_universe.csv`
+
 **Purpose**: Master list of all closed-end mutual funds  
 **Columns**: `id, symbol, name, maturity_date, fund_size, type, source, scraped_at`  
 **Source**: Scraped from ShareSansar API  
@@ -110,6 +117,7 @@ nepal-mf-quant/
 **Usage**: Provides metadata for decision analysis
 
 #### `data/raw/market_prices.csv`
+
 **Purpose**: Daily market prices (OHLC) from NEPSE  
 **Columns**: `date, symbol, ltp, open, high, low, volume, trades, source`  
 **Source**: Scraped from NEPSE website via Playwright  
@@ -121,6 +129,7 @@ nepal-mf-quant/
 ### 📈 Data Files (Outputs)
 
 #### `data/processed/mf_daily_snapshot.csv`
+
 **Purpose**: Complete valuation snapshot for all funds today  
 **Columns**: `date, symbol, nav, ltp, discount_pct, volume, trades, source`  
 **Created by**: `src/analytics/valuation.py`  
@@ -128,6 +137,7 @@ nepal-mf-quant/
 **Example row**: `2026-02-09, NBF2, 10.42, 9.72, -6.72, 105890, 450, NEPSE`
 
 #### `data/processed/mf_decision_table.csv`
+
 **Purpose**: Today's screening decisions with classifications  
 **Columns**: `date, symbol, nav, ltp, discount_pct, volume, years_to_maturity, days_to_maturity, valuation_bucket, liquidity_bucket, decision_flag`  
 **Created by**: `src/analytics/decision_layer.py`  
@@ -135,11 +145,13 @@ nepal-mf-quant/
 **Key field**: `decision_flag` = CONSIDER or IGNORE
 
 #### `data/processed/mf_ranked_today.csv`
+
 **Purpose**: Top 10 funds ranked by discount + liquidity  
 **Created by**: `src/analytics/valuation.py`  
 **Usage**: Quick reference for best opportunities
 
 #### `data/history/mf_decision_history.csv`
+
 **Purpose**: Append-only temporal log of all decisions  
 **Columns**: `date, symbol, discount_pct, days_to_maturity, liquidity_bucket, decision_flag`  
 **Created by**: `src/analytics/decision_history.py`  
@@ -151,6 +163,7 @@ nepal-mf-quant/
 ### 🤖 Scraper Scripts
 
 #### `scrapers/market/daily_price_scraper.py`
+
 **Purpose**: Scrape daily market prices from NEPSE  
 **Technology**: Playwright (headless browser automation)  
 **Method**: Network interception of `/api/nots/security/{id}` JSON responses  
@@ -160,12 +173,14 @@ nepal-mf-quant/
 **Success rate**: 100% (with retry logic)
 
 #### `scrapers/mappings/build_symbol_nepse_map.py`
+
 **Purpose**: Generate mapping from fund symbol → NEPSE security_id  
 **Why needed?**: NEPSE API requires numeric security_id, not symbol  
 **Output**: `symbol_nepse_map.csv` (used by price scraper)  
 **Run frequency**: One-time or when new funds added
 
 #### `src/scrape/fund_universe.py`
+
 **Purpose**: Scrape comprehensive fund metadata  
 **Source**: ShareSansar DataTables API  
 **Output**: `data/raw/fund_universe.csv`  
@@ -173,6 +188,7 @@ nepal-mf-quant/
 **Run frequency**: Weekly (metadata changes slowly)
 
 #### `src/scrape/nav_scraper.py`
+
 **Purpose**: Scrape monthly NAV data per fund  
 **Source**: ShareSansar mutual fund NAV endpoint  
 **Output**: Individual CSV files in `data/raw/nav/`  
@@ -183,8 +199,10 @@ nepal-mf-quant/
 ### 📐 Analytics Scripts
 
 #### `src/analytics/valuation.py`
+
 **Purpose**: Calculate NAV-to-market-price discounts  
 **Process**:
+
 1. Load individual NAV files from `data/raw/nav/`
 2. Load market prices from `data/raw/market_prices.csv`
 3. Perform as-of join (point-in-time correct)
@@ -193,14 +211,17 @@ nepal-mf-quant/
 6. Rank by discount (most negative first)
 
 **Outputs**:
+
 - `mf_daily_snapshot.csv` - All 41 funds
 - `mf_ranked_today.csv` - Top 10 ranked
 
 **Key Innovation**: As-of join prevents look-ahead bias (uses NAV from on/before price date)
 
 #### `src/analytics/decision_layer.py`
+
 **Purpose**: Rule-based investment screening system  
 **Decision Logic**:
+
 ```
 CONSIDER if ALL of:
 1. Valuation: discount_pct <= -4% (deep or moderate discount)
@@ -211,6 +232,7 @@ Otherwise: IGNORE
 ```
 
 **Classifications**:
+
 - **Valuation buckets**: deep_discount, moderate_discount, small_discount, premium
 - **Liquidity buckets**: high (top 25%), medium (middle 50%), low (bottom 25%)
 
@@ -219,8 +241,10 @@ Otherwise: IGNORE
 **Philosophy**: Deterministic, no prediction, research-only
 
 #### `src/analytics/decision_history.py`
+
 **Purpose**: Maintain append-only temporal decision log  
 **Process**:
+
 1. Load today's decision table
 2. Load existing history (if exists)
 3. Identify new records via composite key: `(date, symbol)`
@@ -230,6 +254,7 @@ Otherwise: IGNORE
 **Output**: `data/history/mf_decision_history.csv`
 
 **Properties**:
+
 - Append-only (never overwrites)
 - Idempotent (safe to run multiple times per day)
 - No historical mutation
@@ -237,8 +262,10 @@ Otherwise: IGNORE
 **Persistence Metrics**: Calculates consecutive CONSIDER days per fund
 
 #### `src/analytics/update_readme.py`
+
 **Purpose**: Auto-update README with current screening results  
 **Process**:
+
 1. Load decision history
 2. Calculate summary stats (CONSIDER counts, streaks)
 3. Generate markdown table sorted by streak + discount
@@ -247,6 +274,7 @@ Otherwise: IGNORE
 **Section Updated**: `## 📊 Daily Mutual Fund Decision Summary`
 
 **Properties**:
+
 - Only modifies marked section (`<!-- AUTO-GENERATED-START/END -->`)
 - Preserves all other README content
 - Idempotent (running multiple times = same result)
@@ -256,21 +284,25 @@ Otherwise: IGNORE
 ### 🏗️ Legacy/Placeholder Scripts
 
 #### `src/analytics/returns.py`
+
 **Status**: Legacy (not currently used)  
 **Original purpose**: Calculate fund returns  
 **Future use**: Backtesting, performance analysis
 
 #### `src/analytics/risk.py`
+
 **Status**: Legacy (not currently used)  
 **Original purpose**: Risk metrics (volatility, Sharpe ratio)  
 **Future use**: Risk-adjusted rankings
 
 #### `src/analytics/scoring.py`
+
 **Status**: Legacy (not currently used)  
 **Original purpose**: Composite fund scoring  
 **Future use**: Multi-factor rankings
 
 #### `src/pipeline.py`
+
 **Status**: Orchestration script (can be updated)  
 **Purpose**: Run complete pipeline end-to-end  
 **Usage**: Single entry point for full analysis
@@ -378,38 +410,46 @@ python scrapers/mappings/build_symbol_nepse_map.py
 ## 🔑 Key Design Decisions
 
 ### 1. Individual NAV Files
+
 **Decision**: Store NAV data in separate CSV files per fund  
-**Why**: 
+**Why**:
+
 - Cleaner data model (one file = one fund)
 - Easier debugging (inspect single fund)
 - Prevents data loss (corruption isolated)
-**Files**: `data/raw/nav/*.csv`
+  **Files**: `data/raw/nav/*.csv`
 
 ### 2. As-Of Join
+
 **Decision**: Use `pd.merge_asof()` with `direction='backward'`  
 **Why**: Point-in-time correctness (prevents look-ahead bias)  
 **Implementation**: `valuation.py` line 87
 
 ### 3. Append-Only History
+
 **Decision**: Never overwrite historical decision records  
-**Why**: 
+**Why**:
+
 - Audit trail (reproducible)
 - Persistence analysis (track streaks)
 - No data loss on re-runs
-**Implementation**: `decision_history.py` (idempotency checks)
+  **Implementation**: `decision_history.py` (idempotency checks)
 
 ### 4. Playwright for NEPSE
+
 **Decision**: Use Playwright instead of requests + BeautifulSoup  
 **Why**: NEPSE is Angular SPA (no server-side HTML)  
 **Method**: Network interception of API responses  
 **Implementation**: `daily_price_scraper.py`
 
 ### 5. Percentile-Based Liquidity
+
 **Decision**: Liquidity buckets based on volume percentiles (not absolute thresholds)  
 **Why**: Adapts to changing market conditions  
 **Implementation**: `decision_layer.py` (P25, P75 thresholds)
 
 ### 6. HTML Comment Markers
+
 **Decision**: Use `<!-- AUTO-GENERATED-START/END -->` in README  
 **Why**: Precise section detection + preservation of manual edits  
 **Implementation**: `update_readme.py`
@@ -441,14 +481,14 @@ cat data/history/mf_decision_history.csv | tail -20
 
 ## 📊 File Size Reference
 
-| File | Size | Growth |
-|------|------|--------|
-| `market_prices.csv` | ~50KB | ~1KB/day |
-| `fund_universe.csv` | ~5KB | Static |
-| `nav/*.csv` (each) | ~2KB | ~50B/month |
-| `mf_daily_snapshot.csv` | ~3KB | Replaced daily |
-| `mf_decision_table.csv` | ~4KB | Replaced daily |
-| `mf_decision_history.csv` | ~2KB | ~50B/day (~18KB/year) |
+| File                      | Size  | Growth                |
+| ------------------------- | ----- | --------------------- |
+| `market_prices.csv`       | ~50KB | ~1KB/day              |
+| `fund_universe.csv`       | ~5KB  | Static                |
+| `nav/*.csv` (each)        | ~2KB  | ~50B/month            |
+| `mf_daily_snapshot.csv`   | ~3KB  | Replaced daily        |
+| `mf_decision_table.csv`   | ~4KB  | Replaced daily        |
+| `mf_decision_history.csv` | ~2KB  | ~50B/day (~18KB/year) |
 
 **Total data directory**: ~200KB today → ~300KB after 1 year
 
