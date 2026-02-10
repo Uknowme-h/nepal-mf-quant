@@ -12,13 +12,18 @@ Usage:
     python src/pipeline.py --skip-scrape    # Skip all scraping, only run analytics
 
 Steps:
-    1. Scrape fund universe       (weekly)
-    2. Scrape NAV data            (monthly)
-    3. Scrape market prices       (daily)   [critical]
-    4. Calculate valuations       (daily)   [critical]
-    5. Apply decision rules       (daily)   [critical]
-    6. Update decision history    (daily)   [critical]
-    7. Update README dashboard    (daily)
+     1. Scrape fund universe         (weekly)
+     2. Scrape NAV data              (monthly)
+     3. Scrape market prices          (daily)   [critical]
+     4. Data quality validation       (daily)
+     5. Calculate valuations          (daily)   [critical]
+     6. Calculate returns             (daily)   [critical]
+     7. Calculate risk metrics        (daily)   [critical]
+     8. Score & rank funds            (daily)   [critical]
+     9. Apply decision rules          (daily)   [critical]
+    10. Update decision history       (daily)   [critical]
+    11. Generate reports              (daily)
+    12. Update README dashboard       (daily)
 """
 
 import argparse
@@ -185,16 +190,53 @@ def step_scrape_market_prices():
     )
 
 
+def step_data_quality():
+    """Step 4: Run data quality validation checks."""
+    from src.analytics.data_quality import DataQualityChecker
+
+    checker = DataQualityChecker(PROJECT_ROOT)
+    result = checker.run()
+    issues = result["has_issues"].sum() if "has_issues" in result.columns else 0
+    if issues > 0:
+        logger.warning("Data quality: %d/%d symbols have issues", issues, len(result))
+    else:
+        logger.info("Data quality: all %d symbols clean", len(result))
+
+
 def step_valuation():
-    """Step 4: Calculate NAV-to-price valuations."""
+    """Step 5: Calculate NAV-to-price valuations."""
     from src.analytics.valuation import MutualFundValuation
 
     pipeline = MutualFundValuation(PROJECT_ROOT)
     pipeline.run(top_n=10)
 
 
+def step_returns():
+    """Step 6: Calculate price returns and discount change."""
+    from src.analytics.returns import ReturnsCalculator
+
+    calc = ReturnsCalculator(PROJECT_ROOT)
+    calc.run()
+
+
+def step_risk():
+    """Step 7: Calculate risk metrics from OHLC data."""
+    from src.analytics.risk import RiskMetrics
+
+    risk = RiskMetrics(PROJECT_ROOT)
+    risk.run()
+
+
+def step_scoring():
+    """Step 8: Score and rank funds by composite factors."""
+    from src.analytics.scoring import FundScorer
+
+    scorer = FundScorer(PROJECT_ROOT)
+    scorer.run()
+
+
 def step_decision_layer():
-    """Step 5: Apply rule-based screening decisions."""
+    """Step 9: Apply rule-based screening decisions."""
     from src.analytics.decision_layer import InvestmentDecisionLayer
 
     pipeline = InvestmentDecisionLayer(PROJECT_ROOT)
@@ -202,15 +244,23 @@ def step_decision_layer():
 
 
 def step_decision_history():
-    """Step 6: Append today's decisions to history log."""
+    """Step 10: Append today's decisions to history log."""
     from src.analytics.decision_history import DecisionHistoryTracker
 
     tracker = DecisionHistoryTracker(PROJECT_ROOT)
     tracker.run()
 
 
+def step_generate_reports():
+    """Step 11: Generate detailed markdown and CSV reports."""
+    from src.analytics.report_generator import ReportGenerator
+
+    gen = ReportGenerator(PROJECT_ROOT)
+    gen.run()
+
+
 def step_update_readme():
-    """Step 7: Update README dashboard section."""
+    """Step 12: Update README dashboard section."""
     from src.analytics.update_readme import ReadmeUpdater
 
     updater = ReadmeUpdater(PROJECT_ROOT)
@@ -265,6 +315,7 @@ def validate_prerequisites():
         "data/processed",
         "data/history",
         "data/raw/nav",
+        "data/metrics",
         "reports",
     ]:
         (PROJECT_ROOT / subdir).mkdir(parents=True, exist_ok=True)
@@ -333,6 +384,14 @@ class PipelineRunner:
             ),
             PipelineStep(
                 number=4,
+                name="data_quality",
+                cadence="daily",
+                critical=False,
+                run_fn=step_data_quality,
+                description="Validate data freshness, outliers, and coverage",
+            ),
+            PipelineStep(
+                number=5,
                 name="valuation",
                 cadence="daily",
                 critical=True,
@@ -340,7 +399,31 @@ class PipelineRunner:
                 description="Join NAV + prices, calculate discounts, rank",
             ),
             PipelineStep(
-                number=5,
+                number=6,
+                name="returns",
+                cadence="daily",
+                critical=True,
+                run_fn=step_returns,
+                description="Calculate price returns, discount change, NAV growth",
+            ),
+            PipelineStep(
+                number=7,
+                name="risk_metrics",
+                cadence="daily",
+                critical=True,
+                run_fn=step_risk,
+                description="Calculate Parkinson vol, intraday range, drawdown",
+            ),
+            PipelineStep(
+                number=8,
+                name="scoring",
+                cadence="daily",
+                critical=True,
+                run_fn=step_scoring,
+                description="Composite factor scoring and fund ranking",
+            ),
+            PipelineStep(
+                number=9,
                 name="decision_layer",
                 cadence="daily",
                 critical=True,
@@ -348,7 +431,7 @@ class PipelineRunner:
                 description="Apply rule-based CONSIDER/IGNORE screening",
             ),
             PipelineStep(
-                number=6,
+                number=10,
                 name="decision_history",
                 cadence="daily",
                 critical=True,
@@ -356,7 +439,15 @@ class PipelineRunner:
                 description="Append decisions to temporal history log",
             ),
             PipelineStep(
-                number=7,
+                number=11,
+                name="generate_reports",
+                cadence="daily",
+                critical=False,
+                run_fn=step_generate_reports,
+                description="Generate detailed markdown + CSV reports",
+            ),
+            PipelineStep(
+                number=12,
                 name="update_readme",
                 cadence="daily",
                 critical=False,
@@ -559,21 +650,26 @@ def parse_args() -> argparse.Namespace:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Steps:
-  1  Scrape fund universe       (weekly)
-  2  Scrape NAV data            (monthly)
-  3  Scrape market prices       (daily)   [critical]
-  4  Calculate valuations       (daily)   [critical]
-  5  Apply decision rules       (daily)   [critical]
-  6  Update decision history    (daily)   [critical]
-  7  Update README dashboard    (daily)
+   1  Scrape fund universe         (weekly)
+   2  Scrape NAV data              (monthly)
+   3  Scrape market prices          (daily)   [critical]
+   4  Data quality validation       (daily)
+   5  Calculate valuations          (daily)   [critical]
+   6  Calculate returns             (daily)   [critical]
+   7  Calculate risk metrics        (daily)   [critical]
+   8  Score & rank funds            (daily)   [critical]
+   9  Apply decision rules          (daily)   [critical]
+  10  Update decision history       (daily)   [critical]
+  11  Generate reports              (daily)
+  12  Update README dashboard       (daily)
 
 Examples:
-  python src/pipeline.py                    # Normal daily run
-  python src/pipeline.py --force            # Force all steps
-  python src/pipeline.py --dry-run          # Preview what would run
-  python src/pipeline.py --steps 4,5,6,7    # Skip scrapers, run analytics
-  python src/pipeline.py --skip-scrape      # Same as --steps 4,5,6,7
-  python src/pipeline.py --retries 5        # More retries for flaky networks
+  python src/pipeline.py                      # Normal daily run
+  python src/pipeline.py --force              # Force all steps
+  python src/pipeline.py --dry-run            # Preview what would run
+  python src/pipeline.py --steps 5,6,7,8,9    # Run analytics only
+  python src/pipeline.py --skip-scrape        # Same as above
+  python src/pipeline.py --retries 5          # More retries for flaky networks
         """,
     )
 
@@ -596,7 +692,7 @@ Examples:
     parser.add_argument(
         "--skip-scrape",
         action="store_true",
-        help="Skip scraping steps (1-3), only run analytics (4-7)",
+        help="Skip scraping steps (1-3), only run analytics (4-12)",
     )
     parser.add_argument(
         "--retries",
@@ -621,9 +717,9 @@ def main() -> int:
     if args.steps:
         try:
             selected_steps = [int(s.strip()) for s in args.steps.split(",")]
-            invalid = [s for s in selected_steps if s < 1 or s > 7]
+            invalid = [s for s in selected_steps if s < 1 or s > 12]
             if invalid:
-                logger.error("Invalid step numbers: %s (must be 1-7)", invalid)
+                logger.error("Invalid step numbers: %s (must be 1-12)", invalid)
                 return 1
         except ValueError:
             logger.error("--steps must be comma-separated integers (e.g. 3,4,5)")

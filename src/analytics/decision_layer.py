@@ -36,11 +36,15 @@ class InvestmentDecisionLayer:
         self.project_root = project_root
         self.snapshot_path = project_root / 'data' / 'processed' / 'mf_daily_snapshot.csv'
         self.universe_path = project_root / 'data' / 'raw' / 'fund_universe.csv'
+        self.scored_path = project_root / 'data' / 'processed' / 'mf_scored.csv'
+        self.risk_path = project_root / 'data' / 'processed' / 'mf_risk_metrics.csv'
+        self.returns_path = project_root / 'data' / 'processed' / 'mf_returns.csv'
         self.output_path = project_root / 'data' / 'processed' / 'mf_decision_table.csv'
     
     def load_data(self) -> tuple[pd.DataFrame, pd.DataFrame]:
         """
         Load valuation snapshot and fund universe data.
+        Filters snapshot to latest date only (fixes multi-date leakage).
         
         Returns:
             Tuple of (snapshot_df, universe_df)
@@ -55,7 +59,11 @@ class InvestmentDecisionLayer:
         
         snapshot = pd.read_csv(self.snapshot_path)
         snapshot['date'] = pd.to_datetime(snapshot['date'])
-        logger.info(f"✓ Loaded {len(snapshot)} records from daily snapshot")
+        
+        # Filter to latest date only — prevents stale multi-date decisions
+        latest_date = snapshot['date'].max()
+        snapshot = snapshot[snapshot['date'] == latest_date].copy()
+        logger.info(f"✓ Loaded {len(snapshot)} records from daily snapshot (date: {latest_date.date()})")
         
         # Load fund universe
         if not self.universe_path.exists():
@@ -286,24 +294,33 @@ class InvestmentDecisionLayer:
             """
             Deterministic decision rule.
             
-            Returns 'CONSIDER' or 'IGNORE'
+            Returns ('CONSIDER'/'IGNORE', 'reason_string')
             """
+            reasons = []
+            
             # Check valuation: must be discounted meaningfully
             good_valuation = row['valuation_bucket'] in ['deep_discount', 'moderate_discount']
+            if not good_valuation:
+                reasons.append(f"valuation:{row['valuation_bucket']}")
             
             # Check liquidity: must be tradable
             good_liquidity = row['liquidity_bucket'] != 'low'
+            if not good_liquidity:
+                reasons.append("liquidity:low")
             
             # Check maturity: must be reasonable horizon
             good_maturity = row['years_to_maturity'] <= 4
+            if not good_maturity:
+                reasons.append(f"maturity:{row['years_to_maturity']:.1f}y")
             
-            # All conditions must be true
             if good_valuation and good_liquidity and good_maturity:
-                return "CONSIDER"
+                return "CONSIDER", ""
             else:
-                return "IGNORE"
+                return "IGNORE", "; ".join(reasons)
         
-        df['decision_flag'] = df.apply(make_decision, axis=1)
+        decisions = df.apply(make_decision, axis=1, result_type='expand')
+        df['decision_flag'] = decisions[0]
+        df['ignore_reasons'] = decisions[1]
         
         # Count decisions
         consider_count = (df['decision_flag'] == 'CONSIDER').sum()
@@ -333,22 +350,94 @@ class InvestmentDecisionLayer:
         
         return df
     
+    def enrich_with_scores_and_risk(self, df: pd.DataFrame) -> pd.DataFrame:
+        """
+        Enrich decision table with composite score, risk flag, and discount trend
+        from the scoring and risk pipeline outputs (if available).
+        """
+        logger.info("")
+        logger.info("=" * 80)
+        logger.info("Enriching Decisions with Scores & Risk")
+        logger.info("=" * 80)
+        
+        # --- Composite score & priority rank ---
+        if self.scored_path.exists():
+            scored = pd.read_csv(self.scored_path)
+            score_cols = ['symbol', 'composite_score', 'rank']
+            score_cols = [c for c in score_cols if c in scored.columns]
+            df = df.merge(scored[score_cols].drop_duplicates('symbol'),
+                          on='symbol', how='left')
+            # Priority rank within CONSIDER only
+            consider_mask = df['decision_flag'] == 'CONSIDER'
+            df['priority_rank'] = np.nan
+            if consider_mask.any():
+                df.loc[consider_mask, 'priority_rank'] = (
+                    df.loc[consider_mask, 'composite_score']
+                    .rank(ascending=False, method='min')
+                    .astype('Int64')
+                )
+            logger.info("  Merged composite scores")
+        else:
+            df['composite_score'] = np.nan
+            df['priority_rank'] = np.nan
+            logger.warning("  Scored file not found — composite_score will be NaN")
+        
+        # --- Risk flag ---
+        if self.risk_path.exists():
+            risk = pd.read_csv(self.risk_path)
+            if 'parkinson_vol' in risk.columns:
+                p75 = risk['parkinson_vol'].quantile(0.75)
+                risk['risk_flag'] = risk['parkinson_vol'].apply(
+                    lambda v: 'high_vol' if pd.notna(v) and v > p75 else ''
+                )
+                df = df.merge(risk[['symbol', 'risk_flag']].drop_duplicates('symbol'),
+                              on='symbol', how='left')
+                flagged = (df['risk_flag'] == 'high_vol').sum()
+                logger.info("  Risk flags: %d symbols flagged as high_vol (>75th pctile)", flagged)
+            else:
+                df['risk_flag'] = ''
+        else:
+            df['risk_flag'] = ''
+            logger.warning("  Risk file not found — risk_flag will be empty")
+        
+        # --- Discount trend ---
+        if self.returns_path.exists():
+            returns = pd.read_csv(self.returns_path)
+            returns['date'] = pd.to_datetime(returns['date'])
+            latest_date = returns['date'].max()
+            ret_latest = returns[returns['date'] == latest_date].copy()
+            
+            # Use 1-week discount change if available, else 1-day
+            trend_col = 'discount_change_1w'
+            if trend_col not in ret_latest.columns or ret_latest[trend_col].isna().all():
+                trend_col = 'discount_change_1d'
+            
+            if trend_col in ret_latest.columns:
+                def classify_trend(val):
+                    if pd.isna(val):
+                        return 'unknown'
+                    if val > 0.5:
+                        return 'narrowing'
+                    elif val < -0.5:
+                        return 'widening'
+                    return 'stable'
+                
+                ret_latest['discount_trend'] = ret_latest[trend_col].apply(classify_trend)
+                df = df.merge(ret_latest[['symbol', 'discount_trend']].drop_duplicates('symbol'),
+                              on='symbol', how='left')
+                df['discount_trend'] = df['discount_trend'].fillna('unknown')
+                logger.info("  Discount trends: %s", df['discount_trend'].value_counts().to_dict())
+            else:
+                df['discount_trend'] = 'unknown'
+        else:
+            df['discount_trend'] = 'unknown'
+            logger.warning("  Returns file not found — discount_trend will be unknown")
+        
+        return df
+
     def save_decision_table(self, df: pd.DataFrame) -> None:
         """
-        Save decision table with exact required columns.
-        
-        Output columns (in order):
-        - date
-        - symbol
-        - nav
-        - ltp
-        - discount_pct
-        - volume
-        - years_to_maturity
-        - days_to_maturity
-        - valuation_bucket
-        - liquidity_bucket
-        - decision_flag
+        Save decision table with extended columns.
         
         Args:
             df: Complete decision table
@@ -356,12 +445,16 @@ class InvestmentDecisionLayer:
         # Ensure output directory exists
         self.output_path.parent.mkdir(parents=True, exist_ok=True)
         
-        # Select and order columns exactly as specified
+        # Extended output columns
         output_cols = [
             'date', 'symbol', 'nav', 'ltp', 'discount_pct', 'volume',
-            'years_to_maturity', 'days_to_maturity', 'valuation_bucket', 'liquidity_bucket', 'decision_flag'
+            'years_to_maturity', 'days_to_maturity', 'valuation_bucket',
+            'liquidity_bucket', 'decision_flag', 'ignore_reasons',
+            'composite_score', 'priority_rank', 'discount_trend', 'risk_flag',
         ]
         
+        # Keep only columns that exist
+        output_cols = [c for c in output_cols if c in df.columns]
         output_df = df[output_cols].copy()
         
         # Convert date to string for CSV
@@ -410,7 +503,10 @@ class InvestmentDecisionLayer:
             # Step 5: Apply decision rules
             df = self.apply_decision_rules(df)
             
-            # Step 6: Save decision table
+            # Step 6: Enrich with scores, risk, and trend
+            df = self.enrich_with_scores_and_risk(df)
+            
+            # Step 7: Save decision table
             self.save_decision_table(df)
             
             # Success summary

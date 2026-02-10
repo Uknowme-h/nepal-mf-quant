@@ -1,368 +1,347 @@
 """
 README Auto-Updater for Mutual Fund Decision System
 
-Automatically generates and updates a "Daily Decision Summary" section in README.md
-with current screening results. Preserves all other README content.
+Generates a rich quantitative dashboard in README.md with:
+- Market snapshot (total funds, discount stats, data freshness)
+- Enhanced CONSIDER table (name, NAV, LTP, score, trend, risk, streak)
+- Discount distribution summary
+- Data status footer with pipeline freshness
+- Links to full reports
 
-This is for research dashboard purposes only - NO investment advice.
+Preserves all static README content outside the auto-generated markers.
+This is for research dashboard purposes only — NO investment advice.
 """
 
+import numpy as np
 import pandas as pd
 import logging
 from pathlib import Path
 from datetime import datetime
 import re
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
 logger = logging.getLogger(__name__)
 
 
 class ReadmeUpdater:
     """
-    Updates README.md with current decision analysis summary.
-    
+    Updates README.md with a comprehensive decision analysis dashboard.
+
     Only modifies the auto-generated section, preserves all other content.
     """
-    
-    # Section markers for detection
+
     SECTION_HEADER = "## 📊 Daily Mutual Fund Decision Summary"
     SECTION_START_MARKER = "<!-- AUTO-GENERATED-START -->"
     SECTION_END_MARKER = "<!-- AUTO-GENERATED-END -->"
-    
+
     def __init__(self, project_root: Path):
         self.project_root = project_root
-        self.history_path = project_root / 'data' / 'history' / 'mf_decision_history.csv'
-        self.readme_path = project_root / 'README.md'
-    
-    def load_history(self) -> pd.DataFrame:
-        """
-        Load decision history file.
-        
-        Returns:
-            DataFrame with complete history
-        """
-        if not self.history_path.exists():
-            logger.warning(f"⚠ History file not found: {self.history_path}")
-            logger.warning("  Run decision_history.py first to generate history")
+        self.history_path = project_root / "data" / "history" / "mf_decision_history.csv"
+        self.decision_path = project_root / "data" / "processed" / "mf_decision_table.csv"
+        self.scored_path = project_root / "data" / "processed" / "mf_scored.csv"
+        self.quality_path = project_root / "data" / "processed" / "mf_data_quality.csv"
+        self.snapshot_path = project_root / "data" / "processed" / "mf_daily_snapshot.csv"
+        self.universe_path = project_root / "data" / "raw" / "fund_universe.csv"
+        self.readme_path = project_root / "README.md"
+
+    # ------------------------------------------------------------------
+    # Data loading
+    # ------------------------------------------------------------------
+
+    def _load_csv(self, path: Path, date_cols: list | None = None) -> pd.DataFrame:
+        if not path.exists():
             return pd.DataFrame()
-        
-        df = pd.read_csv(self.history_path)
-        df['date'] = pd.to_datetime(df['date'])
-        
-        logger.info(f"✓ Loaded history: {len(df)} records")
-        logger.info(f"  Date range: {df['date'].min().strftime('%Y-%m-%d')} to {df['date'].max().strftime('%Y-%m-%d')}")
-        
+        df = pd.read_csv(path)
+        for col in (date_cols or []):
+            if col in df.columns:
+                df[col] = pd.to_datetime(df[col], errors="coerce")
         return df
-    
-    def calculate_consider_streaks(self, history: pd.DataFrame) -> pd.DataFrame:
-        """
-        Calculate consecutive CONSIDER days for each symbol.
-        
-        Args:
-            history: Complete decision history
-            
-        Returns:
-            DataFrame with symbol and current consider_streak
-        """
-        if len(history) == 0:
-            return pd.DataFrame(columns=['symbol', 'consider_streak'])
-        
-        # Sort by symbol and date
-        df = history.sort_values(['symbol', 'date']).copy()
-        
-        # Create binary CONSIDER flag
-        df['is_consider'] = (df['decision_flag'] == 'CONSIDER').astype(int)
-        
-        # Calculate streak - reset counter when decision changes
-        df['streak_reset'] = (
-            df.groupby('symbol')['is_consider']
-            .diff()
-            .fillna(0) != 0
-        ).astype(int)
-        
-        df['streak_group'] = df.groupby('symbol')['streak_reset'].cumsum()
-        
-        # Count consecutive days within each streak group
-        df['streak_length'] = df.groupby(['symbol', 'streak_group']).cumcount() + 1
-        
-        # Only keep CONSIDER streaks (ignore IGNORE streaks)
-        df['consider_streak'] = df['is_consider'] * df['streak_length']
-        
-        # Get most recent record for each symbol
-        latest_date = df['date'].max()
-        latest = df[df['date'] == latest_date][['symbol', 'consider_streak']].copy()
-        
-        return latest
-    
-    def get_latest_summary(self, history: pd.DataFrame) -> dict:
-        """
-        Generate summary statistics from latest history records.
-        
-        Args:
-            history: Complete decision history
-            
-        Returns:
-            Dictionary with summary stats
-        """
-        if len(history) == 0:
-            return {
-                'last_date': None,
-                'total_funds': 0,
-                'consider_count': 0,
-                'ignore_count': 0,
-                'consider_funds': pd.DataFrame()
-            }
-        
-        # Get latest date
-        latest_date = history['date'].max()
-        latest = history[history['date'] == latest_date].copy()
-        
-        # Calculate streaks
-        streaks = self.calculate_consider_streaks(history)
-        
-        # Merge streaks with latest data
-        latest = latest.merge(streaks, on='symbol', how='left')
-        latest['consider_streak'] = latest['consider_streak'].fillna(0).astype(int)
-        
-        # Get CONSIDER funds only
-        consider_funds = latest[latest['decision_flag'] == 'CONSIDER'].copy()
-        
-        # Sort by: longest streak first, then deepest discount
-        consider_funds = consider_funds.sort_values(
-            ['consider_streak', 'discount_pct'], 
-            ascending=[False, True]  # Longer streaks first, more negative discount first
-        )
-        
-        summary = {
-            'last_date': latest_date,
-            'total_funds': len(latest),
-            'consider_count': len(consider_funds),
-            'ignore_count': len(latest) - len(consider_funds),
-            'consider_funds': consider_funds
+
+    def load_all_data(self) -> dict:
+        """Load all data sources for the dashboard."""
+        return {
+            "history": self._load_csv(self.history_path, ["date"]),
+            "decisions": self._load_csv(self.decision_path, ["date"]),
+            "scored": self._load_csv(self.scored_path, ["date"]),
+            "quality": self._load_csv(self.quality_path),
+            "snapshot": self._load_csv(self.snapshot_path, ["date"]),
+            "universe": self._load_csv(self.universe_path),
         }
-        
-        return summary
-    
-    def generate_markdown_content(self, summary: dict) -> str:
-        """
-        Generate markdown content for the auto-updated section.
-        
-        Args:
-            summary: Summary statistics dictionary
-            
-        Returns:
-            Markdown string
-        """
+
+    # ------------------------------------------------------------------
+    # Helpers
+    # ------------------------------------------------------------------
+
+    def calculate_consider_streaks(self, history: pd.DataFrame) -> pd.DataFrame:
+        """Calculate consecutive CONSIDER days for each symbol."""
+        if history.empty:
+            return pd.DataFrame(columns=["symbol", "consider_streak"])
+
+        df = history.sort_values(["symbol", "date"]).copy()
+        df["is_consider"] = (df["decision_flag"] == "CONSIDER").astype(int)
+        df["streak_reset"] = (df.groupby("symbol")["is_consider"].diff().fillna(0) != 0).astype(int)
+        df["streak_group"] = df.groupby("symbol")["streak_reset"].cumsum()
+        df["streak_length"] = df.groupby(["symbol", "streak_group"]).cumcount() + 1
+        df["consider_streak"] = df["is_consider"] * df["streak_length"]
+
+        latest_date = df["date"].max()
+        return df[df["date"] == latest_date][["symbol", "consider_streak"]].copy()
+
+    @staticmethod
+    def _fmt(val, fmt_str=".2f", suffix="", na="—"):
+        if pd.isna(val):
+            return na
+        return f"{val:{fmt_str}}{suffix}"
+
+    @staticmethod
+    def _trend_arrow(trend: str) -> str:
+        return {"narrowing": "↑", "widening": "↓", "stable": "→"}.get(str(trend), "·")
+
+    # ------------------------------------------------------------------
+    # Markdown generation
+    # ------------------------------------------------------------------
+
+    def generate_markdown_content(self, data: dict) -> str:
+        """Generate the full auto-generated README section."""
         lines = []
-        
-        # Section header
+        decisions = data["decisions"]
+        scored = data["scored"]
+        history = data["history"]
+        universe = data["universe"]
+        quality = data["quality"]
+
         lines.append(self.SECTION_HEADER)
         lines.append("")
         lines.append(self.SECTION_START_MARKER)
         lines.append("")
-        
-        # Check if we have data
-        if summary['last_date'] is None:
+
+        if decisions.empty:
             lines.append("**Status**: No analysis data available yet.")
             lines.append("")
-            lines.append("Run the screening pipeline to generate decision data:")
+            lines.append("Run the pipeline to generate decision data:")
             lines.append("```bash")
-            lines.append("python src/analytics/decision_layer.py")
-            lines.append("python src/analytics/decision_history.py")
-            lines.append("python src/analytics/update_readme.py")
+            lines.append("python src/pipeline.py --skip-scrape")
             lines.append("```")
             lines.append("")
             lines.append(self.SECTION_END_MARKER)
             return "\n".join(lines)
-        
-        # 1. Run metadata
-        lines.append(f"**Last updated**: {summary['last_date'].strftime('%Y-%m-%d')}")
-        lines.append(f"**Funds analyzed**: {summary['total_funds']}")
-        lines.append(f"**CONSIDER**: {summary['consider_count']}")
-        lines.append(f"**IGNORE**: {summary['ignore_count']}")
+
+        latest_date = decisions["date"].max()
+        date_str = latest_date.strftime("%Y-%m-%d") if hasattr(latest_date, "strftime") else str(latest_date)
+
+        # ====== MARKET SNAPSHOT ======
+        lines.append("### Market Snapshot")
         lines.append("")
-        
-        # 2. Top CONSIDER candidates table
-        lines.append("### Current CONSIDER Candidates")
+
+        total = len(decisions)
+        at_discount = (decisions["discount_pct"] < 0).sum()
+        at_premium = (decisions["discount_pct"] >= 0).sum()
+        deep_discount = (decisions["discount_pct"] <= -8).sum()
+        median_disc = decisions["discount_pct"].median()
+        consider_n = (decisions["decision_flag"] == "CONSIDER").sum()
+
+        lines.append(f"| | |")
+        lines.append(f"|---|---|")
+        lines.append(f"| **Date** | {date_str} |")
+        lines.append(f"| **Funds Tracked** | {total} |")
+        lines.append(f"| **Median Discount** | {median_disc:.2f}% |")
+        lines.append(f"| **At Discount** | {at_discount} ({at_discount/total*100:.0f}%) |")
+        lines.append(f"| **Deep Discount (≤-8%)** | {deep_discount} |")
+        lines.append(f"| **CONSIDER** | {consider_n} |")
+        lines.append(f"| **IGNORE** | {total - consider_n} |")
         lines.append("")
-        
-        consider_funds = summary['consider_funds']
-        
-        if len(consider_funds) == 0:
-            lines.append("**No funds currently meet CONSIDER criteria.**")
-            lines.append("")
-            lines.append("All funds are flagged as IGNORE due to:")
-            lines.append("- Insufficient discount to NAV (< 4%)")
-            lines.append("- Low liquidity (bottom 25% volume)")
-            lines.append("- Long maturity (> 4 years)")
+
+        # NAV freshness warning
+        if not quality.empty and "nav_stale" in quality.columns:
+            stale_count = quality["nav_stale"].sum()
+            if stale_count > 0:
+                lines.append(f"> ⚠️ {stale_count} fund(s) have NAV data older than 45 days.")
+                lines.append("")
+
+        # ====== DISCOUNT DISTRIBUTION ======
+        lines.append("### Discount Distribution")
+        lines.append("")
+        bins_labels = [
+            ((-np.inf, -10), "< -10%"),
+            ((-10, -6), "-10% to -6%"),
+            ((-6, -4), "-6% to -4%"),
+            ((-4, 0), "-4% to 0%"),
+            ((0, np.inf), "≥ 0%"),
+        ]
+        parts = []
+        for (lo, hi), label in bins_labels:
+            if lo == -np.inf:
+                c = (decisions["discount_pct"] <= hi).sum()
+            elif hi == np.inf:
+                c = (decisions["discount_pct"] > lo).sum()
+            else:
+                c = ((decisions["discount_pct"] > lo) & (decisions["discount_pct"] <= hi)).sum()
+            bar = "█" * c
+            parts.append(f"| {label:>14} | {bar} {c} |")
+
+        lines.append("| Range | Distribution |")
+        lines.append("|-------|-------------|")
+        lines.extend(parts)
+        lines.append("")
+
+        # ====== CONSIDER TABLE ======
+        lines.append("### Active CONSIDER Candidates")
+        lines.append("")
+
+        consider = decisions[decisions["decision_flag"] == "CONSIDER"].copy()
+
+        # Merge names
+        if not universe.empty and "name" in universe.columns:
+            consider = consider.merge(universe[["symbol", "name"]], on="symbol", how="left")
+        else:
+            consider["name"] = consider["symbol"]
+
+        # Merge streaks
+        streaks = self.calculate_consider_streaks(history)
+        if not streaks.empty:
+            consider = consider.merge(streaks, on="symbol", how="left")
+            consider["consider_streak"] = consider["consider_streak"].fillna(0).astype(int)
+        else:
+            consider["consider_streak"] = 0
+
+        # Sort by priority_rank or discount
+        sort_col = "priority_rank" if "priority_rank" in consider.columns and consider["priority_rank"].notna().any() else "discount_pct"
+        consider = consider.sort_values(sort_col, ascending=True, na_position="last")
+
+        if len(consider) == 0:
+            lines.append("*No funds currently meet CONSIDER criteria.*")
             lines.append("")
         else:
-            # Table header
-            lines.append("| Symbol | Discount % | Days to Maturity | Liquidity | CONSIDER Streak |")
-            lines.append("|--------|------------|------------------|-----------|-----------------|")
-            
-            # Table rows
-            for _, row in consider_funds.iterrows():
-                symbol = row['symbol']
-                discount = f"{row['discount_pct']:.2f}%"
-                days = f"{int(row['days_to_maturity']):,}"
-                liquidity = row['liquidity_bucket']
-                streak = f"{int(row['consider_streak'])} day{'s' if row['consider_streak'] != 1 else ''}"
-                
-                lines.append(f"| {symbol} | {discount} | {days} | {liquidity} | {streak} |")
-            
+            has_score = "composite_score" in consider.columns and consider["composite_score"].notna().any()
+            has_trend = "discount_trend" in consider.columns
+
+            header = "| # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak |"
+            sep = "|---|--------|------|----------|-----|-----|----------|-----------|--------|"
+            if has_score:
+                header += " Score |"
+                sep += "-------|"
+            if has_trend:
+                header += " Trend |"
+                sep += "-------|"
+
+            lines.append(header)
+            lines.append(sep)
+
+            for idx, (_, row) in enumerate(consider.iterrows(), 1):
+                name = str(row.get("name", row["symbol"]))[:20]
+                streak = int(row.get("consider_streak", 0))
+                streak_str = f"{streak}d"
+                r = f"| {idx} | **{row['symbol']}** | {name} "
+                r += f"| {self._fmt(row.get('discount_pct'), '.2f', '%')} "
+                r += f"| {self._fmt(row.get('nav'), '.2f')} "
+                r += f"| {self._fmt(row.get('ltp'), '.2f')} "
+                maturity = row.get("years_to_maturity", np.nan)
+                r += f"| {self._fmt(maturity, '.1f', 'y')} "
+                r += f"| {row.get('liquidity_bucket', '—')} "
+                r += f"| {streak_str} "
+                if has_score:
+                    r += f"| {self._fmt(row.get('composite_score'), '.1f')} "
+                if has_trend:
+                    trend = str(row.get("discount_trend", "unknown"))
+                    r += f"| {self._trend_arrow(trend)} "
+                r += "|"
+                lines.append(r)
+
             lines.append("")
-        
-        # 3. Interpretation notes (static text - exact wording required)
+
+        # ====== KEY METRICS ======
+        if not consider.empty and "composite_score" in consider.columns:
+            top3 = consider.head(3)
+            if top3["composite_score"].notna().any():
+                lines.append("### Top Picks by Composite Score")
+                lines.append("")
+                for _, row in top3.iterrows():
+                    name = str(row.get("name", row["symbol"]))
+                    lines.append(f"- **{row['symbol']}** ({name}): {self._fmt(row.get('discount_pct'), '.2f', '%')} discount, score {self._fmt(row.get('composite_score'), '.1f')}")
+                lines.append("")
+
+        # ====== INTERPRETATION ======
         lines.append("### Interpretation")
         lines.append("")
-        lines.append("This table highlights closed-end mutual funds that are trading at a discount to NAV, have sufficient liquidity, and are approaching maturity.")
-        lines.append("The system is rule-based and intended for research and monitoring purposes only.")
+        lines.append("CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. "
+                      "Funds are ranked by a composite score (discount 35%, liquidity 20%, maturity 15%, "
+                      "momentum 10%, volatility 10%, trend 10%). This is rule-based screening for "
+                      "research purposes only.")
         lines.append("")
-        
+
+        # ====== DATA STATUS ======
+        lines.append("### Data Status")
+        lines.append("")
+        lines.append(f"- Latest price data: {date_str}")
+        if not quality.empty and "nav_age_days" in quality.columns:
+            median_age = quality["nav_age_days"].median()
+            lines.append(f"- NAV data age: median {self._fmt(median_age, '.0f')} days")
+        history_days = history["date"].nunique() if not history.empty else 0
+        lines.append(f"- History depth: {history_days} trading day(s)")
+        lines.append(f"- Full report: [reports/latest_rankings.md](reports/latest_rankings.md)")
+        lines.append(f"- Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)")
+        lines.append("")
+
         lines.append(self.SECTION_END_MARKER)
-        
+
         return "\n".join(lines)
-    
+
+    # ------------------------------------------------------------------
+    # README update
+    # ------------------------------------------------------------------
+
     def update_readme(self, new_content: str) -> None:
-        """
-        Update README.md with new content for the auto-generated section.
-        
-        Only modifies the section between markers. Preserves all other content.
-        
-        Args:
-            new_content: New markdown content for the section
-        """
-        # Read existing README (or create if doesn't exist)
+        """Replace auto-generated section in README.md."""
         if self.readme_path.exists():
-            with open(self.readme_path, 'r', encoding='utf-8') as f:
+            with open(self.readme_path, "r", encoding="utf-8") as f:
                 existing_content = f.read()
-            logger.info(f"✓ Read existing README: {len(existing_content)} characters")
         else:
             existing_content = ""
-            logger.info("✓ README does not exist - will create new file")
-        
-        # Check if auto-generated section exists
+
         if self.SECTION_HEADER in existing_content:
-            # Section exists - replace it
-            logger.info("✓ Found existing auto-generated section - replacing")
-            
-            # Find section boundaries
-            # Pattern: from SECTION_HEADER to SECTION_END_MARKER (inclusive)
-            pattern = re.escape(self.SECTION_HEADER) + r'.*?' + re.escape(self.SECTION_END_MARKER)
-            
-            # Replace the section
-            updated_content = re.sub(
-                pattern,
-                new_content,
-                existing_content,
-                flags=re.DOTALL
-            )
-            
+            pattern = re.escape(self.SECTION_HEADER) + r".*?" + re.escape(self.SECTION_END_MARKER)
+            updated_content = re.sub(pattern, new_content, existing_content, flags=re.DOTALL)
             operation = "Updated"
         else:
-            # Section doesn't exist - append at end
-            logger.info("✓ No existing section found - appending to end")
-            
-            # Ensure there's spacing before new section
-            if existing_content and not existing_content.endswith('\n\n'):
-                if existing_content.endswith('\n'):
-                    existing_content += '\n'
-                else:
-                    existing_content += '\n\n'
-            
-            updated_content = existing_content + new_content + '\n'
+            if existing_content and not existing_content.endswith("\n\n"):
+                existing_content = existing_content.rstrip("\n") + "\n\n"
+            updated_content = existing_content + new_content + "\n"
             operation = "Appended"
-        
-        # Write updated README
-        with open(self.readme_path, 'w', encoding='utf-8') as f:
+
+        with open(self.readme_path, "w", encoding="utf-8") as f:
             f.write(updated_content)
-        
-        logger.info(f"✓ {operation} README: {self.readme_path}")
-        logger.info(f"  Total size: {len(updated_content)} characters")
-    
+
+        logger.info("%s README: %s (%d chars)", operation, self.readme_path, len(updated_content))
+
+    # ------------------------------------------------------------------
+    # Pipeline entry point
+    # ------------------------------------------------------------------
+
     def run(self) -> None:
-        """Execute README update pipeline"""
-        logger.info("")
+        """Execute README update pipeline."""
         logger.info("=" * 80)
         logger.info("README AUTO-UPDATER")
         logger.info("=" * 80)
-        logger.info("")
-        
+
         try:
-            # Step 1: Load history
-            logger.info("Step 1: Load Decision History")
-            logger.info("-" * 80)
-            history = self.load_history()
-            
-            # Step 2: Calculate summary
-            logger.info("")
-            logger.info("Step 2: Calculate Summary Statistics")
-            logger.info("-" * 80)
-            summary = self.get_latest_summary(history)
-            
-            if summary['last_date']:
-                logger.info(f"✓ Latest analysis date: {summary['last_date'].strftime('%Y-%m-%d')}")
-                logger.info(f"  Total funds: {summary['total_funds']}")
-                logger.info(f"  CONSIDER: {summary['consider_count']}")
-                logger.info(f"  IGNORE: {summary['ignore_count']}")
-                
-                if summary['consider_count'] > 0:
-                    logger.info(f"\n  Top CONSIDER funds:")
-                    for _, row in summary['consider_funds'].head(5).iterrows():
-                        logger.info(f"    • {row['symbol']}: {row['discount_pct']:.2f}% discount, {int(row['consider_streak'])} day streak")
-            else:
-                logger.info("⚠ No history data available")
-            
-            # Step 3: Generate markdown
-            logger.info("")
-            logger.info("Step 3: Generate Markdown Content")
-            logger.info("-" * 80)
-            markdown_content = self.generate_markdown_content(summary)
-            logger.info(f"✓ Generated {len(markdown_content)} characters of markdown")
-            
-            # Step 4: Update README
-            logger.info("")
-            logger.info("Step 4: Update README.md")
-            logger.info("-" * 80)
+            data = self.load_all_data()
+            markdown_content = self.generate_markdown_content(data)
             self.update_readme(markdown_content)
-            
-            # Success
-            logger.info("")
+
             logger.info("=" * 80)
             logger.info("README UPDATE COMPLETE")
             logger.info("=" * 80)
-            logger.info(f"\n✓ README.md updated successfully")
-            logger.info(f"✓ Section: {self.SECTION_HEADER}")
-            
-            if summary['consider_count'] > 0:
-                logger.info(f"✓ Displayed {summary['consider_count']} CONSIDER funds")
-            else:
-                logger.info(f"✓ No CONSIDER funds currently")
-            
-            logger.info("")
-            logger.info("=" * 80)
-            
+
         except Exception as e:
-            logger.error("")
-            logger.error("=" * 80)
-            logger.error("README UPDATE FAILED")
-            logger.error("=" * 80)
-            logger.error(f"Error: {e}")
-            logger.error("=" * 80)
+            logger.error("README UPDATE FAILED: %s", e)
             raise
 
 
 def main():
-    """Entry point"""
+    """Entry point."""
     project_root = Path(__file__).parent.parent.parent
     updater = ReadmeUpdater(project_root)
     updater.run()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
