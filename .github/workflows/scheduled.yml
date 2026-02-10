@@ -57,6 +57,6 @@ jobs:
       - name: Commit results
         run: |
           git config --local user.email "deltarasp100@gmail.com"
-          git config --local user.name "Uknome-h"
+          git config --local user.name "Uknowme-h"
           git add data/processed/ data/history/ data/raw/market_prices.csv data/raw/fund_universe.csv data/raw/nav/ reports/ README.md
           git diff --staged --quiet && echo "No changes to commit" || (git commit -m "Update pipeline outputs [automated $(date -u +%Y-%m-%d)]" && git push)
