@@ -1,0 +1,62 @@
+name: Daily MF Pipeline
+
+on:
+  schedule:
+    # 4:00 PM NST = 10:15 AM UTC (Nepal is UTC+5:45)
+    # Runs daily including weekends — pipeline handles stale data gracefully
+    - cron: "15 10 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Force all steps (ignore cadence)"
+        required: false
+        default: "false"
+        type: boolean
+      steps:
+        description: "Comma-separated step numbers (e.g. 4,5,6,7). Leave empty for all."
+        required: false
+        default: ""
+        type: string
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Install Playwright browsers
+        run: |
+          playwright install chromium --with-deps
+
+      - name: Run pipeline
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: |
+          ARGS=""
+          if [ "${{ inputs.force }}" = "true" ]; then
+            ARGS="$ARGS --force"
+          fi
+          if [ -n "${{ inputs.steps }}" ]; then
+            ARGS="$ARGS --steps ${{ inputs.steps }}"
+          fi
+          python src/pipeline.py $ARGS
+
+      - name: Commit results
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/processed/ data/history/ data/raw/market_prices.csv data/raw/fund_universe.csv data/raw/nav/ reports/ README.md
+          git diff --staged --quiet && echo "No changes to commit" || (git commit -m "Update pipeline outputs [automated $(date -u +%Y-%m-%d)]" && git push)

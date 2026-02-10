@@ -1,0 +1,58 @@
+# ========================
+# Python
+# ========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# ========================
+# Virtual environments
+# ========================
+venv/
+.venv/
+env/
+ENV/
+
+# ========================
+# IDE / Editor
+# ========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# ========================
+# OS
+# ========================
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# ========================
+# Playwright
+# ========================
+playwright-report/
+test-results/
+
+# ========================
+# Debug / temporary
+# ========================
+data/raw/debug_page.html
+*.log
+*.tmp
+
+# ========================
+# Legacy / unused data
+# ========================
+data/raw/nav_data_*.csv
+data/metrics/
