@@ -114,8 +114,24 @@ class MarketDataExtractor:
             
             # Extract data from JSON response
             json_data = captured_data['json']
+
+            # NEPSE API may return a list wrapper — unwrap first element
+            if isinstance(json_data, list):
+                if not json_data:
+                    logger.warning(f"✗ {symbol}: API returned empty list")
+                    return None
+                json_data = json_data[0]
+
+            if not isinstance(json_data, dict):
+                logger.warning(f"✗ {symbol}: Unexpected response type: {type(json_data).__name__}")
+                return None
+
             trade_data = json_data.get('securityDailyTradeDto', {})
-            
+
+            # Fallback: the object itself may be the trade data
+            if not trade_data and 'lastTradedPrice' in json_data:
+                trade_data = json_data
+
             if not trade_data:
                 logger.warning(f"✗ {symbol}: Missing securityDailyTradeDto")
                 return None
