@@ -1,6 +1,6 @@
 # Nepal MF Quant — Full Analysis Report
 
-*Generated: 2026-02-10 14:03*
+*Generated: 2026-02-10 17:51*
 
 ## Market Overview
 
