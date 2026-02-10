@@ -229,7 +229,8 @@ class FundScorer:
         df["composite_score"] = composite_scores
 
         # Rank by composite score (higher = better)
-        df["rank"] = df["composite_score"].rank(ascending=False, method="min", na_option="last").astype(int)
+        # Use na_option="bottom" so NaN scores get the worst (highest) rank numbers
+        df["rank"] = df["composite_score"].rank(ascending=False, method="min", na_option="bottom").astype(int)
 
         # Sort by rank
         df = df.sort_values("rank").reset_index(drop=True)
