@@ -143,11 +143,11 @@ class NavRecord:
 # -----------------------------------------------------------------------
 
 _LAXMI_SCHEMES: Dict[int, str] = {
-    2: "LUK",
-    1: "LVF2",
-    3: "SFEF",
-    6: "SFMF",
-    7: "SBCF",
+    1: "SBCF",     # Sunrise Blue Chip Fund
+    2: "SFMF",     # Sunrise First Mutual Fund
+    3: "SFEF",     # Sunrise Focused Equity Fund
+    6: "LUK",      # Laxmi Unnati Kosh
+    7: "LVF2",     # Laxmi Value Fund II
 }
 
 _NMB_SCHEMES: Dict[int, str] = {
@@ -163,8 +163,8 @@ _NICASIA_CATEGORIES: Dict[int, str] = {
 }
 
 _NABIL_SCHEMES: Dict[int, str] = {
-    2: "NBF2",
-    3: "NBF3",
+    3: "NBF2",
+    4: "NBF3",
 }
 
 _PRABHU_TICKERS = ["PRSF", "PSF"]

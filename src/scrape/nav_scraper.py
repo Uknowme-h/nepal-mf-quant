@@ -21,6 +21,26 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# Symbols whose NAV is fetched from dedicated provider APIs
+# (monthly_nav_scraper.py). ShareSansar is skipped for these
+# to avoid duplicate / less-accurate data.
+PROVIDER_SYMBOLS = {
+    # Laxmi Capital
+    'LUK', 'LVF2', 'SFEF', 'SFMF', 'SBCF',
+    # NMB Capital
+    'NMB50', 'NSIF2', 'NMBHF2',
+    # NIC Asia Capital
+    'NICBF', 'NICFC', 'NICGF2',
+    # Nabil Investment
+    'NBF2', 'NBF3',
+    # Kumari Capital
+    'KSY',
+    # Prabhu Capital
+    'PRSF', 'PSF',
+    # Sanima Capital
+    'SAGF',
+}
+
 
 # Nepali calendar month mapping (approximate mid-month Gregorian dates)
 # Format: {nepali_year: {nepali_month: (gregorian_year, gregorian_month)}}
@@ -39,21 +59,23 @@ NEPALI_MONTH_MAP = {
     'chaitra': 12, 'chait': 12
 }
 
-# Approximate conversion: Nepali month -> Gregorian month offset
-# This gives us roughly which Gregorian month corresponds to each Nepali month
-NEPALI_TO_GREGORIAN_MONTH = {
-    1: 4,   # Baisakh -> April/May
-    2: 5,   # Jestha -> May/June
-    3: 6,   # Ashadh -> June/July
-    4: 7,   # Shrawan -> July/August
-    5: 8,   # Bhadra -> August/September
-    6: 9,   # Ashwin -> September/October
-    7: 10,  # Kartik -> October/November
-    8: 11,  # Mangsir -> November/December
-    9: 12,  # Poush -> December/January
-    10: 1,  # Magh -> January/February
-    11: 2,  # Falgun -> February/March
-    12: 3   # Chaitra -> March/April
+# Approximate conversion: Nepali month -> (Gregorian month, year offset)
+# Each Nepali month starts mid-way through a Gregorian month, so the
+# majority of each BS month falls in the *next* Gregorian month.
+# year_offset: subtract from BS year to get the Gregorian year.
+NEPALI_TO_GREGORIAN = {
+    1:  (5,  57),  # Baisakh  -> mid-Apr to mid-May   -> May
+    2:  (6,  57),  # Jestha   -> mid-May to mid-Jun   -> June
+    3:  (7,  57),  # Ashadh   -> mid-Jun to mid-Jul   -> July
+    4:  (8,  57),  # Shrawan  -> mid-Jul to mid-Aug   -> August
+    5:  (9,  57),  # Bhadra   -> mid-Aug to mid-Sep   -> September
+    6:  (10, 57),  # Ashwin   -> mid-Sep to mid-Oct   -> October
+    7:  (11, 57),  # Kartik   -> mid-Oct to mid-Nov   -> November
+    8:  (12, 57),  # Mangsir  -> mid-Nov to mid-Dec   -> December
+    9:  (1,  56),  # Poush    -> mid-Dec to mid-Jan   -> January (next GY)
+    10: (2,  56),  # Magh     -> mid-Jan to mid-Feb   -> February
+    11: (3,  56),  # Falgun   -> mid-Feb to mid-Mar   -> March
+    12: (4,  56),  # Chaitra  -> mid-Mar to mid-Apr   -> April
 }
 
 
@@ -86,17 +108,9 @@ def parse_nepali_date(nepali_date_str: str) -> Optional[str]:
             logger.warning(f"Unknown Nepali month: {month_name}")
             return None
         
-        # Convert to Gregorian
-        # Nepali year ~= Gregorian year - 57 (approximately)
-        # But Nepali year starts in mid-April, so need to adjust
-        gregorian_month = NEPALI_TO_GREGORIAN_MONTH[nepali_month]
-        
-        # If month is Poush-Chaitra (Jan-Apr), Gregorian year = Nepali year - 56
-        # If month is Baisakh-Mangsir (Apr-Dec), Gregorian year = Nepali year - 57
-        if nepali_month >= 10:  # Magh, Falgun, Chaitra
-            gregorian_year = nepali_year - 56
-        else:  # Baisakh through Mangsir
-            gregorian_year = nepali_year - 57
+        # Convert to Gregorian using (month, year_offset) lookup
+        gregorian_month, year_offset = NEPALI_TO_GREGORIAN[nepali_month]
+        gregorian_year = nepali_year - year_offset
         
         # Use mid-month (15th) as default day
         iso_date = f"{gregorian_year:04d}-{gregorian_month:02d}-15"
@@ -321,6 +335,10 @@ def main():
     skipped_count = 0
     
     for symbol in universe_symbols:
+        if symbol in PROVIDER_SYMBOLS:
+            logger.debug(f"{symbol}: Skipped (dedicated provider scraper)")
+            skipped_count += 1
+            continue
         if symbol in nav_data:
             date, nav = nav_data[symbol]
             update_fund_nav_csv(symbol, date, nav, data_dir)

@@ -143,6 +143,7 @@ def step_scrape_nav():
         fetch_current_monthly_nav,
         load_fund_universe,
         update_fund_nav_csv,
+        PROVIDER_SYMBOLS,
     )
 
     universe_path = PROJECT_ROOT / "data" / "raw" / "fund_universe.csv"
@@ -162,13 +163,20 @@ def step_scrape_nav():
         raise RuntimeError("NAV scrape returned no data from API")
 
     updated = 0
+    skipped_provider = 0
     for symbol in symbols:
+        if symbol in PROVIDER_SYMBOLS:
+            skipped_provider += 1
+            continue
         if symbol in nav_data:
             date, nav = nav_data[symbol]
             update_fund_nav_csv(symbol, date, nav, data_dir)
             updated += 1
 
-    logger.info("NAV update (ShareSansar): %d/%d funds updated", updated, len(symbols))
+    logger.info(
+        "NAV update (ShareSansar): %d/%d funds updated (%d skipped — have provider)",
+        updated, len(symbols), skipped_provider,
+    )
 
 
 def step_scrape_monthly_nav_providers():
