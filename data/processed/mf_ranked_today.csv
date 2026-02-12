@@ -7,5 +7,5 @@ date,symbol,nav,ltp,discount_pct,volume,trades,source
 2026-02-11,NICGF2,10.14,9.1,-10.26,130600,23,nepse_playwright
 2026-02-10,NMBHF2,10.36,9.35,-9.75,6500,20,nepse_playwright
 2026-02-10,SFMF,11.3,10.21,-9.65,13964,5,nepse_playwright
+2026-02-12,SFMF,11.3,10.23,-9.47,6000,3,nepse_playwright
 2026-02-11,NMBHF2,10.36,9.4,-9.27,9230,38,nepse_playwright
-2026-02-09,GIBF1,11.68,10.6,-9.25,101600,22,nepse_playwright
