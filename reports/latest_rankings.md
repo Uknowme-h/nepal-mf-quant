@@ -1,6 +1,6 @@
 # Nepal MF Quant — Full Analysis Report
 
-*Generated: 2026-02-17 11:07*
+*Generated: 2026-02-18 11:06*
 
 ## Market Overview
 
@@ -95,7 +95,7 @@
 
 - Symbols checked: 41
 - Symbols with issues: 14
-- NAV data age: median 33 days, max 264 days
+- NAV data age: median 34 days, max 265 days
 
 ## Methodology
 
