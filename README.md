@@ -149,21 +149,21 @@ MIT
 |---|---|
 | **Date** | 2026-03-03 |
 | **Funds Tracked** | 41 |
-| **Median Discount** | -6.90% |
+| **Median Discount** | -7.14% |
 | **At Discount** | 39 (95%) |
 | **Deep Discount (≤-8%)** | 11 |
 | **CONSIDER** | 4 |
 | **IGNORE** | 37 |
 
-> ⚠️ 14 fund(s) have NAV data older than 45 days.
+> ⚠️ 9 fund(s) have NAV data older than 45 days.
 
 ### Discount Distribution
 
 | Range | Distribution |
 |-------|-------------|
 |         < -10% | █████ 5 |
-|    -10% to -6% | ████████████████████ 20 |
-|     -6% to -4% | ███████ 7 |
+|    -10% to -6% | █████████████████████ 21 |
+|     -6% to -4% | ██████ 6 |
 |      -4% to 0% | ███████ 7 |
 |           ≥ 0% | ██ 2 |
 
@@ -171,16 +171,16 @@ MIT
 
 | # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak | NAV Δ | Score | Trend |
 |---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|-------|
-| 1 | **PSF** | Prabhu Select Fund | -6.90% | 12.03 | 11.20 | 2.3y | high | 8d | 3.35% | 65.8 | ↑ |
-| 2 | **SLCF** | Sanima Large Cap Fun | -4.63% | 10.15 | 9.68 | 2.0y | medium | 1d | 0.30% | 58.2 | ↑ |
-| 3 | **NBF2** | Nabil Balanced Fund  | -6.72% | 10.42 | 9.72 | 3.2y | medium | 5d | 2.26% | 55.6 | ↑ |
-| 4 | **RMF1** | RBB Mutual Fund 1 | -4.49% | 10.03 | 9.58 | 2.4y | medium | 1d | 0.10% | 36.2 | ↓ |
+| 1 | **PSF** | Prabhu Select Fund | -7.05% | 12.05 | 11.20 | 2.3y | high | 8d | 0.17% | 60.0 | ↑ |
+| 2 | **SLCF** | Sanima Large Cap Fun | -4.63% | 10.15 | 9.68 | 2.0y | medium | 1d | 0.30% | 58.9 | ↑ |
+| 3 | **NBF2** | Nabil Balanced Fund  | -7.16% | 10.47 | 9.72 | 3.2y | medium | 5d | 0.48% | 57.3 | ↑ |
+| 4 | **RMF1** | RBB Mutual Fund 1 | -4.49% | 10.03 | 9.58 | 2.4y | medium | 1d | 0.10% | 36.5 | ↓ |
 
 ### Top Picks by Composite Score
 
-- **PSF** (Prabhu Select Fund): -6.90% discount, score 65.8
-- **SLCF** (Sanima Large Cap Fund): -4.63% discount, score 58.2
-- **NBF2** (Nabil Balanced Fund - 2): -6.72% discount, score 55.6
+- **PSF** (Prabhu Select Fund): -7.05% discount, score 60.0
+- **SLCF** (Sanima Large Cap Fund): -4.63% discount, score 58.9
+- **NBF2** (Nabil Balanced Fund - 2): -7.16% discount, score 57.3
 
 ### Interpretation
 
@@ -189,7 +189,7 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 ### Data Status
 
 - Latest price data: 2026-03-03
-- NAV data age: median 20 days
+- NAV data age: median 21 days
 - History depth: 13 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)
