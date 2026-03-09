@@ -147,13 +147,13 @@ MIT
 
 | | |
 |---|---|
-| **Date** | 2026-03-03 |
+| **Date** | 2026-03-09 |
 | **Funds Tracked** | 41 |
-| **Median Discount** | -7.14% |
+| **Median Discount** | -7.05% |
 | **At Discount** | 39 (95%) |
 | **Deep Discount (≤-8%)** | 11 |
-| **CONSIDER** | 4 |
-| **IGNORE** | 37 |
+| **CONSIDER** | 6 |
+| **IGNORE** | 35 |
 
 > ⚠️ 9 fund(s) have NAV data older than 45 days.
 
@@ -162,25 +162,27 @@ MIT
 | Range | Distribution |
 |-------|-------------|
 |         < -10% | █████ 5 |
-|    -10% to -6% | █████████████████████ 21 |
-|     -6% to -4% | ██████ 6 |
-|      -4% to 0% | ███████ 7 |
+|    -10% to -6% | ████████████████████ 20 |
+|     -6% to -4% | █████ 5 |
+|      -4% to 0% | █████████ 9 |
 |           ≥ 0% | ██ 2 |
 
 ### Active CONSIDER Candidates
 
 | # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak | NAV Δ | Score | Trend |
 |---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|-------|
-| 1 | **PSF** | Prabhu Select Fund | -7.05% | 12.05 | 11.20 | 2.3y | high | 8d | 0.17% | 60.0 | ↑ |
-| 2 | **SLCF** | Sanima Large Cap Fun | -4.63% | 10.15 | 9.68 | 2.0y | medium | 1d | 0.30% | 58.9 | ↑ |
-| 3 | **NBF2** | Nabil Balanced Fund  | -7.16% | 10.47 | 9.72 | 3.2y | medium | 5d | 0.48% | 57.3 | ↑ |
-| 4 | **RMF1** | RBB Mutual Fund 1 | -4.49% | 10.03 | 9.58 | 2.4y | medium | 1d | 0.10% | 36.5 | ↓ |
+| 1 | **NBF2** | Nabil Balanced Fund  | -5.54% | 10.47 | 9.89 | 3.2y | high | 6d | 0.48% | 64.5 | ↑ |
+| 2 | **SIGS2** | Siddhartha Investmen | -9.00% | 10.44 | 9.50 | 3.5y | high | 1d | 0.29% | 61.3 | ↓ |
+| 3 | **PSF** | Prabhu Select Fund | -7.05% | 12.05 | 11.20 | 2.3y | high | 9d | 0.17% | 58.0 | ↑ |
+| 4 | **SLCF** | Sanima Large Cap Fun | -4.63% | 10.15 | 9.68 | 2.0y | high | 2d | 0.30% | 55.5 | ↑ |
+| 5 | **SFMF** | Sunrise First Mutual | -10.97% | 11.30 | 10.06 | 3.7y | high | 1d | -2.04% | 55.4 | ↓ |
+| 6 | **NICBF** | NIC ASIA Balanced Fu | -4.28% | 10.04 | 9.61 | 3.5y | high | 1d | 3.83% | 50.3 | → |
 
 ### Top Picks by Composite Score
 
-- **PSF** (Prabhu Select Fund): -7.05% discount, score 60.0
-- **SLCF** (Sanima Large Cap Fund): -4.63% discount, score 58.9
-- **NBF2** (Nabil Balanced Fund - 2): -7.16% discount, score 57.3
+- **NBF2** (Nabil Balanced Fund - 2): -5.54% discount, score 64.5
+- **SIGS2** (Siddhartha Investment Growth Scheme-2): -9.00% discount, score 61.3
+- **PSF** (Prabhu Select Fund): -7.05% discount, score 58.0
 
 ### Interpretation
 
@@ -188,9 +190,9 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 
 ### Data Status
 
-- Latest price data: 2026-03-03
-- NAV data age: median 21 days
-- History depth: 13 trading day(s)
+- Latest price data: 2026-03-09
+- NAV data age: median 22 days
+- History depth: 14 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)
 
