@@ -1,44 +1,44 @@
 id,symbol,name,maturity_date,fund_size,type,source,scraped_at
-1123,C30MF,Citizens Super 30 Mutual Fund,2033-05-14,750723900,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-890,CMF2,Citizens Mutual Fund - 2,2026-07-08,560000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1575,CSY,Citizens Santulit Yojana,2036-01-18,1250000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1273,GBIMESY2,Global IME Samunnat Yojana -II,2035-07-18,1500000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-686,GIBF1,Global IME Balanced Fund-I,2032-07-28,1025763600,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1460,GSY,Garima Samriddhi Yojana,2035-01-02,1250000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1306,H8020,Himalayan 80-20,2033-10-01,1000000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1606,HLICF,HLI Large Cap Fund,2035-09-15,5000000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1103,KDBY,Kumari Dhanabriddhi Yojana,2032-07-25,1225072590,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1059,KEF,Kumari Equity Fund,2031-03-18,1000000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1225,KSY,Kumari Sabal Yojana,2034-03-19,744750700,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-949,LUK,Laxmi Unnati Kosh,2030-08-14,652623600,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1174,LVF2,Laxmi Value Fund-II,2033-09-03,800000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1541,MBLEF,MBL Equity Fund,2037-03-27,1216253300,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1100,MMF1,Mega Mutual Fund - 1,2031-09-08,1250000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1365,MNMF1,Muktinath Mutual Fund 1,2034-12-19,1250000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-891,NBF2,Nabil Balanced Fund - 2,2029-05-31,1120000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1117,NBF3,Nabil Balanced Fund III,2031-09-23,1250000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1121,NIBLGF,NIBL Growth Fund,2033-01-17,1320000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1237,NIBLSTF,NIBL Stable Fund,2036-02-07,1130000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1073,NIBSF2,NIBL Samriddhi Fund - 2,2031-05-29,1500000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-888,NICBF,NIC ASIA Balanced Fund,2029-08-27,755000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1115,NICFC,NIC Asia Flexi Cap Fund,2029-06-15,1020000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1127,NICGF2,NIC Asia Growth Fund 2,2030-11-20,905000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1060,NICSF,NIC Asia Select-30,2028-07-05,1250000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1630,NLSLY,Nepal Life Samriddhi Lagani Yojana,2036-02-02,200000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-901,NMB50,NMB 50,2026-09-01,1250000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1178,NMBHF2,NMB Hybrid Fund L-II,2035-02-27,1364840000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1113,NSIF2,NMB Sulav Investment Fund - II,2032-09-01,1200000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1118,PRSF,Prabhu Smart Fund,2032-03-14,1000000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1076,PSF,Prabhu Select Fund,2028-06-21,1250000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1574,RBBF40,RBB Focus 40,2037-11-12,1250000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1089,RMF1,RBB Mutual Fund 1,2028-07-23,1250000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1223,RMF2,RBB Mutual Fund 2,2033-05-21,846119290,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1556,RSY,Reliable Samriddhi Yojana,2035-05-02,1200000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1112,SAGF,Sanima Growth Fund,2033-11-27,672532600,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1074,SBCF,Sunrise Bluechip Fund,2031-03-26,1250000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-685,SEF,Siddhartha Equity Fund,2027-11-08,1500000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1122,SFEF,Sunrise Focused Equity Fund,2032-02-12,1000000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-962,SFMF,Sunrise First Mutual Fund,2029-11-04,860000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-889,SIGS2,Siddhartha Investment Growth Scheme-2,2029-08-26,1200000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1111,SIGS3,Siddhartha Investment Growth Scheme 3,2033-04-30,805800000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
-1005,SLCF,Sanima Large Cap Fund,2028-02-23,1200000000,closed_end,sharesansar,2026-03-08T10:41:24.520478+00:00
+1123,C30MF,Citizens Super 30 Mutual Fund,2033-05-14,750723900,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+890,CMF2,Citizens Mutual Fund - 2,2026-07-08,560000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1575,CSY,Citizens Santulit Yojana,2036-01-18,1250000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1273,GBIMESY2,Global IME Samunnat Yojana -II,2035-07-18,1500000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+686,GIBF1,Global IME Balanced Fund-I,2032-07-28,1025763600,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1460,GSY,Garima Samriddhi Yojana,2035-01-02,1250000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1306,H8020,Himalayan 80-20,2033-10-01,1000000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1606,HLICF,HLI Large Cap Fund,2035-09-15,5000000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1103,KDBY,Kumari Dhanabriddhi Yojana,2032-07-25,1225072590,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1059,KEF,Kumari Equity Fund,2031-03-18,1000000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1225,KSY,Kumari Sabal Yojana,2034-03-19,744750700,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+949,LUK,Laxmi Unnati Kosh,2030-08-14,652623600,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1174,LVF2,Laxmi Value Fund-II,2033-09-03,800000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1541,MBLEF,MBL Equity Fund,2037-03-27,1216253300,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1100,MMF1,Mega Mutual Fund - 1,2031-09-08,1250000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1365,MNMF1,Muktinath Mutual Fund 1,2034-12-19,1250000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+891,NBF2,Nabil Balanced Fund - 2,2029-05-31,1120000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1117,NBF3,Nabil Balanced Fund III,2031-09-23,1250000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1121,NIBLGF,NIBL Growth Fund,2033-01-17,1320000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1237,NIBLSTF,NIBL Stable Fund,2036-02-07,1130000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1073,NIBSF2,NIBL Samriddhi Fund - 2,2031-05-29,1500000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+888,NICBF,NIC ASIA Balanced Fund,2029-08-27,755000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1115,NICFC,NIC Asia Flexi Cap Fund,2029-06-15,1020000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1127,NICGF2,NIC Asia Growth Fund 2,2030-11-20,905000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1060,NICSF,NIC Asia Select-30,2028-07-05,1250000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1630,NLSLY,Nepal Life Samriddhi Lagani Yojana,2036-02-02,200000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+901,NMB50,NMB 50,2026-09-01,1250000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1178,NMBHF2,NMB Hybrid Fund L-II,2035-02-27,1364840000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1113,NSIF2,NMB Sulav Investment Fund - II,2032-09-01,1200000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1118,PRSF,Prabhu Smart Fund,2032-03-14,1000000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1076,PSF,Prabhu Select Fund,2028-06-21,1250000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1574,RBBF40,RBB Focus 40,2037-11-12,1250000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1089,RMF1,RBB Mutual Fund 1,2028-07-23,1250000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1223,RMF2,RBB Mutual Fund 2,2033-05-21,846119290,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1556,RSY,Reliable Samriddhi Yojana,2035-05-02,1200000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1112,SAGF,Sanima Growth Fund,2033-11-27,672532600,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1074,SBCF,Sunrise Bluechip Fund,2031-03-26,1250000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+685,SEF,Siddhartha Equity Fund,2027-11-08,1500000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1122,SFEF,Sunrise Focused Equity Fund,2032-02-12,1000000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+962,SFMF,Sunrise First Mutual Fund,2029-11-04,860000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+889,SIGS2,Siddhartha Investment Growth Scheme-2,2029-08-26,1200000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1111,SIGS3,Siddhartha Investment Growth Scheme 3,2033-04-30,805800000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
+1005,SLCF,Sanima Large Cap Fund,2028-02-23,1200000000,closed_end,sharesansar,2026-03-15T10:48:59.026039+00:00
