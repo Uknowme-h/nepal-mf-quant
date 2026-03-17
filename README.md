@@ -147,13 +147,13 @@ MIT
 
 | | |
 |---|---|
-| **Date** | 2026-03-16 |
-| **Funds Tracked** | 41 |
-| **Median Discount** | -4.84% |
-| **At Discount** | 41 (100%) |
+| **Date** | 2026-03-17 |
+| **Funds Tracked** | 40 |
+| **Median Discount** | -4.73% |
+| **At Discount** | 38 (95%) |
 | **Deep Discount (≤-8%)** | 4 |
-| **CONSIDER** | 4 |
-| **IGNORE** | 37 |
+| **CONSIDER** | 1 |
+| **IGNORE** | 39 |
 
 > ⚠️ 5 fund(s) have NAV data older than 45 days.
 
@@ -161,26 +161,21 @@ MIT
 
 | Range | Distribution |
 |-------|-------------|
-|         < -10% | ████ 4 |
-|    -10% to -6% | ████████ 8 |
-|     -6% to -4% | ██████████████████ 18 |
+|         < -10% | ██ 2 |
+|    -10% to -6% | █████████ 9 |
+|     -6% to -4% | ████████████████ 16 |
 |      -4% to 0% | ███████████ 11 |
-|           ≥ 0% |  0 |
+|           ≥ 0% | ██ 2 |
 
 ### Active CONSIDER Candidates
 
 | # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak | NAV Δ | Score | Trend |
 |---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|-------|
-| 1 | **PSF** | Prabhu Select Fund | -4.23% | 12.05 | 11.54 | 2.3y | high | 1d | 0.17% | 62.7 | ↑ |
-| 2 | **SIGS2** | Siddhartha Investmen | -4.41% | 10.44 | 9.98 | 3.5y | medium | 2d | 0.29% | 60.7 | ↑ |
-| 3 | **NBF2** | Nabil Balanced Fund  | -5.35% | 10.47 | 9.91 | 3.2y | high | 3d | 0.48% | 59.3 | → |
-| 4 | **NICFC** | NIC Asia Flexi Cap F | -5.75% | 10.09 | 9.51 | 3.2y | medium | 3d | 0.70% | 47.7 | ↓ |
+| 1 | **SIGS2** | Siddhartha Investmen | -6.13% | 10.44 | 9.80 | 3.5y | medium | 3d | 0.29% | 69.6 | ↑ |
 
 ### Top Picks by Composite Score
 
-- **PSF** (Prabhu Select Fund): -4.23% discount, score 62.7
-- **SIGS2** (Siddhartha Investment Growth Scheme-2): -4.41% discount, score 60.7
-- **NBF2** (Nabil Balanced Fund - 2): -5.35% discount, score 59.3
+- **SIGS2** (Siddhartha Investment Growth Scheme-2): -6.13% discount, score 69.6
 
 ### Interpretation
 
@@ -188,9 +183,9 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 
 ### Data Status
 
-- Latest price data: 2026-03-16
-- NAV data age: median 29 days
-- History depth: 19 trading day(s)
+- Latest price data: 2026-03-17
+- NAV data age: median 30 days
+- History depth: 20 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)
 
