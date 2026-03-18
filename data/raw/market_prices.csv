@@ -818,3 +818,4 @@ date,symbol,ltp,open,high,low,volume,trades,source
 2026-03-17,SIGS2,9.8,9.96,9.96,9.8,30000,7,nepse_playwright
 2026-03-17,SIGS3,10.32,10.31,10.35,10.31,13400,14,nepse_playwright
 2026-03-17,SLCF,9.9,9.8,9.9,9.8,19093,14,nepse_playwright
+2026-03-17,SBCF,9.64,9.5,9.78,9.45,5950,10,nepse_playwright

@@ -1,19 +1,19 @@
 # Nepal MF Quant — Full Analysis Report
 
-*Generated: 2026-03-17 11:12*
+*Generated: 2026-03-18 11:09*
 
 ## Market Overview
 
 | Metric | Value |
 |--------|-------|
 | Analysis Date | 2026-03-17 |
-| Funds Tracked | 40 |
-| At Discount (price < NAV) | 38 |
+| Funds Tracked | 41 |
+| At Discount (price < NAV) | 39 |
 | At Premium (price ≥ NAV) | 2 |
-| Deep Discount (≤ -8%) | 4 |
-| Median Discount | -4.73% |
+| Deep Discount (≤ -8%) | 5 |
+| Median Discount | -4.76% |
 | CONSIDER | 1 |
-| IGNORE | 39 |
+| IGNORE | 40 |
 
 > ⚠️ **NAV Staleness Warning**: 5 fund(s) have NAV data older than 45 days. Discount calculations may be less reliable.
 
@@ -21,11 +21,11 @@
 
 | Discount Range | Count | % of Universe |
 |---------------|-------|---------------|
-| < -10% | 2 | 5.0% |
-| -10% to -6% | 9 | 22.5% |
-| -6% to -4% | 16 | 40.0% |
-| -4% to 0% | 11 | 27.5% |
-| ≥ 0% (premium) | 2 | 5.0% |
+| < -10% | 3 | 7.3% |
+| -10% to -6% | 9 | 22.0% |
+| -6% to -4% | 16 | 39.0% |
+| -4% to 0% | 11 | 26.8% |
+| ≥ 0% (premium) | 2 | 4.9% |
 
 ## CONSIDER Candidates
 
@@ -35,11 +35,11 @@
 
 ## IGNORE Summary
 
-*39 funds are flagged IGNORE. Top reasons:*
+*40 funds are flagged IGNORE. Top reasons:*
 
 | Gate Failed | Count |
 |-------------|-------|
-| maturity | 28 |
+| maturity | 29 |
 | valuation | 13 |
 | liquidity | 10 |
 
@@ -48,6 +48,7 @@
 
 | Symbol | Discount | Reason |
 |--------|----------|--------|
+| SBCF | -14.99% | maturity:5.0y |
 | LUK | -14.75% | maturity:4.4y |
 | LVF2 | -12.80% | maturity:7.5y |
 | NICGF2 | -8.97% | liquidity:low; maturity:4.7y |
@@ -94,7 +95,7 @@
 
 - Symbols checked: 43
 - Symbols with issues: 9
-- NAV data age: median 30 days, max 292 days
+- NAV data age: median 31 days, max 293 days
 
 ## Methodology
 

@@ -148,12 +148,12 @@ MIT
 | | |
 |---|---|
 | **Date** | 2026-03-17 |
-| **Funds Tracked** | 40 |
-| **Median Discount** | -4.73% |
-| **At Discount** | 38 (95%) |
-| **Deep Discount (≤-8%)** | 4 |
+| **Funds Tracked** | 41 |
+| **Median Discount** | -4.76% |
+| **At Discount** | 39 (95%) |
+| **Deep Discount (≤-8%)** | 5 |
 | **CONSIDER** | 1 |
-| **IGNORE** | 39 |
+| **IGNORE** | 40 |
 
 > ⚠️ 5 fund(s) have NAV data older than 45 days.
 
@@ -161,7 +161,7 @@ MIT
 
 | Range | Distribution |
 |-------|-------------|
-|         < -10% | ██ 2 |
+|         < -10% | ███ 3 |
 |    -10% to -6% | █████████ 9 |
 |     -6% to -4% | ████████████████ 16 |
 |      -4% to 0% | ███████████ 11 |
@@ -184,7 +184,7 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 ### Data Status
 
 - Latest price data: 2026-03-17
-- NAV data age: median 30 days
+- NAV data age: median 31 days
 - History depth: 20 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)
