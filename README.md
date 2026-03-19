@@ -147,13 +147,13 @@ MIT
 
 | | |
 |---|---|
-| **Date** | 2026-03-17 |
+| **Date** | 2026-03-19 |
 | **Funds Tracked** | 41 |
-| **Median Discount** | -4.76% |
-| **At Discount** | 39 (95%) |
-| **Deep Discount (≤-8%)** | 5 |
-| **CONSIDER** | 1 |
-| **IGNORE** | 40 |
+| **Median Discount** | -4.53% |
+| **At Discount** | 37 (90%) |
+| **Deep Discount (≤-8%)** | 4 |
+| **CONSIDER** | 4 |
+| **IGNORE** | 37 |
 
 > ⚠️ 5 fund(s) have NAV data older than 45 days.
 
@@ -162,20 +162,25 @@ MIT
 | Range | Distribution |
 |-------|-------------|
 |         < -10% | ███ 3 |
-|    -10% to -6% | █████████ 9 |
-|     -6% to -4% | ████████████████ 16 |
-|      -4% to 0% | ███████████ 11 |
-|           ≥ 0% | ██ 2 |
+|    -10% to -6% | ███████ 7 |
+|     -6% to -4% | ███████████████ 15 |
+|      -4% to 0% | ████████████ 12 |
+|           ≥ 0% | ████ 4 |
 
 ### Active CONSIDER Candidates
 
 | # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak | NAV Δ | Score | Trend |
 |---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|-------|
-| 1 | **SIGS2** | Siddhartha Investmen | -6.13% | 10.44 | 9.80 | 3.5y | medium | 3d | 0.29% | 69.6 | ↑ |
+| 1 | **NBF2** | Nabil Balanced Fund  | -4.30% | 10.47 | 10.02 | 3.2y | high | 1d | 0.48% | 67.9 | ↑ |
+| 2 | **SFMF** | Sunrise First Mutual | -6.19% | 11.30 | 10.60 | 3.6y | medium | 1d | -2.04% | 64.9 | ↑ |
+| 3 | **NICFC** | NIC Asia Flexi Cap F | -6.54% | 10.09 | 9.43 | 3.2y | medium | 1d | 0.70% | 62.2 | → |
+| 4 | **SIGS2** | Siddhartha Investmen | -4.12% | 10.44 | 10.01 | 3.4y | medium | 4d | 0.29% | 51.6 | ↓ |
 
 ### Top Picks by Composite Score
 
-- **SIGS2** (Siddhartha Investment Growth Scheme-2): -6.13% discount, score 69.6
+- **NBF2** (Nabil Balanced Fund - 2): -4.30% discount, score 67.9
+- **SFMF** (Sunrise First Mutual Fund): -6.19% discount, score 64.9
+- **NICFC** (NIC Asia Flexi Cap Fund): -6.54% discount, score 62.2
 
 ### Interpretation
 
@@ -183,9 +188,9 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 
 ### Data Status
 
-- Latest price data: 2026-03-17
-- NAV data age: median 31 days
-- History depth: 20 trading day(s)
+- Latest price data: 2026-03-19
+- NAV data age: median 32 days
+- History depth: 21 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)
 
