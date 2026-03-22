@@ -147,13 +147,13 @@ MIT
 
 | | |
 |---|---|
-| **Date** | 2026-03-19 |
+| **Date** | 2026-03-22 |
 | **Funds Tracked** | 41 |
-| **Median Discount** | -4.53% |
-| **At Discount** | 37 (90%) |
+| **Median Discount** | -3.37% |
+| **At Discount** | 35 (85%) |
 | **Deep Discount (≤-8%)** | 4 |
-| **CONSIDER** | 4 |
-| **IGNORE** | 37 |
+| **CONSIDER** | 2 |
+| **IGNORE** | 39 |
 
 > ⚠️ 5 fund(s) have NAV data older than 45 days.
 
@@ -162,25 +162,22 @@ MIT
 | Range | Distribution |
 |-------|-------------|
 |         < -10% | ███ 3 |
-|    -10% to -6% | ███████ 7 |
-|     -6% to -4% | ███████████████ 15 |
-|      -4% to 0% | ████████████ 12 |
-|           ≥ 0% | ████ 4 |
+|    -10% to -6% | █ 1 |
+|     -6% to -4% | ████████████ 12 |
+|      -4% to 0% | ███████████████████ 19 |
+|           ≥ 0% | ██████ 6 |
 
 ### Active CONSIDER Candidates
 
 | # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak | NAV Δ | Score | Trend |
 |---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|-------|
-| 1 | **NBF2** | Nabil Balanced Fund  | -4.30% | 10.47 | 10.02 | 3.2y | high | 1d | 0.48% | 67.9 | ↑ |
-| 2 | **SFMF** | Sunrise First Mutual | -6.19% | 11.30 | 10.60 | 3.6y | medium | 1d | -2.04% | 64.9 | ↑ |
-| 3 | **NICFC** | NIC Asia Flexi Cap F | -6.54% | 10.09 | 9.43 | 3.2y | medium | 1d | 0.70% | 62.2 | → |
-| 4 | **SIGS2** | Siddhartha Investmen | -4.12% | 10.44 | 10.01 | 3.4y | medium | 4d | 0.29% | 51.6 | ↓ |
+| 1 | **NICFC** | NIC Asia Flexi Cap F | -4.56% | 10.09 | 9.63 | 3.2y | medium | 2d | 0.70% | 62.1 | ↑ |
+| 2 | **NICBF** | NIC ASIA Balanced Fu | -4.49% | 10.03 | 9.58 | 3.4y | medium | 1d | -0.10% | 41.7 | ↓ |
 
 ### Top Picks by Composite Score
 
-- **NBF2** (Nabil Balanced Fund - 2): -4.30% discount, score 67.9
-- **SFMF** (Sunrise First Mutual Fund): -6.19% discount, score 64.9
-- **NICFC** (NIC Asia Flexi Cap Fund): -6.54% discount, score 62.2
+- **NICFC** (NIC Asia Flexi Cap Fund): -4.56% discount, score 62.1
+- **NICBF** (NIC ASIA Balanced Fund): -4.49% discount, score 41.7
 
 ### Interpretation
 
@@ -188,9 +185,9 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 
 ### Data Status
 
-- Latest price data: 2026-03-19
-- NAV data age: median 34 days
-- History depth: 21 trading day(s)
+- Latest price data: 2026-03-22
+- NAV data age: median 35 days
+- History depth: 22 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)
 
