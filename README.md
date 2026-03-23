@@ -147,13 +147,13 @@ MIT
 
 | | |
 |---|---|
-| **Date** | 2026-03-22 |
+| **Date** | 2026-03-23 |
 | **Funds Tracked** | 41 |
-| **Median Discount** | -3.37% |
-| **At Discount** | 35 (85%) |
-| **Deep Discount (≤-8%)** | 4 |
-| **CONSIDER** | 2 |
-| **IGNORE** | 39 |
+| **Median Discount** | -2.76% |
+| **At Discount** | 32 (78%) |
+| **Deep Discount (≤-8%)** | 5 |
+| **CONSIDER** | 1 |
+| **IGNORE** | 40 |
 
 > ⚠️ 5 fund(s) have NAV data older than 45 days.
 
@@ -162,22 +162,20 @@ MIT
 | Range | Distribution |
 |-------|-------------|
 |         < -10% | ███ 3 |
-|    -10% to -6% | █ 1 |
-|     -6% to -4% | ████████████ 12 |
+|    -10% to -6% | ███ 3 |
+|     -6% to -4% | ████████ 8 |
 |      -4% to 0% | ███████████████████ 19 |
-|           ≥ 0% | ██████ 6 |
+|           ≥ 0% | ████████ 8 |
 
 ### Active CONSIDER Candidates
 
 | # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak | NAV Δ | Score | Trend |
 |---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|-------|
-| 1 | **NICFC** | NIC Asia Flexi Cap F | -4.56% | 10.09 | 9.63 | 3.2y | medium | 2d | 0.70% | 62.1 | ↑ |
-| 2 | **NICBF** | NIC ASIA Balanced Fu | -4.49% | 10.03 | 9.58 | 3.4y | medium | 1d | -0.10% | 41.7 | ↓ |
+| 1 | **SFMF** | Sunrise First Mutual | -8.05% | 11.30 | 10.39 | 3.6y | medium | 1d | -2.04% | 53.2 | ↓ |
 
 ### Top Picks by Composite Score
 
-- **NICFC** (NIC Asia Flexi Cap Fund): -4.56% discount, score 62.1
-- **NICBF** (NIC ASIA Balanced Fund): -4.49% discount, score 41.7
+- **SFMF** (Sunrise First Mutual Fund): -8.05% discount, score 53.2
 
 ### Interpretation
 
@@ -185,9 +183,9 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 
 ### Data Status
 
-- Latest price data: 2026-03-22
-- NAV data age: median 35 days
-- History depth: 22 trading day(s)
+- Latest price data: 2026-03-23
+- NAV data age: median 36 days
+- History depth: 23 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)
 
