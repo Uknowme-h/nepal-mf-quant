@@ -147,13 +147,13 @@ MIT
 
 | | |
 |---|---|
-| **Date** | 2026-03-24 |
+| **Date** | 2026-03-25 |
 | **Funds Tracked** | 41 |
-| **Median Discount** | -2.66% |
-| **At Discount** | 32 (78%) |
+| **Median Discount** | -2.99% |
+| **At Discount** | 33 (80%) |
 | **Deep Discount (≤-8%)** | 4 |
-| **CONSIDER** | 2 |
-| **IGNORE** | 39 |
+| **CONSIDER** | 1 |
+| **IGNORE** | 40 |
 
 > ⚠️ 5 fund(s) have NAV data older than 45 days.
 
@@ -163,21 +163,19 @@ MIT
 |-------|-------------|
 |         < -10% | ███ 3 |
 |    -10% to -6% | ██ 2 |
-|     -6% to -4% | ████ 4 |
-|      -4% to 0% | ███████████████████████ 23 |
-|           ≥ 0% | █████████ 9 |
+|     -6% to -4% | ███████ 7 |
+|      -4% to 0% | █████████████████████ 21 |
+|           ≥ 0% | ████████ 8 |
 
 ### Active CONSIDER Candidates
 
 | # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak | NAV Δ | Score | Trend |
 |---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|-------|
-| 1 | **NBF2** | Nabil Balanced Fund  | -4.01% | 10.47 | 10.05 | 3.2y | medium | 1d | 0.48% | 60.1 | ↑ |
-| 2 | **SFMF** | Sunrise First Mutual | -6.19% | 11.30 | 10.60 | 3.6y | medium | 2d | -2.04% | 53.5 | ↓ |
+| 1 | **NBF2** | Nabil Balanced Fund  | -4.01% | 10.47 | 10.05 | 3.2y | medium | 2d | 0.48% | 59.9 | ↑ |
 
 ### Top Picks by Composite Score
 
-- **NBF2** (Nabil Balanced Fund - 2): -4.01% discount, score 60.1
-- **SFMF** (Sunrise First Mutual Fund): -6.19% discount, score 53.5
+- **NBF2** (Nabil Balanced Fund - 2): -4.01% discount, score 59.9
 
 ### Interpretation
 
@@ -185,9 +183,9 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 
 ### Data Status
 
-- Latest price data: 2026-03-24
-- NAV data age: median 37 days
-- History depth: 24 trading day(s)
+- Latest price data: 2026-03-25
+- NAV data age: median 38 days
+- History depth: 25 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)
 

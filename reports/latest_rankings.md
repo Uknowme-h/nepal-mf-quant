@@ -1,19 +1,19 @@
 # Nepal MF Quant — Full Analysis Report
 
-*Generated: 2026-03-24 11:10*
+*Generated: 2026-03-25 11:07*
 
 ## Market Overview
 
 | Metric | Value |
 |--------|-------|
-| Analysis Date | 2026-03-24 |
+| Analysis Date | 2026-03-25 |
 | Funds Tracked | 41 |
-| At Discount (price < NAV) | 32 |
-| At Premium (price ≥ NAV) | 9 |
+| At Discount (price < NAV) | 33 |
+| At Premium (price ≥ NAV) | 8 |
 | Deep Discount (≤ -8%) | 4 |
-| Median Discount | -2.66% |
-| CONSIDER | 2 |
-| IGNORE | 39 |
+| Median Discount | -2.99% |
+| CONSIDER | 1 |
+| IGNORE | 40 |
 
 > ⚠️ **NAV Staleness Warning**: 5 fund(s) have NAV data older than 45 days. Discount calculations may be less reliable.
 
@@ -23,25 +23,24 @@
 |---------------|-------|---------------|
 | < -10% | 3 | 7.3% |
 | -10% to -6% | 2 | 4.9% |
-| -6% to -4% | 4 | 9.8% |
-| -4% to 0% | 23 | 56.1% |
-| ≥ 0% (premium) | 9 | 22.0% |
+| -6% to -4% | 7 | 17.1% |
+| -4% to 0% | 21 | 51.2% |
+| ≥ 0% (premium) | 8 | 19.5% |
 
 ## CONSIDER Candidates
 
 | # | Symbol | Name | NAV | LTP | Discount | Maturity | Liquidity | Streak | NAV Δ | Score | Trend | Risk |
 |---|--------|------|-----|-----|----------|----------|-----------|--------|-------|-------|-------|------|
-| 1 | NBF2 | Nabil Balanced Fund - 2 | 10.47 | 10.05 | -4.01% | 3.2y | medium | 1d | 0.48% | 60.1 | ↑ narrowing | — |
-| 2 | SFMF | Sunrise First Mutual Fund | 11.30 | 10.60 | -6.19% | 3.6y | medium | 2d | -2.04% | 53.5 | ↓ widening | — |
+| 1 | NBF2 | Nabil Balanced Fund - 2 | 10.47 | 10.05 | -4.01% | 3.2y | medium | 2d | 0.48% | 59.9 | ↑ narrowing | — |
 
 ## IGNORE Summary
 
-*39 funds are flagged IGNORE. Top reasons:*
+*40 funds are flagged IGNORE. Top reasons:*
 
 | Gate Failed | Count |
 |-------------|-------|
-| valuation | 32 |
 | maturity | 29 |
+| valuation | 29 |
 | liquidity | 10 |
 
 <details>
@@ -50,52 +49,53 @@
 | Symbol | Discount | Reason |
 |--------|----------|--------|
 | LUK | -14.24% | liquidity:low; maturity:4.4y |
-| LVF2 | -12.45% | liquidity:low; maturity:7.5y |
-| SBCF | -10.41% | maturity:5.0y |
-| SFEF | -8.14% | maturity:5.9y |
-| NICGF2 | -4.83% | liquidity:low; maturity:4.7y |
-| KSY | -4.30% | liquidity:low; maturity:8.0y |
-| NSIF2 | -4.30% | maturity:6.5y |
-| NICFC | -3.96% | valuation:small_discount; liquidity:low |
-| GSY | -3.95% | valuation:small_discount; maturity:8.8y |
-| KDBY | -3.84% | valuation:small_discount; maturity:6.3y |
-| MNMF1 | -3.66% | valuation:small_discount; maturity:8.8y |
-| NMBHF2 | -3.57% | valuation:small_discount; maturity:8.9y |
-| RMF2 | -3.54% | valuation:small_discount; maturity:7.2y |
-| C30MF | -3.40% | valuation:small_discount; maturity:7.2y |
-| PRSF | -3.25% | valuation:small_discount; maturity:6.0y |
-| GIBF1 | -3.23% | valuation:small_discount; maturity:6.3y |
-| H8020 | -3.05% | valuation:small_discount; maturity:7.5y |
-| RSY | -2.97% | valuation:small_discount; maturity:9.1y |
-| SAGF | -2.66% | valuation:small_discount; liquidity:low; maturity:7.7y |
-| MBLEF | -2.65% | valuation:small_discount; maturity:11.0y |
-| SIGS3 | -1.76% | valuation:small_discount; liquidity:low; maturity:7.1y |
-| NBF3 | -1.74% | valuation:small_discount; maturity:5.5y |
-| SLCF | -1.38% | valuation:small_discount; liquidity:low |
-| SIGS2 | -1.34% | valuation:small_discount |
-| GBIMESY2 | -1.31% | valuation:small_discount; liquidity:low; maturity:9.3y |
-| NIBLSTF | -0.72% | valuation:small_discount; maturity:9.9y |
-| PSF | -0.66% | valuation:small_discount |
-| KEF | -0.60% | valuation:small_discount; maturity:5.0y |
-| RMF1 | -0.50% | valuation:small_discount |
+| LVF2 | -12.80% | maturity:7.5y |
+| SBCF | -10.49% | maturity:5.0y |
+| SFEF | -9.36% | liquidity:low; maturity:5.9y |
+| SFMF | -7.96% | liquidity:low |
+| NSIF2 | -5.59% | maturity:6.4y |
+| MBLEF | -4.94% | liquidity:low; maturity:11.0y |
+| C30MF | -4.53% | liquidity:low; maturity:7.1y |
+| NMBHF2 | -4.34% | maturity:8.9y |
+| GIBF1 | -4.24% | maturity:6.3y |
+| RSY | -4.09% | maturity:9.1y |
+| NICFC | -3.87% | valuation:small_discount; liquidity:low |
+| GSY | -3.76% | valuation:small_discount; maturity:8.8y |
+| KDBY | -3.75% | valuation:small_discount; maturity:6.3y |
+| MNMF1 | -3.66% | valuation:small_discount; maturity:8.7y |
+| SAGF | -3.51% | valuation:small_discount; liquidity:low; maturity:7.7y |
+| NICGF2 | -3.45% | valuation:small_discount; maturity:4.7y |
+| KSY | -3.32% | valuation:small_discount; liquidity:low; maturity:8.0y |
+| SIGS2 | -3.26% | valuation:small_discount |
+| RMF2 | -2.99% | valuation:small_discount; maturity:7.2y |
+| NBF3 | -2.62% | valuation:small_discount; maturity:5.5y |
+| RBBF40 | -2.53% | valuation:small_discount; liquidity:low; maturity:11.6y |
+| SLCF | -2.46% | valuation:small_discount |
+| PRSF | -2.11% | valuation:small_discount; maturity:6.0y |
+| PSF | -1.58% | valuation:small_discount |
+| KEF | -1.29% | valuation:small_discount; maturity:5.0y |
+| H8020 | -0.99% | valuation:small_discount; maturity:7.5y |
+| SIGS3 | -0.83% | valuation:small_discount; maturity:7.1y |
+| GBIMESY2 | -0.81% | valuation:small_discount; maturity:9.3y |
+| RMF1 | -0.30% | valuation:small_discount |
 | NIBSF2 | -0.20% | valuation:small_discount; maturity:5.2y |
-| CMF2 | 0.29% | valuation:premium |
-| RBBF40 | 1.01% | valuation:premium; maturity:11.7y |
-| NIBLGF | 1.02% | valuation:premium; maturity:6.8y |
-| HLICF | 1.67% | valuation:premium; maturity:9.5y |
-| NMB50 | 1.74% | valuation:premium |
-| SEF | 2.39% | valuation:premium |
-| NICSF | 2.62% | valuation:premium |
-| MMF1 | 3.13% | valuation:premium; maturity:5.5y |
-| NICBF | 4.49% | valuation:premium; liquidity:low |
+| NICSF | -0.10% | valuation:small_discount |
+| CMF2 | 0.68% | valuation:premium |
+| SEF | 0.70% | valuation:premium |
+| NIBLSTF | 1.02% | valuation:premium; maturity:9.9y |
+| NIBLGF | 2.15% | valuation:premium; maturity:6.8y |
+| HLICF | 2.41% | valuation:premium; maturity:9.5y |
+| MMF1 | 2.61% | valuation:premium; maturity:5.5y |
+| NMB50 | 3.20% | valuation:premium |
+| NICBF | 4.19% | valuation:premium; liquidity:low |
 
 </details>
 
 ## Data Quality
 
 - Symbols checked: 43
-- Symbols with issues: 9
-- NAV data age: median 37 days, max 299 days
+- Symbols with issues: 8
+- NAV data age: median 38 days, max 300 days
 
 ## Methodology
 
