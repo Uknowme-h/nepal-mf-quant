@@ -1,17 +1,17 @@
 # Nepal MF Quant — Full Analysis Report
 
-*Generated: 2026-03-28 10:52*
+*Generated: 2026-03-29 10:54*
 
 ## Market Overview
 
 | Metric | Value |
 |--------|-------|
-| Analysis Date | 2026-03-26 |
+| Analysis Date | 2026-03-29 |
 | Funds Tracked | 41 |
-| At Discount (price < NAV) | 32 |
-| At Premium (price ≥ NAV) | 9 |
-| Deep Discount (≤ -8%) | 5 |
-| Median Discount | -2.22% |
+| At Discount (price < NAV) | 35 |
+| At Premium (price ≥ NAV) | 6 |
+| Deep Discount (≤ -8%) | 6 |
+| Median Discount | -2.99% |
 | CONSIDER | 2 |
 | IGNORE | 39 |
 
@@ -22,17 +22,17 @@
 | Discount Range | Count | % of Universe |
 |---------------|-------|---------------|
 | < -10% | 3 | 7.3% |
-| -10% to -6% | 2 | 4.9% |
-| -6% to -4% | 5 | 12.2% |
-| -4% to 0% | 23 | 56.1% |
-| ≥ 0% (premium) | 8 | 19.5% |
+| -10% to -6% | 8 | 19.5% |
+| -6% to -4% | 4 | 9.8% |
+| -4% to 0% | 20 | 48.8% |
+| ≥ 0% (premium) | 6 | 14.6% |
 
 ## CONSIDER Candidates
 
 | # | Symbol | Name | NAV | LTP | Discount | Maturity | Liquidity | Streak | NAV Δ | Score | Trend | Risk |
 |---|--------|------|-----|-----|----------|----------|-----------|--------|-------|-------|-------|------|
-| 1 | SFMF | Sunrise First Mutual Fund | 11.30 | 10.30 | -8.85% | 3.6y | medium | 1d | -2.04% | 59.0 | ↓ widening | — |
-| 2 | NBF2 | Nabil Balanced Fund - 2 | 10.47 | 10.05 | -4.01% | 3.2y | medium | 3d | 0.48% | 55.7 | → stable | — |
+| 1 | NICFC | NIC Asia Flexi Cap Fund | 10.09 | 9.66 | -4.26% | 3.2y | medium | 1d | 0.70% | 63.2 | → stable | — |
+| 2 | SFMF | Sunrise First Mutual Fund | 11.30 | 10.53 | -6.81% | 3.6y | medium | 2d | -2.04% | 50.4 | ↓ widening | — |
 
 ## IGNORE Summary
 
@@ -40,8 +40,8 @@
 
 | Gate Failed | Count |
 |-------------|-------|
-| valuation | 31 |
 | maturity | 29 |
+| valuation | 26 |
 | liquidity | 10 |
 
 <details>
@@ -49,53 +49,53 @@
 
 | Symbol | Discount | Reason |
 |--------|----------|--------|
-| LUK | -13.46% | liquidity:low; maturity:4.4y |
-| LVF2 | -12.36% | liquidity:low; maturity:7.5y |
-| SBCF | -10.67% | maturity:5.0y |
-| SFEF | -8.40% | maturity:5.9y |
-| RSY | -4.83% | maturity:9.1y |
-| KSY | -4.59% | liquidity:low; maturity:8.0y |
-| NMBHF2 | -4.24% | maturity:8.9y |
-| RMF2 | -4.01% | liquidity:low; maturity:7.2y |
-| GIBF1 | -3.90% | valuation:small_discount; maturity:6.3y |
-| NSIF2 | -3.70% | valuation:small_discount; maturity:6.4y |
-| GSY | -3.47% | valuation:small_discount; maturity:8.8y |
-| NICGF2 | -3.45% | valuation:small_discount; maturity:4.7y |
-| C30MF | -3.30% | valuation:small_discount; maturity:7.1y |
-| MBLEF | -3.11% | valuation:small_discount; maturity:11.0y |
-| NICFC | -2.87% | valuation:small_discount |
-| MNMF1 | -2.79% | valuation:small_discount; maturity:8.7y |
+| LUK | -13.38% | maturity:4.4y |
+| LVF2 | -13.23% | liquidity:low; maturity:7.4y |
+| SBCF | -13.14% | liquidity:low; maturity:5.0y |
+| NSIF2 | -9.75% | maturity:6.4y |
+| NMBHF2 | -9.30% | maturity:8.9y |
+| KSY | -8.37% | maturity:8.0y |
+| SFEF | -7.26% | maturity:5.9y |
+| PRSF | -7.24% | liquidity:low; maturity:6.0y |
+| SAGF | -6.93% | liquidity:low; maturity:7.7y |
+| PSF | -6.59% | liquidity:low |
+| MBLEF | -5.76% | liquidity:low; maturity:11.0y |
+| GIBF1 | -4.07% | maturity:6.3y |
+| SIGS2 | -4.02% | liquidity:low |
+| NBF2 | -3.92% | valuation:small_discount |
+| NICGF2 | -3.65% | valuation:small_discount; liquidity:low; maturity:4.7y |
+| NBF3 | -3.20% | valuation:small_discount; maturity:5.5y |
+| GSY | -3.09% | valuation:small_discount; maturity:8.8y |
+| KDBY | -3.02% | valuation:small_discount; maturity:6.3y |
+| RMF2 | -2.99% | valuation:small_discount; maturity:7.2y |
+| C30MF | -2.83% | valuation:small_discount; maturity:7.1y |
 | NIBSF2 | -2.75% | valuation:small_discount; maturity:5.2y |
-| SIGS2 | -2.49% | valuation:small_discount |
-| SIGS3 | -2.22% | valuation:small_discount; liquidity:low; maturity:7.1y |
-| NBF3 | -2.13% | valuation:small_discount; maturity:5.5y |
-| GBIMESY2 | -2.12% | valuation:small_discount; liquidity:low; maturity:9.3y |
-| SLCF | -2.07% | valuation:small_discount |
-| PRSF | -1.79% | valuation:small_discount; maturity:6.0y |
-| KDBY | -1.56% | valuation:small_discount; maturity:6.3y |
-| RMF1 | -1.30% | valuation:small_discount |
-| SAGF | -1.23% | valuation:small_discount; maturity:7.7y |
-| H8020 | -0.99% | valuation:small_discount; liquidity:low; maturity:7.5y |
-| NIBLSTF | -0.72% | valuation:small_discount; maturity:9.9y |
-| NIBLGF | -0.51% | valuation:small_discount; maturity:6.8y |
-| RBBF40 | -0.51% | valuation:small_discount; liquidity:low; maturity:11.6y |
-| PSF | 0.00% | valuation:premium |
-| NICSF | 0.21% | valuation:premium |
-| HLICF | 0.42% | valuation:premium; liquidity:low; maturity:9.5y |
-| KEF | 0.69% | valuation:premium; maturity:5.0y |
-| CMF2 | 0.78% | valuation:premium |
+| MNMF1 | -2.70% | valuation:small_discount; maturity:8.7y |
+| RSY | -2.51% | valuation:small_discount; maturity:9.1y |
+| RBBF40 | -2.22% | valuation:small_discount; liquidity:low; maturity:11.6y |
+| GBIMESY2 | -2.12% | valuation:small_discount; maturity:9.3y |
+| H8020 | -1.82% | valuation:small_discount; maturity:7.5y |
+| SIGS3 | -1.76% | valuation:small_discount; maturity:7.1y |
+| NIBLSTF | -1.74% | valuation:small_discount; maturity:9.9y |
+| RMF1 | -1.60% | valuation:small_discount |
+| SLCF | -1.48% | valuation:small_discount |
+| NMB50 | -1.47% | valuation:small_discount |
+| KEF | -0.79% | valuation:small_discount; maturity:5.0y |
+| NICSF | -0.31% | valuation:small_discount |
+| SEF | 0.50% | valuation:premium |
+| HLICF | 0.52% | valuation:premium; liquidity:low; maturity:9.5y |
+| CMF2 | 0.88% | valuation:premium |
+| NICBF | 1.60% | valuation:premium |
 | MMF1 | 2.30% | valuation:premium; maturity:5.5y |
-| SEF | 2.69% | valuation:premium; liquidity:low |
-| NMB50 | 3.68% | valuation:premium |
-| NICBF | 5.18% | valuation:premium |
+| NIBLGF | 5.41% | valuation:premium; maturity:6.8y |
 
 </details>
 
 ## Data Quality
 
 - Symbols checked: 43
-- Symbols with issues: 9
-- NAV data age: median 41 days, max 303 days
+- Symbols with issues: 14
+- NAV data age: median 42 days, max 304 days
 
 ## Methodology
 
