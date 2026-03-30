@@ -147,15 +147,15 @@ MIT
 
 | | |
 |---|---|
-| **Date** | 2026-03-29 |
-| **Funds Tracked** | 41 |
-| **Median Discount** | -2.99% |
-| **At Discount** | 35 (85%) |
-| **Deep Discount (≤-8%)** | 6 |
+| **Date** | 2026-03-30 |
+| **Funds Tracked** | 40 |
+| **Median Discount** | -3.81% |
+| **At Discount** | 38 (95%) |
+| **Deep Discount (≤-8%)** | 7 |
 | **CONSIDER** | 2 |
-| **IGNORE** | 39 |
+| **IGNORE** | 38 |
 
-> ⚠️ 5 fund(s) have NAV data older than 45 days.
+> ⚠️ 10 fund(s) have NAV data older than 45 days.
 
 ### Discount Distribution
 
@@ -163,21 +163,21 @@ MIT
 |-------|-------------|
 |         < -10% | ███ 3 |
 |    -10% to -6% | ████████ 8 |
-|     -6% to -4% | ████ 4 |
-|      -4% to 0% | ████████████████████ 20 |
-|           ≥ 0% | ██████ 6 |
+|     -6% to -4% | ████████ 8 |
+|      -4% to 0% | ███████████████████ 19 |
+|           ≥ 0% | ██ 2 |
 
 ### Active CONSIDER Candidates
 
 | # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak | NAV Δ | Score | Trend |
 |---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|-------|
-| 1 | **NICFC** | NIC Asia Flexi Cap F | -4.26% | 10.09 | 9.66 | 3.2y | medium | 1d | 0.70% | 63.2 | → |
-| 2 | **SFMF** | Sunrise First Mutual | -6.81% | 11.30 | 10.53 | 3.6y | medium | 2d | -2.04% | 50.4 | ↓ |
+| 1 | **PSF** | Prabhu Select Fund | -7.06% | 12.75 | 11.85 | 2.2y | medium | 1d | 5.81% | 67.5 | ↓ |
+| 2 | **SFMF** | Sunrise First Mutual | -8.41% | 11.30 | 10.35 | 3.6y | medium | 3d | -2.04% | 65.5 | → |
 
 ### Top Picks by Composite Score
 
-- **NICFC** (NIC Asia Flexi Cap Fund): -4.26% discount, score 63.2
-- **SFMF** (Sunrise First Mutual Fund): -6.81% discount, score 50.4
+- **PSF** (Prabhu Select Fund): -7.06% discount, score 67.5
+- **SFMF** (Sunrise First Mutual Fund): -8.41% discount, score 65.5
 
 ### Interpretation
 
@@ -185,9 +185,9 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 
 ### Data Status
 
-- Latest price data: 2026-03-29
-- NAV data age: median 42 days
-- History depth: 27 trading day(s)
+- Latest price data: 2026-03-30
+- NAV data age: median 43 days
+- History depth: 28 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)
 

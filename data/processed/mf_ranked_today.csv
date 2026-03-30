@@ -8,4 +8,4 @@ date,symbol,nav,ltp,discount_pct,volume,trades,source
 2026-02-23,SFEF,11.43,9.6,-16.01,10300,4,nepse_playwright
 2026-02-25,SFEF,11.43,9.61,-15.92,41550,5,nepse_playwright
 2026-02-22,SFEF,11.43,9.63,-15.75,64838,11,nepse_playwright
-2026-02-16,SBCF,11.34,9.58,-15.52,124150,19,nepse_playwright
+2026-03-30,SBCF,11.34,9.57,-15.61,15644,20,nepse_playwright
