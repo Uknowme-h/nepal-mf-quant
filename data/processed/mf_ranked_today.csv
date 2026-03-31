@@ -1,8 +1,8 @@
 date,symbol,nav,ltp,discount_pct,volume,trades,source
 2026-02-17,SBCF,11.34,9.4,-17.11,36034,17,nepse_playwright
 2026-02-17,LUK,11.66,9.7,-16.81,18060,8,nepse_playwright
-2026-02-11,LVF2,11.41,9.5,-16.74,13670,17,nepse_playwright
 2026-02-24,LVF2,11.41,9.5,-16.74,84256,11,nepse_playwright
+2026-02-11,LVF2,11.41,9.5,-16.74,13670,17,nepse_playwright
 2026-03-01,SBCF,11.34,9.45,-16.67,23730,14,nepse_playwright
 2026-02-17,LVF2,11.41,9.54,-16.39,19335,15,nepse_playwright
 2026-02-23,SFEF,11.43,9.6,-16.01,10300,4,nepse_playwright

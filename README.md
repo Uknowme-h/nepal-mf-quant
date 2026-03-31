@@ -147,13 +147,13 @@ MIT
 
 | | |
 |---|---|
-| **Date** | 2026-03-30 |
-| **Funds Tracked** | 40 |
-| **Median Discount** | -3.81% |
-| **At Discount** | 38 (95%) |
-| **Deep Discount (≤-8%)** | 7 |
-| **CONSIDER** | 2 |
-| **IGNORE** | 38 |
+| **Date** | 2026-03-31 |
+| **Funds Tracked** | 41 |
+| **Median Discount** | -4.39% |
+| **At Discount** | 37 (90%) |
+| **Deep Discount (≤-8%)** | 8 |
+| **CONSIDER** | 4 |
+| **IGNORE** | 37 |
 
 > ⚠️ 10 fund(s) have NAV data older than 45 days.
 
@@ -161,23 +161,26 @@ MIT
 
 | Range | Distribution |
 |-------|-------------|
-|         < -10% | ███ 3 |
-|    -10% to -6% | ████████ 8 |
-|     -6% to -4% | ████████ 8 |
-|      -4% to 0% | ███████████████████ 19 |
-|           ≥ 0% | ██ 2 |
+|         < -10% | ████ 4 |
+|    -10% to -6% | ███████ 7 |
+|     -6% to -4% | ██████████████ 14 |
+|      -4% to 0% | ████████████ 12 |
+|           ≥ 0% | ████ 4 |
 
 ### Active CONSIDER Candidates
 
 | # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak | NAV Δ | Score | Trend |
 |---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|-------|
-| 1 | **PSF** | Prabhu Select Fund | -7.06% | 12.75 | 11.85 | 2.2y | medium | 1d | 5.81% | 67.5 | ↓ |
-| 2 | **SFMF** | Sunrise First Mutual | -8.41% | 11.30 | 10.35 | 3.6y | medium | 3d | -2.04% | 65.5 | → |
+| 1 | **PSF** | Prabhu Select Fund | -4.31% | 12.75 | 12.20 | 2.2y | medium | 2d | 5.81% | 68.0 | ↑ |
+| 2 | **NBF2** | Nabil Balanced Fund  | -4.49% | 10.47 | 10.00 | 3.2y | high | 1d | 0.48% | 64.9 | → |
+| 3 | **NICFC** | NIC Asia Flexi Cap F | -4.86% | 10.09 | 9.60 | 3.2y | medium | 1d | 0.70% | 57.3 | ↓ |
+| 4 | **SIGS2** | Siddhartha Investmen | -4.60% | 10.44 | 9.96 | 3.4y | medium | 1d | 0.29% | 53.2 | ↓ |
 
 ### Top Picks by Composite Score
 
-- **PSF** (Prabhu Select Fund): -7.06% discount, score 67.5
-- **SFMF** (Sunrise First Mutual Fund): -8.41% discount, score 65.5
+- **PSF** (Prabhu Select Fund): -4.31% discount, score 68.0
+- **NBF2** (Nabil Balanced Fund - 2): -4.49% discount, score 64.9
+- **NICFC** (NIC Asia Flexi Cap Fund): -4.86% discount, score 57.3
 
 ### Interpretation
 
@@ -185,9 +188,9 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 
 ### Data Status
 
-- Latest price data: 2026-03-30
-- NAV data age: median 43 days
-- History depth: 28 trading day(s)
+- Latest price data: 2026-03-31
+- NAV data age: median 44 days
+- History depth: 29 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)
 
