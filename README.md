@@ -147,13 +147,13 @@ MIT
 
 | | |
 |---|---|
-| **Date** | 2026-03-31 |
+| **Date** | 2026-04-01 |
 | **Funds Tracked** | 41 |
-| **Median Discount** | -4.39% |
-| **At Discount** | 37 (90%) |
-| **Deep Discount (≤-8%)** | 8 |
-| **CONSIDER** | 4 |
-| **IGNORE** | 37 |
+| **Median Discount** | -7.92% |
+| **At Discount** | 41 (100%) |
+| **Deep Discount (≤-8%)** | 20 |
+| **CONSIDER** | 9 |
+| **IGNORE** | 32 |
 
 > ⚠️ 10 fund(s) have NAV data older than 45 days.
 
@@ -161,26 +161,31 @@ MIT
 
 | Range | Distribution |
 |-------|-------------|
-|         < -10% | ████ 4 |
-|    -10% to -6% | ███████ 7 |
-|     -6% to -4% | ██████████████ 14 |
-|      -4% to 0% | ████████████ 12 |
-|           ≥ 0% | ████ 4 |
+|         < -10% | ██████████ 10 |
+|    -10% to -6% | ████████████████████████ 24 |
+|     -6% to -4% | ███ 3 |
+|      -4% to 0% | ████ 4 |
+|           ≥ 0% |  0 |
 
 ### Active CONSIDER Candidates
 
 | # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak | NAV Δ | Score | Trend |
 |---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|-------|
-| 1 | **PSF** | Prabhu Select Fund | -4.31% | 12.75 | 12.20 | 2.2y | medium | 2d | 5.81% | 68.0 | ↑ |
-| 2 | **NBF2** | Nabil Balanced Fund  | -4.49% | 10.47 | 10.00 | 3.2y | high | 1d | 0.48% | 64.9 | → |
-| 3 | **NICFC** | NIC Asia Flexi Cap F | -4.86% | 10.09 | 9.60 | 3.2y | medium | 1d | 0.70% | 57.3 | ↓ |
-| 4 | **SIGS2** | Siddhartha Investmen | -4.60% | 10.44 | 9.96 | 3.4y | medium | 1d | 0.29% | 53.2 | ↓ |
+| 1 | **SIGS2** | Siddhartha Investmen | -9.11% | 10.98 | 9.98 | 3.4y | medium | 2d | 5.17% | 70.6 | ↓ |
+| 2 | **PSF** | Prabhu Select Fund | -6.67% | 12.75 | 11.90 | 2.2y | high | 3d | 5.81% | 68.7 | → |
+| 3 | **RMF1** | RBB Mutual Fund 1 | -8.52% | 10.56 | 9.66 | 2.3y | medium | 1d | 5.28% | 51.1 | ↓ |
+| 4 | **NICSF** | NIC Asia Select-30 | -6.37% | 10.04 | 9.40 | 2.3y | medium | 1d | 5.35% | 48.8 | ↓ |
+| 5 | **SEF** | Siddhartha Equity Fu | -6.16% | 10.55 | 9.90 | 1.6y | medium | 1d | 4.98% | 46.7 | ↓ |
+| 6 | **NBF2** | Nabil Balanced Fund  | -4.68% | 10.47 | 9.98 | 3.2y | medium | 2d | 0.48% | 45.9 | ↓ |
+| 7 | **CMF2** | Citizens Mutual Fund | -4.61% | 10.62 | 10.13 | 0.3y | medium | 1d | 3.31% | 44.3 | ↓ |
+| 8 | **NICFC** | NIC Asia Flexi Cap F | -7.23% | 10.09 | 9.36 | 3.2y | medium | 2d | 0.70% | 39.3 | ↓ |
+| 9 | **NICBF** | NIC ASIA Balanced Fu | -6.38% | 10.03 | 9.39 | 3.4y | medium | 1d | -0.10% | 27.8 | ↓ |
 
 ### Top Picks by Composite Score
 
-- **PSF** (Prabhu Select Fund): -4.31% discount, score 68.0
-- **NBF2** (Nabil Balanced Fund - 2): -4.49% discount, score 64.9
-- **NICFC** (NIC Asia Flexi Cap Fund): -4.86% discount, score 57.3
+- **SIGS2** (Siddhartha Investment Growth Scheme-2): -9.11% discount, score 70.6
+- **PSF** (Prabhu Select Fund): -6.67% discount, score 68.7
+- **RMF1** (RBB Mutual Fund 1): -8.52% discount, score 51.1
 
 ### Interpretation
 
@@ -188,9 +193,9 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 
 ### Data Status
 
-- Latest price data: 2026-03-31
-- NAV data age: median 44 days
-- History depth: 29 trading day(s)
+- Latest price data: 2026-04-01
+- NAV data age: median 17 days
+- History depth: 30 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)
 
