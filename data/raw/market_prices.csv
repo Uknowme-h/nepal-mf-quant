@@ -1268,3 +1268,4 @@ date,symbol,ltp,open,high,low,volume,trades,source
 2026-04-02,SIGS2,10.17,9.98,10.17,9.98,4100,4,nepse_playwright
 2026-04-02,SIGS3,10.35,10.21,10.41,10.21,650,4,nepse_playwright
 2026-04-02,SLCF,9.8,9.8,9.81,9.78,2100,10,nepse_playwright
+2026-04-02,KEF,9.78,9.71,9.78,9.71,23550,21,nepse_playwright
