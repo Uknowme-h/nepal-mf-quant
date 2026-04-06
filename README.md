@@ -147,13 +147,13 @@ MIT
 
 | | |
 |---|---|
-| **Date** | 2026-04-05 |
+| **Date** | 2026-04-06 |
 | **Funds Tracked** | 41 |
-| **Median Discount** | -8.84% |
-| **At Discount** | 41 (100%) |
-| **Deep Discount (≤-8%)** | 26 |
-| **CONSIDER** | 12 |
-| **IGNORE** | 29 |
+| **Median Discount** | -8.29% |
+| **At Discount** | 40 (98%) |
+| **Deep Discount (≤-8%)** | 22 |
+| **CONSIDER** | 9 |
+| **IGNORE** | 32 |
 
 > ⚠️ 7 fund(s) have NAV data older than 45 days.
 
@@ -161,34 +161,31 @@ MIT
 
 | Range | Distribution |
 |-------|-------------|
-|         < -10% | ████████████████ 16 |
-|    -10% to -6% | ███████████████████ 19 |
-|     -6% to -4% | █████ 5 |
-|      -4% to 0% | █ 1 |
-|           ≥ 0% |  0 |
+|         < -10% | ██████████ 10 |
+|    -10% to -6% | █████████████████████ 21 |
+|     -6% to -4% | ███████ 7 |
+|      -4% to 0% | ██ 2 |
+|           ≥ 0% | █ 1 |
 
 ### Active CONSIDER Candidates
 
 | # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak | NAV Δ | Score | Trend |
 |---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|-------|
-| 1 | **RMF1** | RBB Mutual Fund 1 | -9.00% | 10.56 | 9.61 | 2.3y | high | 3d | 5.28% | 63.9 | ↓ |
-| 2 | **NICFC** | NIC Asia Flexi Cap F | -11.31% | 10.52 | 9.33 | 3.2y | medium | 4d | 4.26% | 60.9 | ↓ |
-| 3 | **PSF** | Prabhu Select Fund | -5.65% | 12.75 | 12.03 | 2.2y | medium | 5d | 5.81% | 60.6 | ↑ |
-| 4 | **SIGS2** | Siddhartha Investmen | -7.10% | 10.98 | 10.20 | 3.4y | medium | 4d | 5.17% | 60.0 | ↑ |
-| 5 | **NICSF** | NIC Asia Select-30 | -9.26% | 10.04 | 9.11 | 2.2y | medium | 3d | 5.35% | 57.6 | ↓ |
-| 6 | **SLCF** | Sanima Large Cap Fun | -8.49% | 10.60 | 9.70 | 1.9y | medium | 2d | 4.43% | 57.2 | ↓ |
-| 7 | **SFMF** | Sunrise First Mutual | -7.17% | 11.30 | 10.49 | 3.6y | medium | 1d | -2.04% | 52.8 | → |
-| 8 | **SEF** | Siddhartha Equity Fu | -7.87% | 10.55 | 9.72 | 1.6y | high | 3d | 4.98% | 52.4 | ↓ |
-| 9 | **NBF2** | Nabil Balanced Fund  | -4.01% | 10.47 | 10.05 | 3.2y | high | 1d | 0.48% | 51.2 | → |
-| 10 | **NMB50** | NMB 50 | -5.71% | 10.86 | 10.24 | 0.4y | medium | 1d | 5.23% | 46.0 | ↓ |
-| 11 | **CMF2** | Citizens Mutual Fund | -6.40% | 10.62 | 9.94 | 0.3y | medium | 3d | 3.31% | 45.2 | ↓ |
-| 12 | **NICBF** | NIC ASIA Balanced Fu | -8.31% | 10.47 | 9.60 | 3.4y | high | 3d | 4.39% | 39.9 | ↓ |
+| 1 | **PSF** | Prabhu Select Fund | -7.06% | 12.75 | 11.85 | 2.2y | high | 6d | 5.81% | 65.0 | → |
+| 2 | **RMF1** | RBB Mutual Fund 1 | -8.81% | 10.56 | 9.63 | 2.3y | medium | 4d | 5.28% | 60.7 | → |
+| 3 | **NICFC** | NIC Asia Flexi Cap F | -11.50% | 10.52 | 9.31 | 3.2y | medium | 5d | 4.26% | 57.1 | ↓ |
+| 4 | **SLCF** | Sanima Large Cap Fun | -7.45% | 10.60 | 9.81 | 1.9y | medium | 3d | 4.43% | 56.5 | ↓ |
+| 5 | **NICSF** | NIC Asia Select-30 | -7.27% | 10.04 | 9.31 | 2.2y | medium | 4d | 5.35% | 55.1 | ↓ |
+| 6 | **SEF** | Siddhartha Equity Fu | -6.64% | 10.55 | 9.85 | 1.6y | high | 4d | 4.98% | 53.3 | ↓ |
+| 7 | **CMF2** | Citizens Mutual Fund | -6.59% | 10.62 | 9.92 | 0.2y | medium | 4d | 3.31% | 40.6 | ↓ |
+| 8 | **NBF2** | Nabil Balanced Fund  | -4.49% | 10.47 | 10.00 | 3.1y | medium | 2d | 0.48% | 40.6 | → |
+| 9 | **NICBF** | NIC ASIA Balanced Fu | -4.87% | 10.47 | 9.96 | 3.4y | medium | 4d | 4.39% | 31.8 | ↓ |
 
 ### Top Picks by Composite Score
 
-- **RMF1** (RBB Mutual Fund 1): -9.00% discount, score 63.9
-- **NICFC** (NIC Asia Flexi Cap Fund): -11.31% discount, score 60.9
-- **PSF** (Prabhu Select Fund): -5.65% discount, score 60.6
+- **PSF** (Prabhu Select Fund): -7.06% discount, score 65.0
+- **RMF1** (RBB Mutual Fund 1): -8.81% discount, score 60.7
+- **NICFC** (NIC Asia Flexi Cap Fund): -11.50% discount, score 57.1
 
 ### Interpretation
 
@@ -196,9 +193,9 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 
 ### Data Status
 
-- Latest price data: 2026-04-05
-- NAV data age: median 21 days
-- History depth: 32 trading day(s)
+- Latest price data: 2026-04-06
+- NAV data age: median 22 days
+- History depth: 33 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)
 
