@@ -1,42 +1,42 @@
 date,symbol,nav,ltp,discount_pct,volume,years_to_maturity,days_to_maturity,valuation_bucket,liquidity_bucket,decision_flag,ignore_reasons,composite_score,priority_rank,discount_trend,risk_flag,nav_return_1m
-2026-04-09,LUK,11.66,9.71,-16.72,36800,4.35,1588,deep_discount,medium,IGNORE,maturity:4.3y,64.39,,widening,,-1.17
-2026-04-09,LVF2,11.41,9.9,-13.23,2860,7.41,2704,deep_discount,low,IGNORE,liquidity:low; maturity:7.4y,52.8,,narrowing,,-1.93
-2026-04-09,SBCF,11.34,9.99,-11.9,64000,4.96,1812,deep_discount,high,IGNORE,maturity:5.0y,70.12,,narrowing,high_vol,-1.94
-2026-04-09,MBLEF,11.46,10.1,-11.87,215010,10.97,4005,deep_discount,high,IGNORE,maturity:11.0y,52.68,,widening,,4.75
-2026-04-09,SFEF,11.43,10.11,-11.55,94140,5.85,2135,deep_discount,high,IGNORE,maturity:5.8y,62.07,,widening,,-4.1
-2026-04-09,NICGF2,10.67,9.47,-11.25,2750,4.62,1686,deep_discount,low,IGNORE,liquidity:low; maturity:4.6y,64.02,,narrowing,,5.12
-2026-04-09,RMF2,11.27,10.05,-10.83,23750,7.12,2599,deep_discount,medium,IGNORE,maturity:7.1y,55.85,,widening,,5.13
-2026-04-09,NSIF2,12.2,10.95,-10.25,91052,6.4,2337,deep_discount,high,IGNORE,maturity:6.4y,59.76,,widening,,4.9
-2026-04-09,KSY,10.75,9.65,-10.23,1250,7.95,2901,deep_discount,low,IGNORE,liquidity:low; maturity:8.0y,47.68,,narrowing,,4.98
-2026-04-09,NIBLSTF,10.26,9.25,-9.84,48927,9.84,3591,deep_discount,medium,IGNORE,maturity:9.8y,47.56,,widening,high_vol,5.02
-2026-04-09,RSY,11.29,10.23,-9.39,105800,9.07,3310,deep_discount,high,IGNORE,maturity:9.1y,57.32,,narrowing,,4.83
-2026-04-09,GIBF1,12.38,11.3,-8.72,63770,6.31,2302,deep_discount,high,IGNORE,maturity:6.3y,69.88,,narrowing,,5.09
-2026-04-09,H8020,12.58,11.5,-8.59,14093,7.48,2732,deep_discount,medium,IGNORE,maturity:7.5y,47.68,,narrowing,,3.8
-2026-04-09,GBIMESY2,10.4,9.56,-8.08,12910,9.28,3387,deep_discount,medium,IGNORE,maturity:9.3y,40.37,,widening,,4.94
-2026-04-09,MNMF1,10.86,10.0,-7.92,55850,8.7,3176,moderate_discount,high,IGNORE,maturity:8.7y,53.66,,narrowing,high_vol,4.62
-2026-04-09,GSY,10.85,10.0,-7.83,39200,8.74,3190,moderate_discount,medium,IGNORE,maturity:8.7y,46.95,,narrowing,,4.63
-2026-04-09,SIGS3,11.35,10.49,-7.58,1755,7.06,2578,moderate_discount,low,IGNORE,liquidity:low; maturity:7.1y,52.93,,narrowing,,5.19
-2026-04-09,C30MF,11.0,10.18,-7.45,10800,7.1,2592,moderate_discount,medium,IGNORE,maturity:7.1y,55.12,,narrowing,,3.77
-2026-04-09,RBBF40,10.37,9.6,-7.43,4500,11.6,4235,moderate_discount,medium,IGNORE,maturity:11.6y,37.32,,narrowing,high_vol,4.75
-2026-04-09,NIBSF2,10.25,9.5,-7.32,20100,5.14,1876,moderate_discount,medium,IGNORE,maturity:5.1y,39.76,,widening,high_vol,4.38
-2026-04-09,NMBHF2,10.75,9.99,-7.07,21756,8.89,3246,moderate_discount,medium,IGNORE,maturity:8.9y,46.34,,narrowing,,3.66
-2026-04-09,SAGF,10.96,10.22,-6.75,1200,7.64,2789,moderate_discount,low,IGNORE,liquidity:low; maturity:7.6y,34.15,,narrowing,,4.08
-2026-04-09,SFMF,11.3,10.71,-5.22,0,3.58,1305,moderate_discount,low,IGNORE,liquidity:low,44.63,,narrowing,,-2.04
-2026-04-09,MMF1,10.15,9.66,-4.83,49600,5.42,1978,moderate_discount,high,IGNORE,maturity:5.4y,47.56,,narrowing,high_vol,5.95
-2026-04-09,PRSF,12.98,12.37,-4.7,4881081,5.93,2166,moderate_discount,high,IGNORE,maturity:5.9y,60.12,,narrowing,,5.36
-2026-04-09,NMB50,10.86,10.4,-4.24,770,0.4,145,moderate_discount,low,IGNORE,liquidity:low,43.41,,stable,,5.23
-2026-04-09,CMF2,10.62,10.19,-4.05,300,0.25,90,moderate_discount,low,IGNORE,liquidity:low,37.56,,narrowing,,3.31
-2026-04-09,NBF2,10.47,10.05,-4.01,1700,3.15,1148,moderate_discount,low,IGNORE,liquidity:low,39.63,,narrowing,,0.48
-2026-04-09,NIBLGF,10.26,9.85,-4.0,3715,6.78,2475,moderate_discount,low,IGNORE,liquidity:low; maturity:6.8y,33.41,,narrowing,high_vol,4.8
-2026-04-09,NBF3,10.32,10.0,-3.1,49207,5.46,1993,small_discount,medium,IGNORE,valuation:small_discount; maturity:5.5y,41.71,,narrowing,,1.18
-2026-04-09,HLICF,9.64,9.35,-3.01,4000,9.44,3446,small_discount,medium,IGNORE,valuation:small_discount; maturity:9.4y,15.61,,widening,,0.84
-2026-04-09,KEF,10.55,10.58,0.28,80519,4.94,1804,premium,high,IGNORE,valuation:premium; maturity:4.9y,52.2,,narrowing,,4.66
-2026-04-09,KDBY,11.41,11.61,1.75,78710,6.3,2299,premium,high,IGNORE,valuation:premium; maturity:6.3y,46.95,,narrowing,,4.39
-2026-04-09,NICFC,10.52,9.5,-9.7,8100,3.19,1163,deep_discount,medium,CONSIDER,,63.78,1.0,narrowing,,4.26
-2026-04-09,SIGS2,10.98,10.03,-8.65,7800,3.38,1235,deep_discount,medium,CONSIDER,,57.2,3.0,widening,,5.17
-2026-04-09,NICSF,10.04,9.3,-7.37,4400,2.24,818,moderate_discount,medium,CONSIDER,,47.2,7.0,widening,,5.35
-2026-04-09,RMF1,10.56,9.87,-6.53,7655,2.29,836,moderate_discount,medium,CONSIDER,,51.59,5.0,narrowing,high_vol,5.28
-2026-04-09,SLCF,10.6,9.91,-6.51,6980,1.88,685,moderate_discount,medium,CONSIDER,,51.83,4.0,narrowing,,4.43
-2026-04-09,SEF,10.55,9.9,-6.16,7600,1.58,578,moderate_discount,medium,CONSIDER,,40.61,8.0,widening,high_vol,4.98
-2026-04-09,NICBF,10.47,9.83,-6.11,7052,3.39,1236,moderate_discount,medium,CONSIDER,,48.54,6.0,narrowing,high_vol,4.39
-2026-04-09,PSF,12.75,12.06,-5.41,37900,2.2,804,moderate_discount,medium,CONSIDER,,63.05,2.0,narrowing,,5.81
+2026-04-10,LUK,11.66,9.85,-15.52,1000,4.35,1587,deep_discount,low,IGNORE,liquidity:low; maturity:4.3y,62.07,,narrowing,,-1.17
+2026-04-10,SBCF,11.34,9.74,-14.11,84250,4.96,1811,deep_discount,high,IGNORE,maturity:5.0y,69.02,,narrowing,high_vol,-1.94
+2026-04-10,LVF2,11.41,9.9,-13.23,8100,7.41,2703,deep_discount,medium,IGNORE,maturity:7.4y,55.3,,narrowing,,-1.93
+2026-04-10,SFEF,11.43,10.05,-12.07,7500,5.85,2134,deep_discount,medium,IGNORE,maturity:5.8y,60.73,,narrowing,,-4.1
+2026-04-10,NICGF2,10.67,9.48,-11.15,5001,4.62,1685,deep_discount,medium,IGNORE,maturity:4.6y,72.2,,narrowing,,5.12
+2026-04-10,MBLEF,11.46,10.21,-10.91,123400,10.97,4004,deep_discount,high,IGNORE,maturity:11.0y,55.37,,narrowing,,4.75
+2026-04-10,NSIF2,12.2,10.87,-10.9,10865,6.4,2336,deep_discount,medium,IGNORE,maturity:6.4y,71.22,,narrowing,,4.9
+2026-04-10,KSY,10.75,9.64,-10.33,1200,7.95,2900,deep_discount,low,IGNORE,liquidity:low; maturity:8.0y,44.63,,stable,,4.98
+2026-04-10,GIBF1,12.38,11.13,-10.1,660400,6.3,2301,deep_discount,high,IGNORE,maturity:6.3y,75.24,,narrowing,,5.09
+2026-04-10,GBIMESY2,10.4,9.37,-9.9,1800,9.28,3386,deep_discount,low,IGNORE,liquidity:low; maturity:9.3y,35.37,,widening,,4.94
+2026-04-10,NIBLSTF,10.26,9.28,-9.55,11250,9.84,3590,deep_discount,medium,IGNORE,maturity:9.8y,46.34,,narrowing,high_vol,5.02
+2026-04-10,RMF2,11.27,10.22,-9.32,16500,7.12,2598,deep_discount,medium,IGNORE,maturity:7.1y,68.17,,narrowing,,5.13
+2026-04-10,C30MF,11.0,10.01,-9.0,200,7.1,2591,deep_discount,low,IGNORE,liquidity:low; maturity:7.1y,44.88,,narrowing,,3.77
+2026-04-10,MNMF1,10.86,9.9,-8.84,7300,8.7,3175,deep_discount,medium,IGNORE,maturity:8.7y,39.15,,stable,high_vol,4.62
+2026-04-10,RSY,11.29,10.3,-8.77,105500,9.07,3309,deep_discount,high,IGNORE,maturity:9.1y,59.76,,narrowing,,4.83
+2026-04-10,SIGS3,11.35,10.38,-8.55,2000,7.06,2577,deep_discount,low,IGNORE,liquidity:low; maturity:7.1y,50.98,,narrowing,,5.19
+2026-04-10,GSY,10.85,9.97,-8.11,7370,8.74,3189,deep_discount,medium,IGNORE,maturity:8.7y,43.17,,narrowing,,4.63
+2026-04-10,NIBLGF,10.26,9.45,-7.89,4350,6.78,2474,moderate_discount,medium,IGNORE,maturity:6.8y,30.12,,widening,high_vol,4.8
+2026-04-10,NIBSF2,10.25,9.47,-7.61,7100,5.14,1875,moderate_discount,medium,IGNORE,maturity:5.1y,35.37,,stable,high_vol,4.38
+2026-04-10,RBBF40,10.37,9.6,-7.43,2100,11.6,4234,moderate_discount,low,IGNORE,liquidity:low; maturity:11.6y,26.59,,stable,high_vol,4.75
+2026-04-10,NMBHF2,10.75,9.99,-7.07,6500,8.89,3245,moderate_discount,medium,IGNORE,maturity:8.9y,35.18,,narrowing,,3.66
+2026-04-10,SAGF,10.96,10.3,-6.02,53700,7.64,2788,moderate_discount,high,IGNORE,maturity:7.6y,46.59,,narrowing,,4.08
+2026-04-10,H8020,12.58,11.9,-5.41,3220,7.48,2731,moderate_discount,low,IGNORE,liquidity:low; maturity:7.5y,40.49,,narrowing,,3.8
+2026-04-10,SFMF,11.3,10.71,-5.22,0,3.57,1304,moderate_discount,low,IGNORE,liquidity:low,42.2,,narrowing,,-2.04
+2026-04-10,MMF1,10.15,9.68,-4.63,86807,5.42,1977,moderate_discount,high,IGNORE,maturity:5.4y,53.41,,narrowing,high_vol,5.95
+2026-04-10,NMB50,10.86,10.36,-4.6,1400,0.39,144,moderate_discount,low,IGNORE,liquidity:low,45.12,,narrowing,,5.23
+2026-04-10,HLICF,9.64,9.23,-4.25,67000,9.44,3445,moderate_discount,high,IGNORE,maturity:9.4y,27.32,,widening,,0.84
+2026-04-10,CMF2,10.62,10.21,-3.86,3600,0.24,89,small_discount,low,IGNORE,valuation:small_discount; liquidity:low,47.56,,narrowing,,3.31
+2026-04-10,NBF3,10.32,10.0,-3.1,23300,5.46,1992,small_discount,medium,IGNORE,valuation:small_discount; maturity:5.5y,40.98,,narrowing,,1.18
+2026-04-10,PRSF,12.98,12.79,-1.46,53108,5.93,2165,small_discount,high,IGNORE,valuation:small_discount; maturity:5.9y,52.56,,narrowing,,5.36
+2026-04-10,KEF,10.55,10.48,-0.66,46892,4.94,1803,small_discount,high,IGNORE,valuation:small_discount; maturity:4.9y,51.22,,narrowing,,4.66
+2026-04-10,KDBY,11.41,11.59,1.58,8100,6.3,2298,premium,medium,IGNORE,valuation:premium; maturity:6.3y,41.89,,narrowing,,4.39
+2026-04-10,NICFC,10.52,9.45,-10.17,10693,3.18,1162,deep_discount,medium,CONSIDER,,61.95,1.0,narrowing,,4.26
+2026-04-10,NICBF,10.47,9.42,-10.03,42448,3.38,1235,deep_discount,high,CONSIDER,,49.51,8.0,widening,high_vol,4.39
+2026-04-10,SIGS2,10.98,10.06,-8.38,6500,3.38,1234,deep_discount,medium,CONSIDER,,52.26,6.0,widening,,5.17
+2026-04-10,RMF1,10.56,9.71,-8.05,10400,2.29,835,deep_discount,medium,CONSIDER,,51.59,7.0,narrowing,high_vol,5.28
+2026-04-10,NICSF,10.04,9.3,-7.37,4500,2.24,817,moderate_discount,medium,CONSIDER,,54.76,4.0,narrowing,,5.35
+2026-04-10,SEF,10.55,9.9,-6.16,16334,1.58,577,moderate_discount,medium,CONSIDER,,52.44,5.0,narrowing,high_vol,4.98
+2026-04-10,SLCF,10.6,9.96,-6.04,8550,1.87,684,moderate_discount,medium,CONSIDER,,58.17,2.0,narrowing,,4.43
+2026-04-10,NBF2,10.47,10.0,-4.49,21800,3.14,1147,moderate_discount,medium,CONSIDER,,39.02,9.0,stable,,0.48
+2026-04-10,PSF,12.75,12.2,-4.31,91315,2.2,803,moderate_discount,high,CONSIDER,,55.12,3.0,narrowing,,5.81
