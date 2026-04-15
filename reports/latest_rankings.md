@@ -1,19 +1,19 @@
 # Nepal MF Quant — Full Analysis Report
 
-*Generated: 2026-04-14 11:20*
+*Generated: 2026-04-15 11:17*
 
 ## Market Overview
 
 | Metric | Value |
 |--------|-------|
-| Analysis Date | 2026-04-13 |
-| Funds Tracked | 41 |
-| At Discount (price < NAV) | 39 |
-| At Premium (price ≥ NAV) | 2 |
-| Deep Discount (≤ -8%) | 19 |
-| Median Discount | -7.80% |
+| Analysis Date | 2026-04-15 |
+| Funds Tracked | 40 |
+| At Discount (price < NAV) | 37 |
+| At Premium (price ≥ NAV) | 3 |
+| Deep Discount (≤ -8%) | 16 |
+| Median Discount | -7.48% |
 | CONSIDER | 6 |
-| IGNORE | 35 |
+| IGNORE | 34 |
 
 > ⚠️ **NAV Staleness Warning**: 7 fund(s) have NAV data older than 45 days. Discount calculations may be less reliable.
 
@@ -21,81 +21,80 @@
 
 | Discount Range | Count | % of Universe |
 |---------------|-------|---------------|
-| < -10% | 8 | 19.5% |
-| -10% to -6% | 20 | 48.8% |
-| -6% to -4% | 7 | 17.1% |
-| -4% to 0% | 4 | 9.8% |
-| ≥ 0% (premium) | 2 | 4.9% |
+| < -10% | 6 | 15.0% |
+| -10% to -6% | 20 | 50.0% |
+| -6% to -4% | 4 | 10.0% |
+| -4% to 0% | 7 | 17.5% |
+| ≥ 0% (premium) | 3 | 7.5% |
 
 ## CONSIDER Candidates
 
 | # | Symbol | Name | NAV | LTP | Discount | Maturity | Liquidity | Streak | NAV Δ | Score | Trend | Risk |
 |---|--------|------|-----|-----|----------|----------|-----------|--------|-------|-------|-------|------|
-| 1 | NICFC | NIC Asia Flexi Cap Fund | 10.52 | 9.50 | -9.70% | 3.2y | high | 9d | 4.26% | 67.3 | ↑ narrowing | — |
-| 2 | PSF | Prabhu Select Fund | 12.75 | 12.18 | -4.47% | 2.2y | high | 11d | 5.81% | 61.7 | ↑ narrowing | — |
-| 3 | RMF1 | RBB Mutual Fund 1 | 10.56 | 9.67 | -8.43% | 2.3y | medium | 9d | 5.28% | 58.0 | → stable | high_vol |
-| 4 | NICSF | NIC Asia Select-30 | 10.04 | 9.43 | -6.08% | 2.2y | medium | 4d | 5.35% | 54.8 | ↑ narrowing | — |
-| 5 | SLCF | Sanima Large Cap Fund | 10.60 | 10.05 | -5.19% | 1.9y | medium | 4d | 4.43% | 51.5 | ↑ narrowing | — |
-| 6 | NBF2 | Nabil Balanced Fund - 2 | 10.47 | 10.01 | -4.39% | 3.1y | high | 2d | 0.48% | 42.4 | → stable | — |
+| 1 | NICFC | NIC Asia Flexi Cap Fund | 10.52 | 9.52 | -9.51% | 3.2y | medium | 10d | 4.26% | 65.0 | ↑ narrowing | — |
+| 2 | RMF1 | RBB Mutual Fund 1 | 10.56 | 9.80 | -7.20% | 2.3y | medium | 10d | 5.28% | 58.8 | ↑ narrowing | high_vol |
+| 3 | SLCF | Sanima Large Cap Fund | 10.60 | 10.01 | -5.57% | 1.9y | medium | 5d | 4.43% | 52.5 | ↑ narrowing | — |
+| 4 | SFMF | Sunrise First Mutual Fund | 11.30 | 10.52 | -6.90% | 3.6y | medium | 1d | -2.04% | 44.1 | → stable | — |
+| 5 | NBF2 | Nabil Balanced Fund - 2 | 10.47 | 10.01 | -4.39% | 3.1y | high | 3d | 0.48% | 42.6 | ↓ widening | — |
+| 6 | NICBF | NIC ASIA Balanced Fund | 10.47 | 9.52 | -9.07% | 3.4y | medium | 1d | 4.39% | 40.9 | ↓ widening | high_vol |
 
 ## IGNORE Summary
 
-*35 funds are flagged IGNORE. Top reasons:*
+*34 funds are flagged IGNORE. Top reasons:*
 
 | Gate Failed | Count |
 |-------------|-------|
-| maturity | 29 |
+| maturity | 28 |
 | liquidity | 10 |
-| valuation | 6 |
+| valuation | 10 |
 
 <details>
 <summary>Full IGNORE list (click to expand)</summary>
 
 | Symbol | Discount | Reason |
 |--------|----------|--------|
-| LUK | -13.81% | maturity:4.3y |
-| LVF2 | -13.58% | liquidity:low; maturity:7.4y |
-| SFEF | -11.64% | liquidity:low; maturity:5.8y |
-| KSY | -11.63% | maturity:7.9y |
-| GBIMESY2 | -10.96% | maturity:9.3y |
-| SBCF | -10.93% | maturity:5.0y |
-| MBLEF | -10.91% | maturity:11.0y |
-| NICBF | -10.79% | liquidity:low |
-| NICGF2 | -9.93% | liquidity:low; maturity:4.6y |
-| NSIF2 | -9.84% | maturity:6.4y |
+| LUK | -14.24% | liquidity:low; maturity:4.3y |
+| SBCF | -13.40% | liquidity:low; maturity:5.0y |
+| LVF2 | -12.36% | maturity:7.4y |
+| MBLEF | -11.78% | maturity:11.0y |
+| SFEF | -11.37% | liquidity:low; maturity:5.8y |
+| NSIF2 | -10.98% | maturity:6.4y |
 | NIBLSTF | -9.45% | maturity:9.8y |
 | GIBF1 | -9.37% | maturity:6.3y |
-| RSY | -9.30% | maturity:9.1y |
-| MNMF1 | -9.21% | maturity:8.7y |
-| NMBHF2 | -8.37% | maturity:8.9y |
-| SIGS2 | -8.29% | liquidity:low |
+| NICGF2 | -9.18% | maturity:4.6y |
+| RSY | -9.12% | maturity:9.1y |
+| GBIMESY2 | -9.04% | liquidity:low; maturity:9.3y |
+| NMBHF2 | -8.37% | liquidity:low; maturity:8.9y |
+| RBBF40 | -8.29% | maturity:11.6y |
 | GSY | -8.11% | maturity:8.7y |
-| SEF | -7.87% | liquidity:low |
+| MNMF1 | -7.92% | liquidity:low; maturity:8.7y |
 | NIBSF2 | -7.80% | maturity:5.1y |
 | RMF2 | -7.72% | maturity:7.1y |
-| SIGS3 | -7.49% | maturity:7.0y |
-| RBBF40 | -7.43% | liquidity:low; maturity:11.6y |
+| C30MF | -7.55% | maturity:7.1y |
 | NIBLGF | -7.41% | maturity:6.8y |
-| C30MF | -7.36% | maturity:7.1y |
-| MMF1 | -7.29% | maturity:5.4y |
-| H8020 | -5.56% | maturity:7.5y |
-| SAGF | -5.47% | maturity:7.6y |
-| SFMF | -5.13% | liquidity:low |
-| NMB50 | -4.70% | liquidity:low |
-| NBF3 | -3.39% | valuation:small_discount; maturity:5.5y |
-| HLICF | -2.49% | valuation:small_discount; liquidity:low; maturity:9.4y |
-| PRSF | -1.93% | valuation:small_discount; maturity:5.9y |
-| CMF2 | -1.88% | valuation:small_discount |
-| KEF | 2.75% | valuation:premium; maturity:4.9y |
-| KDBY | 4.12% | valuation:premium; maturity:6.3y |
+| SAGF | -6.57% | maturity:7.6y |
+| SIGS2 | -6.38% | liquidity:low |
+| NICSF | -6.37% | liquidity:low |
+| SIGS3 | -5.81% | maturity:7.0y |
+| H8020 | -4.61% | liquidity:low; maturity:7.5y |
+| SEF | -3.79% | valuation:small_discount |
+| CMF2 | -3.39% | valuation:small_discount; liquidity:low |
+| NMB50 | -3.31% | valuation:small_discount |
+| NBF3 | -3.10% | valuation:small_discount; maturity:5.4y |
+| PSF | -3.06% | valuation:small_discount |
+| MMF1 | -2.96% | valuation:small_discount; maturity:5.4y |
+| HLICF | -1.56% | valuation:small_discount; maturity:9.4y |
+| PRSF | 1.23% | valuation:premium; maturity:5.9y |
+| KEF | 3.32% | valuation:premium; maturity:4.9y |
+| KDBY | 4.73% | valuation:premium; maturity:6.3y |
 
 </details>
 
 ## Data Quality
 
 - Symbols checked: 43
-- Symbols with issues: 17
-- NAV data age: median 30 days, max 320 days
+- Symbols with issues: 11
+- NAV data age: median 31 days, max 321 days
 
 ## Methodology
 
