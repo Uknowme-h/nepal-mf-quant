@@ -147,13 +147,13 @@ MIT
 
 | | |
 |---|---|
-| **Date** | 2026-04-17 |
+| **Date** | 2026-04-20 |
 | **Funds Tracked** | 41 |
-| **Median Discount** | -7.44% |
+| **Median Discount** | -7.91% |
 | **At Discount** | 38 (93%) |
-| **Deep Discount (≤-8%)** | 15 |
-| **CONSIDER** | 5 |
-| **IGNORE** | 36 |
+| **Deep Discount (≤-8%)** | 20 |
+| **CONSIDER** | 6 |
+| **IGNORE** | 35 |
 
 > ⚠️ 7 fund(s) have NAV data older than 45 days.
 
@@ -161,27 +161,28 @@ MIT
 
 | Range | Distribution |
 |-------|-------------|
-|         < -10% | ██████ 6 |
-|    -10% to -6% | ███████████████████████ 23 |
-|     -6% to -4% | █████ 5 |
-|      -4% to 0% | ████ 4 |
+|         < -10% | ██████████ 10 |
+|    -10% to -6% | ████████████████ 16 |
+|     -6% to -4% | ██████ 6 |
+|      -4% to 0% | ██████ 6 |
 |           ≥ 0% | ███ 3 |
 
 ### Active CONSIDER Candidates
 
 | # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak | NAV Δ | Score | Trend |
 |---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|-------|
-| 1 | **SIGS2** | Siddhartha Investmen | -6.10% | 10.98 | 10.31 | 3.4y | medium | 1d | 5.17% | 60.6 | ↑ |
-| 2 | **NICFC** | NIC Asia Flexi Cap F | -10.17% | 10.52 | 9.45 | 3.2y | medium | 1d | 4.26% | 55.6 | → |
-| 3 | **SLCF** | Sanima Large Cap Fun | -6.13% | 10.60 | 9.95 | 1.9y | medium | 7d | 4.43% | 53.8 | → |
-| 4 | **NICSF** | NIC Asia Select-30 | -7.67% | 10.04 | 9.27 | 2.2y | medium | 2d | 5.35% | 53.8 | → |
-| 5 | **RMF1** | RBB Mutual Fund 1 | -6.34% | 10.56 | 9.89 | 2.3y | medium | 12d | 5.28% | 53.7 | → |
+| 1 | **SIGS2** | Siddhartha Investmen | -7.56% | 10.98 | 10.15 | 3.4y | high | 2d | 5.17% | 67.9 | ↑ |
+| 2 | **NICFC** | NIC Asia Flexi Cap F | -10.65% | 10.52 | 9.40 | 3.2y | medium | 2d | 4.26% | 60.9 | → |
+| 3 | **NICSF** | NIC Asia Select-30 | -8.76% | 10.04 | 9.16 | 2.2y | medium | 3d | 5.35% | 53.2 | ↓ |
+| 4 | **SLCF** | Sanima Large Cap Fun | -6.13% | 10.60 | 9.95 | 1.9y | medium | 8d | 4.43% | 52.4 | → |
+| 5 | **SEF** | Siddhartha Equity Fu | -4.08% | 10.55 | 10.12 | 1.6y | medium | 1d | 4.98% | 52.4 | ↑ |
+| 6 | **SFMF** | Sunrise First Mutual | -5.66% | 11.30 | 10.66 | 3.5y | high | 1d | -2.04% | 50.0 | → |
 
 ### Top Picks by Composite Score
 
-- **SIGS2** (Siddhartha Investment Growth Scheme-2): -6.10% discount, score 60.6
-- **NICFC** (NIC Asia Flexi Cap Fund): -10.17% discount, score 55.6
-- **SLCF** (Sanima Large Cap Fund): -6.13% discount, score 53.8
+- **SIGS2** (Siddhartha Investment Growth Scheme-2): -7.56% discount, score 67.9
+- **NICFC** (NIC Asia Flexi Cap Fund): -10.65% discount, score 60.9
+- **NICSF** (NIC Asia Select-30): -8.76% discount, score 53.2
 
 ### Interpretation
 
@@ -189,9 +190,9 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 
 ### Data Status
 
-- Latest price data: 2026-04-17
-- NAV data age: median 35 days
-- History depth: 41 trading day(s)
+- Latest price data: 2026-04-20
+- NAV data age: median 36 days
+- History depth: 42 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)
 
