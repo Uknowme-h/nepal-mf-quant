@@ -38,6 +38,7 @@ class ReportGenerator:
         self.history_path = project_root / "data" / "history" / "mf_decision_history.csv"
         self.universe_path = project_root / "data" / "raw" / "fund_universe.csv"
         self.snapshot_path = project_root / "data" / "processed" / "mf_daily_snapshot.csv"
+        self.dividend_metrics_path = project_root / "data" / "processed" / "mf_dividend_metrics.csv"
 
         # Outputs
         self.md_path = project_root / "reports" / "latest_rankings.md"
@@ -68,6 +69,7 @@ class ReportGenerator:
             "history": self._load_csv(self.history_path, ["date"]),
             "universe": self._load_csv(self.universe_path),
             "snapshot": self._load_csv(self.snapshot_path, ["date"]),
+            "dividends": self._load_csv(self.dividend_metrics_path),
         }
         loaded = sum(1 for v in data.values() if not v.empty)
         logger.info("Loaded %d/%d report data sources", loaded, len(data))
@@ -313,6 +315,68 @@ class ReportGenerator:
                 lines.append(f"- NAV data age: median {self._fmt(median_age, '.0f')} days, max {self._fmt(max_age, '.0f')} days")
             lines.append("")
 
+        # ==== DIVIDEND HISTORY ====
+        dividends = data.get("dividends", pd.DataFrame())
+        if not dividends.empty:
+            lines.append("## Dividend History")
+            lines.append("")
+            lines.append(
+                "Dividend metrics derived from scraped history. "
+                "Tiers: **strong_payer** (≥5 dividends, avg ≥5%), "
+                "**consistent_payer** (3–4), **occasional_payer** (1–2), "
+                "**no_dividend** (0)."
+            )
+            lines.append("")
+
+            # Merge with decision flags if available
+            div_display = dividends.copy()
+            if not decisions.empty:
+                flag_cols = [c for c in ["symbol", "decision_flag", "dividend_tier"] if c in decisions.columns]
+                if "dividend_tier" not in div_display.columns and "decision_flag" in decisions.columns:
+                    div_display = div_display.merge(
+                        decisions[flag_cols].drop_duplicates("symbol"),
+                        on="symbol", how="left",
+                    )
+
+            # Sort: strong payers first, then by avg rate desc
+            sort_key = []
+            tier_order = {"strong_payer": 0, "consistent_payer": 1, "occasional_payer": 2, "no_dividend": 3}
+            if "dividend_tier" in div_display.columns:
+                div_display["_tier_order"] = div_display["dividend_tier"].map(tier_order).fillna(9)
+                sort_key.append("_tier_order")
+            if "avg_dividend_rate_pct" in div_display.columns:
+                sort_key.append("avg_dividend_rate_pct")
+            if sort_key:
+                div_display = div_display.sort_values(
+                    sort_key,
+                    ascending=[True] * (len(sort_key) - 1) + [False],
+                    na_position="last",
+                )
+
+            # Only show funds with any dividend history
+            has_dividends = div_display[div_display.get("dividend_count", pd.Series(0, index=div_display.index)).fillna(0) > 0]
+            if "dividend_count" in div_display.columns:
+                has_dividends = div_display[div_display["dividend_count"].fillna(0) > 0]
+            else:
+                has_dividends = div_display
+
+            header = "| Symbol | Tier | Count | Avg Rate | Consistency | Cumulative |"
+            sep    = "|--------|------|-------|----------|-------------|------------|"
+            lines.append(header)
+            lines.append(sep)
+            for _, row in has_dividends.iterrows():
+                tier = row.get("dividend_tier", "—") if "dividend_tier" in row else "—"
+                count = int(row.get("dividend_count", 0))
+                avg = self._fmt(row.get("avg_dividend_rate_pct"), ".2f", "%")
+                cons = self._fmt(row.get("dividend_consistency_pct"), ".1f", "%")
+                cumul = self._fmt(row.get("cumulative_dividend_pct"), ".1f", "%")
+                lines.append(f"| {row['symbol']} | {tier} | {count} | {avg} | {cons} | {cumul} |")
+            lines.append("")
+
+            if has_dividends.empty:
+                lines.append("*No dividend history on file for any fund.*")
+                lines.append("")
+
         # ==== METHODOLOGY ====
         lines.append("## Methodology")
         lines.append("")
@@ -324,13 +388,14 @@ class ReportGenerator:
         lines.append("")
         lines.append("### Composite Score")
         lines.append("Within CONSIDER funds, a weighted composite score ranks relative attractiveness:")
-        lines.append("- Discount depth: 30% — deeper discount = higher score")
-        lines.append("- Liquidity: 15% — higher volume = higher score")
-        lines.append("- Maturity proximity: 15% — closer maturity = higher score")
+        lines.append("- Discount depth: 28% — deeper discount = higher score")
+        lines.append("- Liquidity: 13% — higher volume = higher score")
+        lines.append("- Maturity proximity: 13% — closer maturity = higher score")
         lines.append("- NAV growth: 10% — positive month-over-month NAV return = higher score (fund manager quality)")
-        lines.append("- Price momentum: 10% — positive return = higher score")
-        lines.append("- Volatility (inverse): 10% — lower Parkinson vol = higher score")
+        lines.append("- Price momentum: 8% — positive return = higher score")
+        lines.append("- Volatility (inverse): 8% — lower Parkinson vol = higher score")
         lines.append("- Discount trend: 10% — narrowing discount = higher score")
+        lines.append("- Dividend: 10% — higher average dividend rate & consistency = higher score (NaN-safe)")
         lines.append("")
         lines.append("### Risk Metrics")
         lines.append("- **Parkinson Volatility**: Estimated from OHLC (high/low) range — more efficient than close-to-close for small samples")
@@ -391,6 +456,18 @@ class ReportGenerator:
         else:
             df["consider_streak"] = 0
 
+        # Merge dividend metrics
+        dividends = data.get("dividends", pd.DataFrame())
+        if not dividends.empty:
+            div_cols = [c for c in [
+                "symbol", "dividend_count", "dividend_years",
+                "avg_dividend_rate_pct", "ttm_dividend_rate_pct",
+                "max_dividend_rate_pct", "cumulative_dividend_pct",
+                "dividend_consistency_pct", "recent_dividend_years",
+            ] if c in dividends.columns]
+            df = df.merge(dividends[div_cols].drop_duplicates("symbol"),
+                          on="symbol", how="left")
+
         # Select and order final columns
         desired_cols = [
             "date", "symbol", "name", "nav", "ltp", "discount_pct",
@@ -404,6 +481,10 @@ class ReportGenerator:
             "parkinson_vol", "parkinson_vol_ann",
             "intraday_range", "avg_intraday_range",
             "return_vol_5d", "volume_cv", "max_drawdown", "sharpe_1m",
+            "dividend_tier", "dividend_count", "dividend_years",
+            "avg_dividend_rate_pct", "ttm_dividend_rate_pct",
+            "max_dividend_rate_pct", "cumulative_dividend_pct",
+            "dividend_consistency_pct", "recent_dividend_years",
         ]
         final_cols = [c for c in desired_cols if c in df.columns]
         df = df[final_cols].copy()

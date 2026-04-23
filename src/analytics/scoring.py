@@ -5,12 +5,14 @@ Combines multiple quantitative factors into a single composite score
 for each fund, enabling relative ranking within the universe.
 
 Factor weights (configurable):
-    discount    35%   — deeper discount = higher score
-    liquidity   20%   — higher volume = higher score
-    maturity    15%   — closer to maturity = higher score
-    momentum    10%   — positive price return = higher score
-    volatility  10%   — lower volatility = higher score (inverse)
+    discount    28%   — deeper discount = higher score
+    liquidity   13%   — higher volume = higher score
+    maturity    13%   — closer to maturity = higher score
+    nav_growth  10%   — positive NAV return = higher score
+    momentum     8%   — positive price return = higher score
+    volatility   8%   — lower volatility = higher score (inverse)
     disc_trend  10%   — narrowing discount = higher score
+    dividend    10%   — higher & more consistent dividend = higher score
 
 NaN handling: if a factor is NaN (insufficient data), it is excluded
 from the weighted sum and remaining weights are re-normalized.
@@ -28,13 +30,14 @@ logger = logging.getLogger(__name__)
 
 # Default factor weights — can be overridden in constructor
 DEFAULT_WEIGHTS = {
-    "discount_score": 0.30,
-    "liquidity_score": 0.15,
-    "maturity_score": 0.15,
+    "discount_score": 0.28,
+    "liquidity_score": 0.13,
+    "maturity_score": 0.13,
     "nav_growth_score": 0.10,
-    "momentum_score": 0.10,
-    "volatility_score": 0.10,
+    "momentum_score": 0.08,
+    "volatility_score": 0.08,
     "disc_trend_score": 0.10,
+    "dividend_score": 0.10,
 }
 
 
@@ -53,6 +56,7 @@ class FundScorer:
         self.returns_path = project_root / "data" / "processed" / "mf_returns.csv"
         self.risk_path = project_root / "data" / "processed" / "mf_risk_metrics.csv"
         self.universe_path = project_root / "data" / "raw" / "fund_universe.csv"
+        self.dividend_metrics_path = project_root / "data" / "processed" / "mf_dividend_metrics.csv"
 
         # Output
         self.output_path = project_root / "data" / "processed" / "mf_scored.csv"
@@ -128,6 +132,21 @@ class FundScorer:
             snapshot["parkinson_vol"] = np.nan
             snapshot["parkinson_vol_ann"] = np.nan
 
+        # Dividend metrics (optional)
+        if self.dividend_metrics_path.exists():
+            div_df = pd.read_csv(self.dividend_metrics_path)
+            div_cols = ["symbol", "avg_dividend_rate_pct", "dividend_consistency_pct",
+                        "dividend_count", "recent_dividend_years", "cumulative_dividend_pct"]
+            div_cols = [c for c in div_cols if c in div_df.columns]
+            snapshot = snapshot.merge(div_df[div_cols].drop_duplicates("symbol"),
+                                      on="symbol", how="left")
+            logger.info("  Dividend metrics: merged")
+        else:
+            logger.warning("  Dividend metrics not found — dividend_score will be NaN")
+            for col in ["avg_dividend_rate_pct", "dividend_consistency_pct",
+                        "dividend_count", "recent_dividend_years"]:
+                snapshot[col] = np.nan
+
         return snapshot
 
     # ------------------------------------------------------------------
@@ -197,10 +216,41 @@ class FundScorer:
         else:
             df["disc_trend_score"] = np.nan
 
+        # 8. Dividend score — higher & more consistent dividend payer = higher score
+        #    Combines dividend yield (60%) with consistency (40%)
+        has_yield = "avg_dividend_rate_pct" in df.columns and df["avg_dividend_rate_pct"].notna().any()
+        has_consistency = "dividend_consistency_pct" in df.columns and df["dividend_consistency_pct"].notna().any()
+
+        if has_yield or has_consistency:
+            yield_score = (
+                self._percentile_rank(df["avg_dividend_rate_pct"], ascending=True)
+                if has_yield else pd.Series(np.nan, index=df.index)
+            )
+            cons_score = (
+                self._percentile_rank(df["dividend_consistency_pct"], ascending=True)
+                if has_consistency else pd.Series(np.nan, index=df.index)
+            )
+            # Weighted combination; NaN-safe per row
+            combined = []
+            for i in df.index:
+                y = yield_score.at[i]
+                c = cons_score.at[i]
+                if np.isnan(y) and np.isnan(c):
+                    combined.append(np.nan)
+                elif np.isnan(y):
+                    combined.append(c)
+                elif np.isnan(c):
+                    combined.append(y)
+                else:
+                    combined.append(0.6 * y + 0.4 * c)
+            df["dividend_score"] = combined
+        else:
+            df["dividend_score"] = np.nan
+
         # Log coverage
         score_cols = ["discount_score", "liquidity_score", "maturity_score",
                       "nav_growth_score", "momentum_score", "volatility_score",
-                      "disc_trend_score"]
+                      "disc_trend_score", "dividend_score"]
         for col in score_cols:
             valid = df[col].notna().sum()
             logger.info("  %s: %d/%d valid", col, valid, len(df))
@@ -267,9 +317,11 @@ class FundScorer:
             "discount_change_1d", "discount_change_1w",
             "parkinson_vol", "parkinson_vol_ann",
             "nav_return_1m",
+            "avg_dividend_rate_pct", "dividend_consistency_pct",
+            "dividend_count", "recent_dividend_years",
             "discount_score", "liquidity_score", "maturity_score",
             "nav_growth_score", "momentum_score", "volatility_score",
-            "disc_trend_score",
+            "disc_trend_score", "dividend_score",
             "composite_score", "rank",
         ]
 

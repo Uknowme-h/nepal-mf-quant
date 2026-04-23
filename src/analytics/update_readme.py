@@ -41,6 +41,7 @@ class ReadmeUpdater:
         self.quality_path = project_root / "data" / "processed" / "mf_data_quality.csv"
         self.snapshot_path = project_root / "data" / "processed" / "mf_daily_snapshot.csv"
         self.universe_path = project_root / "data" / "raw" / "fund_universe.csv"
+        self.dividend_metrics_path = project_root / "data" / "processed" / "mf_dividend_metrics.csv"
         self.readme_path = project_root / "README.md"
 
     # ------------------------------------------------------------------
@@ -65,6 +66,7 @@ class ReadmeUpdater:
             "quality": self._load_csv(self.quality_path),
             "snapshot": self._load_csv(self.snapshot_path, ["date"]),
             "universe": self._load_csv(self.universe_path),
+            "dividends": self._load_csv(self.dividend_metrics_path),
         }
 
     # ------------------------------------------------------------------
@@ -96,6 +98,16 @@ class ReadmeUpdater:
     def _trend_arrow(trend: str) -> str:
         return {"narrowing": "↑", "widening": "↓", "stable": "→"}.get(str(trend), "·")
 
+    @staticmethod
+    def _dividend_icon(tier: str) -> str:
+        """Return an emoji icon for a dividend tier."""
+        return {
+            "strong_payer": "🏆",
+            "consistent_payer": "📊",
+            "occasional_payer": "💰",
+            "no_dividend": "➖",
+        }.get(str(tier), "➖")
+
     # ------------------------------------------------------------------
     # Markdown generation
     # ------------------------------------------------------------------
@@ -108,6 +120,7 @@ class ReadmeUpdater:
         history = data["history"]
         universe = data["universe"]
         quality = data["quality"]
+        dividends = data.get("dividends", pd.DataFrame())
 
         lines.append(self.SECTION_HEADER)
         lines.append("")
@@ -137,7 +150,8 @@ class ReadmeUpdater:
         at_premium = (decisions["discount_pct"] >= 0).sum()
         deep_discount = (decisions["discount_pct"] <= -8).sum()
         median_disc = decisions["discount_pct"].median()
-        consider_n = (decisions["decision_flag"] == "CONSIDER").sum()
+        consider_n = decisions["decision_flag"].isin(["CONSIDER", "CONSIDER_STRONG"]).sum()
+        strong_n = (decisions["decision_flag"] == "CONSIDER_STRONG").sum()
 
         lines.append(f"| | |")
         lines.append(f"|---|---|")
@@ -147,6 +161,8 @@ class ReadmeUpdater:
         lines.append(f"| **At Discount** | {at_discount} ({at_discount/total*100:.0f}%) |")
         lines.append(f"| **Deep Discount (≤-8%)** | {deep_discount} |")
         lines.append(f"| **CONSIDER** | {consider_n} |")
+        if strong_n > 0:
+            lines.append(f"| **CONSIDER_STRONG 🏆** | {strong_n} |")
         lines.append(f"| **IGNORE** | {total - consider_n} |")
         lines.append("")
 

@@ -39,6 +39,7 @@ class InvestmentDecisionLayer:
         self.scored_path = project_root / 'data' / 'processed' / 'mf_scored.csv'
         self.risk_path = project_root / 'data' / 'processed' / 'mf_risk_metrics.csv'
         self.returns_path = project_root / 'data' / 'processed' / 'mf_returns.csv'
+        self.dividend_metrics_path = project_root / 'data' / 'processed' / 'mf_dividend_metrics.csv'
         self.output_path = project_root / 'data' / 'processed' / 'mf_decision_table.csv'
     
     def load_data(self) -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -350,6 +351,82 @@ class InvestmentDecisionLayer:
         
         return df
     
+    def classify_dividends(self, df: pd.DataFrame) -> pd.DataFrame:
+        """
+        Enrich the decision table with dividend tier classification and
+        key dividend metrics from mf_dividend_metrics.csv.
+
+        Dividend tier logic (informational — not a hard gate):
+            strong_payer     — ≥5 total dividends AND avg cash rate ≥5%
+            consistent_payer — 3–4 total dividends
+            occasional_payer — 1–2 total dividends
+            no_dividend      — 0 dividends on record
+
+        If a fund is already CONSIDER-rated and qualifies as a
+        strong_payer, it receives the enhanced flag CONSIDER_STRONG.
+
+        Args:
+            df: Decision table DataFrame (must have 'decision_flag' column).
+
+        Returns:
+            DataFrame with 'dividend_tier', 'dividend_count',
+            'avg_dividend_rate_pct', and 'decision_flag' updated.
+        """
+        logger.info("")
+        logger.info("=" * 80)
+        logger.info("Classifying Dividend History")
+        logger.info("=" * 80)
+
+        if not self.dividend_metrics_path.exists():
+            logger.warning("  Dividend metrics not found — dividend columns will be empty")
+            df['dividend_tier'] = 'no_dividend'
+            df['dividend_count'] = 0
+            df['avg_dividend_rate_pct'] = np.nan
+            return df
+
+        div_metrics = pd.read_csv(self.dividend_metrics_path)
+        merge_cols = ['symbol', 'dividend_count', 'avg_dividend_rate_pct',
+                      'dividend_consistency_pct', 'recent_dividend_years']
+        merge_cols = [c for c in merge_cols if c in div_metrics.columns]
+        df = df.merge(div_metrics[merge_cols].drop_duplicates('symbol'),
+                      on='symbol', how='left')
+
+        # Fill missing dividend counts for funds with no data at all
+        df['dividend_count'] = df['dividend_count'].fillna(0).astype(int)
+
+        def _tier(row) -> str:
+            count = int(row.get('dividend_count', 0))
+            avg_rate = row.get('avg_dividend_rate_pct', np.nan)
+            if count == 0:
+                return 'no_dividend'
+            if count >= 5 and pd.notna(avg_rate) and avg_rate >= 5.0:
+                return 'strong_payer'
+            if count >= 3:
+                return 'consistent_payer'
+            return 'occasional_payer'
+
+        df['dividend_tier'] = df.apply(_tier, axis=1)
+
+        # Upgrade CONSIDER → CONSIDER_STRONG for strong payers
+        strong_consider = (
+            (df['decision_flag'] == 'CONSIDER') &
+            (df['dividend_tier'] == 'strong_payer')
+        )
+        df.loc[strong_consider, 'decision_flag'] = 'CONSIDER_STRONG'
+
+        # Log distribution
+        tier_counts = df['dividend_tier'].value_counts()
+        logger.info("  Dividend tier distribution:")
+        for tier in ['strong_payer', 'consistent_payer', 'occasional_payer', 'no_dividend']:
+            count = tier_counts.get(tier, 0)
+            logger.info("    %-20s: %d", tier, count)
+
+        strong_count = (df['decision_flag'] == 'CONSIDER_STRONG').sum()
+        if strong_count > 0:
+            logger.info("  CONSIDER_STRONG funds: %d", strong_count)
+
+        return df
+
     def enrich_with_scores_and_risk(self, df: pd.DataFrame) -> pd.DataFrame:
         """
         Enrich decision table with composite score, risk flag, and discount trend
@@ -464,6 +541,7 @@ class InvestmentDecisionLayer:
             'liquidity_bucket', 'decision_flag', 'ignore_reasons',
             'composite_score', 'priority_rank', 'discount_trend', 'risk_flag',
             'nav_return_1m',
+            'dividend_tier', 'dividend_count', 'avg_dividend_rate_pct',
         ]
         
         # Keep only columns that exist
@@ -516,10 +594,13 @@ class InvestmentDecisionLayer:
             # Step 5: Apply decision rules
             df = self.apply_decision_rules(df)
             
-            # Step 6: Enrich with scores, risk, and trend
+            # Step 6: Enrich with dividend history & classify dividend tier
+            df = self.classify_dividends(df)
+            
+            # Step 7: Enrich with scores, risk, and trend
             df = self.enrich_with_scores_and_risk(df)
             
-            # Step 7: Save decision table
+            # Step 8: Save decision table
             self.save_decision_table(df)
             
             # Success summary
@@ -529,7 +610,7 @@ class InvestmentDecisionLayer:
             logger.info("=" * 80)
             
             # Show top CONSIDER funds
-            consider_funds = df[df['decision_flag'] == 'CONSIDER'].sort_values('discount_pct')
+            consider_funds = df[df['decision_flag'].isin(['CONSIDER', 'CONSIDER_STRONG'])].sort_values('discount_pct')
             
             if len(consider_funds) > 0:
                 logger.info(f"\n🎯 Top Funds to CONSIDER ({len(consider_funds)} total):")
