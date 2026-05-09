@@ -2250,3 +2250,4 @@ date,symbol,ltp,open,high,low,volume,trades,source
 2026-05-08,SIGS2,10.61,10.61,10.61,10.61,940,1,nepse_playwright
 2026-05-08,SIGS3,10.42,10.31,10.63,10.31,1600,5,nepse_playwright
 2026-05-08,SLCF,9.9,9.62,9.9,9.62,43500,12,nepse_playwright
+2026-05-08,GBIMESY2,9.3,9.5,9.5,9.1,15580,14,nepse_playwright

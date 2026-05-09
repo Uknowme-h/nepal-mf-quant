@@ -148,12 +148,12 @@ MIT
 | | |
 |---|---|
 | **Date** | 2026-05-08 |
-| **Funds Tracked** | 40 |
-| **Median Discount** | -9.50% |
-| **At Discount** | 39 (98%) |
-| **Deep Discount (≤-8%)** | 25 |
+| **Funds Tracked** | 41 |
+| **Median Discount** | -9.59% |
+| **At Discount** | 40 (98%) |
+| **Deep Discount (≤-8%)** | 26 |
 | **CONSIDER** | 5 |
-| **IGNORE** | 35 |
+| **IGNORE** | 36 |
 
 > ⚠️ 11 fund(s) have NAV data older than 45 days.
 
@@ -161,7 +161,7 @@ MIT
 
 | Range | Distribution |
 |-------|-------------|
-|         < -10% | ███████████████████ 19 |
+|         < -10% | ████████████████████ 20 |
 |    -10% to -6% | ██████████ 10 |
 |     -6% to -4% | ███████ 7 |
 |      -4% to 0% | ███ 3 |
@@ -171,17 +171,17 @@ MIT
 
 | # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak | NAV Δ | Score | Trend |
 |---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|-------|
-| 1 | **PSF** | Prabhu Select Fund | -13.94% | 14.35 | 12.35 | 2.1y | medium | 5d | 12.55% | 72.0 | → |
-| 2 | **SLCF** | Sanima Large Cap Fun | -7.04% | 10.65 | 9.90 | 1.8y | high | 21d | 0.47% | 62.8 | ↑ |
-| 3 | **RMF1** | RBB Mutual Fund 1 | -4.98% | 10.64 | 10.11 | 2.2y | high | 13d | 0.76% | 58.6 | ↑ |
-| 4 | **SFMF** | Sunrise First Mutual | -7.96% | 11.30 | 10.40 | 3.5y | medium | 3d | -2.04% | 49.2 | → |
-| 5 | **NICBF** | NIC ASIA Balanced Fu | -4.97% | 10.47 | 9.95 | 3.3y | medium | 1d | 4.39% | 48.9 | ↑ |
+| 1 | **PSF** | Prabhu Select Fund | -13.94% | 14.35 | 12.35 | 2.1y | medium | 5d | 12.55% | 72.2 | → |
+| 2 | **SLCF** | Sanima Large Cap Fun | -7.04% | 10.65 | 9.90 | 1.8y | high | 21d | 0.47% | 62.7 | ↑ |
+| 3 | **RMF1** | RBB Mutual Fund 1 | -4.98% | 10.64 | 10.11 | 2.2y | high | 13d | 0.76% | 58.7 | ↑ |
+| 4 | **NICBF** | NIC ASIA Balanced Fu | -4.97% | 10.47 | 9.95 | 3.3y | medium | 1d | 4.39% | 48.8 | ↑ |
+| 5 | **SFMF** | Sunrise First Mutual | -7.96% | 11.30 | 10.40 | 3.5y | medium | 3d | -2.04% | 48.7 | → |
 
 ### Top Picks by Composite Score
 
-- **PSF** (Prabhu Select Fund): -13.94% discount, score 72.0
-- **SLCF** (Sanima Large Cap Fund): -7.04% discount, score 62.8
-- **RMF1** (RBB Mutual Fund 1): -4.98% discount, score 58.6
+- **PSF** (Prabhu Select Fund): -13.94% discount, score 72.2
+- **SLCF** (Sanima Large Cap Fund): -7.04% discount, score 62.7
+- **RMF1** (RBB Mutual Fund 1): -4.98% discount, score 58.7
 
 ### Interpretation
 
@@ -190,7 +190,7 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 ### Data Status
 
 - Latest price data: 2026-05-08
-- NAV data age: median 23 days
+- NAV data age: median 24 days
 - History depth: 55 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)

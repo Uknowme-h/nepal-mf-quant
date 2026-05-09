@@ -1,19 +1,19 @@
 # Nepal MF Quant — Full Analysis Report
 
-*Generated: 2026-05-08 11:45*
+*Generated: 2026-05-09 11:13*
 
 ## Market Overview
 
 | Metric | Value |
 |--------|-------|
 | Analysis Date | 2026-05-08 |
-| Funds Tracked | 40 |
-| At Discount (price < NAV) | 39 |
+| Funds Tracked | 41 |
+| At Discount (price < NAV) | 40 |
 | At Premium (price ≥ NAV) | 1 |
-| Deep Discount (≤ -8%) | 25 |
-| Median Discount | -9.50% |
+| Deep Discount (≤ -8%) | 26 |
+| Median Discount | -9.59% |
 | CONSIDER | 5 |
-| IGNORE | 35 |
+| IGNORE | 36 |
 
 > ⚠️ **NAV Staleness Warning**: 11 fund(s) have NAV data older than 45 days. Discount calculations may be less reliable.
 
@@ -21,29 +21,29 @@
 
 | Discount Range | Count | % of Universe |
 |---------------|-------|---------------|
-| < -10% | 19 | 47.5% |
-| -10% to -6% | 10 | 25.0% |
-| -6% to -4% | 7 | 17.5% |
-| -4% to 0% | 3 | 7.5% |
-| ≥ 0% (premium) | 1 | 2.5% |
+| < -10% | 20 | 48.8% |
+| -10% to -6% | 10 | 24.4% |
+| -6% to -4% | 7 | 17.1% |
+| -4% to 0% | 3 | 7.3% |
+| ≥ 0% (premium) | 1 | 2.4% |
 
 ## CONSIDER Candidates
 
 | # | Symbol | Name | NAV | LTP | Discount | Maturity | Liquidity | Streak | NAV Δ | Score | Trend | Risk |
 |---|--------|------|-----|-----|----------|----------|-----------|--------|-------|-------|-------|------|
-| 1 | PSF | Prabhu Select Fund | 14.35 | 12.35 | -13.94% | 2.1y | medium | 5d | 12.55% | 72.0 | → stable | — |
-| 2 | SLCF | Sanima Large Cap Fund | 10.65 | 9.90 | -7.04% | 1.8y | high | 21d | 0.47% | 62.8 | ↑ narrowing | — |
-| 3 | RMF1 | RBB Mutual Fund 1 | 10.64 | 10.11 | -4.98% | 2.2y | high | 13d | 0.76% | 58.6 | ↑ narrowing | high_vol |
-| 4 | SFMF | Sunrise First Mutual Fund | 11.30 | 10.40 | -7.96% | 3.5y | medium | 3d | -2.04% | 49.2 | → stable | — |
-| 5 | NICBF | NIC ASIA Balanced Fund | 10.47 | 9.95 | -4.97% | 3.3y | medium | 1d | 4.39% | 48.9 | ↑ narrowing | high_vol |
+| 1 | PSF | Prabhu Select Fund | 14.35 | 12.35 | -13.94% | 2.1y | medium | 5d | 12.55% | 72.2 | → stable | — |
+| 2 | SLCF | Sanima Large Cap Fund | 10.65 | 9.90 | -7.04% | 1.8y | high | 21d | 0.47% | 62.7 | ↑ narrowing | — |
+| 3 | RMF1 | RBB Mutual Fund 1 | 10.64 | 10.11 | -4.98% | 2.2y | high | 13d | 0.76% | 58.7 | ↑ narrowing | high_vol |
+| 4 | NICBF | NIC ASIA Balanced Fund | 10.47 | 9.95 | -4.97% | 3.3y | medium | 1d | 4.39% | 48.8 | ↑ narrowing | high_vol |
+| 5 | SFMF | Sunrise First Mutual Fund | 11.30 | 10.40 | -7.96% | 3.5y | medium | 3d | -2.04% | 48.7 | → stable | — |
 
 ## IGNORE Summary
 
-*35 funds are flagged IGNORE. Top reasons:*
+*36 funds are flagged IGNORE. Top reasons:*
 
 | Gate Failed | Count |
 |-------------|-------|
-| maturity | 28 |
+| maturity | 29 |
 | liquidity | 10 |
 | valuation | 4 |
 
@@ -65,6 +65,7 @@
 | RSY | -12.14% | maturity:9.0y |
 | MNMF1 | -11.30% | maturity:8.6y |
 | H8020 | -11.24% | liquidity:low; maturity:7.4y |
+| GBIMESY2 | -11.09% | maturity:9.2y |
 | NICGF2 | -10.78% | maturity:4.5y |
 | GSY | -10.74% | maturity:8.7y |
 | MBLEF | -10.67% | maturity:10.9y |
@@ -94,7 +95,7 @@
 
 - Symbols checked: 43
 - Symbols with issues: 24
-- NAV data age: median 23 days, max 344 days
+- NAV data age: median 24 days, max 345 days
 
 ## Methodology
 

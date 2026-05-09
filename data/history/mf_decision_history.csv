@@ -2212,6 +2212,7 @@ date,symbol,discount_pct,days_to_maturity,liquidity_bucket,decision_flag
 2026-05-07,SLCF,-9.67,657,medium,CONSIDER
 2026-05-08,C30MF,-8.46,2563,low,IGNORE
 2026-05-08,CMF2,-4.94,61,low,IGNORE
+2026-05-08,GBIMESY2,-11.09,3358,medium,IGNORE
 2026-05-08,GIBF1,-12.55,2273,medium,IGNORE
 2026-05-08,GSY,-10.74,3161,medium,IGNORE
 2026-05-08,H8020,-11.24,2703,low,IGNORE
