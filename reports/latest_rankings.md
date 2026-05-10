@@ -1,6 +1,6 @@
 # Nepal MF Quant — Full Analysis Report
 
-*Generated: 2026-05-09 11:13*
+*Generated: 2026-05-10 11:15*
 
 ## Market Overview
 
@@ -15,7 +15,7 @@
 | CONSIDER | 5 |
 | IGNORE | 36 |
 
-> ⚠️ **NAV Staleness Warning**: 11 fund(s) have NAV data older than 45 days. Discount calculations may be less reliable.
+> ⚠️ **NAV Staleness Warning**: 10 fund(s) have NAV data older than 45 days. Discount calculations may be less reliable.
 
 ## Discount Distribution
 
@@ -31,10 +31,10 @@
 
 | # | Symbol | Name | NAV | LTP | Discount | Maturity | Liquidity | Streak | NAV Δ | Score | Trend | Risk |
 |---|--------|------|-----|-----|----------|----------|-----------|--------|-------|-------|-------|------|
-| 1 | PSF | Prabhu Select Fund | 14.35 | 12.35 | -13.94% | 2.1y | medium | 5d | 12.55% | 72.2 | → stable | — |
+| 1 | PSF | Prabhu Select Fund | 14.35 | 12.35 | -13.94% | 2.1y | medium | 5d | 12.55% | 71.5 | → stable | — |
 | 2 | SLCF | Sanima Large Cap Fund | 10.65 | 9.90 | -7.04% | 1.8y | high | 21d | 0.47% | 62.7 | ↑ narrowing | — |
 | 3 | RMF1 | RBB Mutual Fund 1 | 10.64 | 10.11 | -4.98% | 2.2y | high | 13d | 0.76% | 58.7 | ↑ narrowing | high_vol |
-| 4 | NICBF | NIC ASIA Balanced Fund | 10.47 | 9.95 | -4.97% | 3.3y | medium | 1d | 4.39% | 48.8 | ↑ narrowing | high_vol |
+| 4 | NICBF | NIC ASIA Balanced Fund | 10.47 | 9.95 | -4.97% | 3.3y | medium | 1d | 4.39% | 49.0 | ↑ narrowing | high_vol |
 | 5 | SFMF | Sunrise First Mutual Fund | 11.30 | 10.40 | -7.96% | 3.5y | medium | 3d | -2.04% | 48.7 | → stable | — |
 
 ## IGNORE Summary
@@ -58,8 +58,8 @@
 | LVF2 | -16.65% | liquidity:low; maturity:7.3y |
 | SIGS3 | -15.15% | maturity:7.0y |
 | LUK | -14.24% | maturity:4.3y |
+| KSY | -14.21% | liquidity:low; maturity:7.9y |
 | SBCF | -13.58% | maturity:4.9y |
-| KSY | -13.49% | liquidity:low; maturity:7.9y |
 | GIBF1 | -12.55% | maturity:6.2y |
 | SFEF | -12.51% | maturity:5.8y |
 | RSY | -12.14% | maturity:9.0y |
@@ -95,7 +95,7 @@
 
 - Symbols checked: 43
 - Symbols with issues: 24
-- NAV data age: median 24 days, max 345 days
+- NAV data age: median 25 days, max 346 days
 
 ## Methodology
 
