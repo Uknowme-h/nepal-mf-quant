@@ -147,13 +147,13 @@ MIT
 
 | | |
 |---|---|
-| **Date** | 2026-05-14 |
+| **Date** | 2026-05-15 |
 | **Funds Tracked** | 41 |
-| **Median Discount** | -9.41% |
+| **Median Discount** | -9.09% |
 | **At Discount** | 41 (100%) |
-| **Deep Discount (≤-8%)** | 25 |
-| **CONSIDER** | 5 |
-| **IGNORE** | 36 |
+| **Deep Discount (≤-8%)** | 26 |
+| **CONSIDER** | 6 |
+| **IGNORE** | 35 |
 
 > ⚠️ 10 fund(s) have NAV data older than 45 days.
 
@@ -162,26 +162,27 @@ MIT
 | Range | Distribution |
 |-------|-------------|
 |         < -10% | █████████████████ 17 |
-|    -10% to -6% | ██████████████████ 18 |
-|     -6% to -4% | ██ 2 |
-|      -4% to 0% | ████ 4 |
+|    -10% to -6% | █████████████████ 17 |
+|     -6% to -4% | █████ 5 |
+|      -4% to 0% | ██ 2 |
 |           ≥ 0% |  0 |
 
 ### Active CONSIDER Candidates
 
 | # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak | NAV Δ | Score | Trend |
 |---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|-------|
-| 1 | **NICFC** | NIC Asia Flexi Cap F | -11.22% | 10.52 | 9.34 | 3.1y | medium | 4d | 4.26% | 65.6 | ↑ |
-| 2 | **SEF** | Siddhartha Equity Fu | -9.59% | 10.95 | 9.90 | 1.5y | medium | 4d | 3.79% | 54.4 | → |
-| 3 | **RMF1** | RBB Mutual Fund 1 | -6.02% | 10.64 | 10.00 | 2.2y | high | 17d | 0.76% | 53.9 | ↑ |
-| 4 | **SFMF** | Sunrise First Mutual | -8.32% | 11.30 | 10.36 | 3.5y | medium | 1d | -2.04% | 48.1 | → |
-| 5 | **NICSF** | NIC Asia Select-30 | -6.47% | 9.89 | 9.25 | 2.1y | high | 2d | -1.49% | 38.0 | ↓ |
+| 1 | **PSF** | Prabhu Select Fund | -16.86% | 14.35 | 11.93 | 2.1y | high | 1d | 12.55% | 70.1 | ↓ |
+| 2 | **SEF** | Siddhartha Equity Fu | -9.13% | 10.95 | 9.95 | 1.5y | medium | 5d | 3.79% | 60.4 | → |
+| 3 | **SLCF** | Sanima Large Cap Fun | -5.26% | 10.65 | 10.09 | 1.8y | medium | 1d | 0.47% | 54.9 | ↑ |
+| 4 | **RMF1** | RBB Mutual Fund 1 | -7.71% | 10.64 | 9.82 | 2.2y | high | 18d | 0.76% | 43.7 | ↓ |
+| 5 | **NBF2** | Nabil Balanced Fund  | -4.49% | 10.47 | 10.00 | 3.0y | medium | 1d | 0.48% | 40.5 | ↓ |
+| 6 | **NICSF** | NIC Asia Select-30 | -7.48% | 9.89 | 9.15 | 2.1y | high | 3d | -1.49% | 39.8 | ↓ |
 
 ### Top Picks by Composite Score
 
-- **NICFC** (NIC Asia Flexi Cap Fund): -11.22% discount, score 65.6
-- **SEF** (Siddhartha Equity Fund): -9.59% discount, score 54.4
-- **RMF1** (RBB Mutual Fund 1): -6.02% discount, score 53.9
+- **PSF** (Prabhu Select Fund): -16.86% discount, score 70.1
+- **SEF** (Siddhartha Equity Fund): -9.13% discount, score 60.4
+- **SLCF** (Sanima Large Cap Fund): -5.26% discount, score 54.9
 
 ### Interpretation
 
@@ -189,9 +190,9 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 
 ### Data Status
 
-- Latest price data: 2026-05-14
-- NAV data age: median 29 days
-- History depth: 59 trading day(s)
+- Latest price data: 2026-05-15
+- NAV data age: median 30 days
+- History depth: 60 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)
 
