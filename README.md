@@ -147,13 +147,13 @@ MIT
 
 | | |
 |---|---|
-| **Date** | 2026-06-12 |
+| **Date** | 2026-06-15 |
 | **Funds Tracked** | 41 |
-| **Median Discount** | -7.81% |
+| **Median Discount** | -7.40% |
 | **At Discount** | 38 (93%) |
 | **Deep Discount (≤-8%)** | 19 |
-| **CONSIDER** | 6 |
-| **IGNORE** | 35 |
+| **CONSIDER** | 4 |
+| **IGNORE** | 37 |
 
 > ⚠️ 10 fund(s) have NAV data older than 45 days.
 
@@ -161,8 +161,8 @@ MIT
 
 | Range | Distribution |
 |-------|-------------|
-|         < -10% | ██████████ 10 |
-|    -10% to -6% | ███████████████ 15 |
+|         < -10% | █████████ 9 |
+|    -10% to -6% | ████████████████ 16 |
 |     -6% to -4% | ███████ 7 |
 |      -4% to 0% | ██████ 6 |
 |           ≥ 0% | ███ 3 |
@@ -171,18 +171,16 @@ MIT
 
 | # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak | NAV Δ | Score | Trend |
 |---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|-------|
-| 1 | **RMF1** | RBB Mutual Fund 1 | -5.86% | 10.41 | 9.80 | 2.1y | high | 9d | -2.16% | 61.1 | ↑ |
-| 2 | **SEF** | Siddhartha Equity Fu | -4.41% | 10.65 | 10.18 | 1.4y | high | 23d | -2.74% | 60.9 | ↑ |
-| 3 | **SFMF** | Sunrise First Mutual | -4.34% | 11.30 | 10.81 | 3.4y | medium | 3d | -2.04% | 60.4 | ↑ |
-| 4 | **PSF** | Prabhu Select Fund | -10.52% | 13.69 | 12.25 | 2.0y | high | 8d | -4.60% | 58.4 | ↓ |
-| 5 | **NICFC** | NIC Asia Flexi Cap F | -10.88% | 10.39 | 9.26 | 3.0y | medium | 4d | -1.24% | 57.9 | ↓ |
-| 6 | **NBF2** | Nabil Balanced Fund  | -5.06% | 10.47 | 9.94 | 3.0y | medium | 2d | 0.48% | 44.0 | ↓ |
+| 1 | **NICFC** | NIC Asia Flexi Cap F | -9.53% | 10.39 | 9.40 | 3.0y | medium | 5d | -1.24% | 68.9 | ↑ |
+| 2 | **PSF** | Prabhu Select Fund | -10.15% | 13.69 | 12.30 | 2.0y | high | 9d | -4.60% | 66.2 | → |
+| 3 | **SEF** | Siddhartha Equity Fu | -4.32% | 10.65 | 10.19 | 1.4y | high | 24d | -2.74% | 60.4 | ↑ |
+| 4 | **NBF2** | Nabil Balanced Fund  | -7.16% | 10.47 | 9.72 | 3.0y | medium | 3d | 0.48% | 48.7 | ↓ |
 
 ### Top Picks by Composite Score
 
-- **RMF1** (RBB Mutual Fund 1): -5.86% discount, score 61.1
-- **SEF** (Siddhartha Equity Fund): -4.41% discount, score 60.9
-- **SFMF** (Sunrise First Mutual Fund): -4.34% discount, score 60.4
+- **NICFC** (NIC Asia Flexi Cap Fund): -9.53% discount, score 68.9
+- **PSF** (Prabhu Select Fund): -10.15% discount, score 66.2
+- **SEF** (Siddhartha Equity Fund): -4.32% discount, score 60.4
 
 ### Interpretation
 
@@ -190,9 +188,9 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 
 ### Data Status
 
-- Latest price data: 2026-06-12
-- NAV data age: median 30 days
-- History depth: 78 trading day(s)
+- Latest price data: 2026-06-15
+- NAV data age: median 31 days
+- History depth: 79 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)
 
