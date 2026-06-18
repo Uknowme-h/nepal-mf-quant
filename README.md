@@ -147,13 +147,13 @@ MIT
 
 | | |
 |---|---|
-| **Date** | 2026-06-17 |
+| **Date** | 2026-06-18 |
 | **Funds Tracked** | 41 |
-| **Median Discount** | -7.26% |
+| **Median Discount** | -6.62% |
 | **At Discount** | 40 (98%) |
-| **Deep Discount (≤-8%)** | 16 |
-| **CONSIDER** | 5 |
-| **IGNORE** | 36 |
+| **Deep Discount (≤-8%)** | 15 |
+| **CONSIDER** | 2 |
+| **IGNORE** | 39 |
 
 > ⚠️ 10 fund(s) have NAV data older than 45 days.
 
@@ -161,27 +161,23 @@ MIT
 
 | Range | Distribution |
 |-------|-------------|
-|         < -10% | ███████ 7 |
-|    -10% to -6% | █████████████████ 17 |
+|         < -10% | ████████ 8 |
+|    -10% to -6% | █████████████ 13 |
 |     -6% to -4% | ████████ 8 |
-|      -4% to 0% | ████████ 8 |
+|      -4% to 0% | ███████████ 11 |
 |           ≥ 0% | █ 1 |
 
 ### Active CONSIDER Candidates
 
 | # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak | NAV Δ | Score | Trend |
 |---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|-------|
-| 1 | **NICBF** | NIC ASIA Balanced Fu | -9.34% | 10.38 | 9.41 | 3.2y | high | 1d | -0.86% | 72.3 | ↑ |
-| 2 | **PSF** | Prabhu Select Fund | -10.96% | 13.69 | 12.19 | 2.0y | medium | 11d | -4.60% | 69.2 | ↑ |
-| 3 | **NICFC** | NIC Asia Flexi Cap F | -9.05% | 10.39 | 9.45 | 3.0y | medium | 7d | -1.24% | 68.5 | ↑ |
-| 4 | **NBF2** | Nabil Balanced Fund  | -5.92% | 10.47 | 9.85 | 3.0y | medium | 1d | 0.48% | 56.0 | → |
-| 5 | **RMF1** | RBB Mutual Fund 1 | -5.76% | 10.41 | 9.81 | 2.1y | medium | 1d | -2.16% | 42.3 | → |
+| 1 | **NICFC** | NIC Asia Flexi Cap F | -9.62% | 10.39 | 9.39 | 3.0y | medium | 8d | -1.24% | 65.5 | ↑ |
+| 2 | **PSF** | Prabhu Select Fund | -11.32% | 13.69 | 12.14 | 2.0y | medium | 12d | -4.60% | 59.9 | → |
 
 ### Top Picks by Composite Score
 
-- **NICBF** (NIC ASIA Balanced Fund): -9.34% discount, score 72.3
-- **PSF** (Prabhu Select Fund): -10.96% discount, score 69.2
-- **NICFC** (NIC Asia Flexi Cap Fund): -9.05% discount, score 68.5
+- **NICFC** (NIC Asia Flexi Cap Fund): -9.62% discount, score 65.5
+- **PSF** (Prabhu Select Fund): -11.32% discount, score 59.9
 
 ### Interpretation
 
@@ -189,9 +185,9 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 
 ### Data Status
 
-- Latest price data: 2026-06-17
-- NAV data age: median 33 days
-- History depth: 81 trading day(s)
+- Latest price data: 2026-06-18
+- NAV data age: median 34 days
+- History depth: 82 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)
 
