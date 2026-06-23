@@ -147,13 +147,13 @@ MIT
 
 | | |
 |---|---|
-| **Date** | 2026-06-22 |
+| **Date** | 2026-06-23 |
 | **Funds Tracked** | 41 |
-| **Median Discount** | -7.71% |
-| **At Discount** | 41 (100%) |
-| **Deep Discount (≤-8%)** | 19 |
-| **CONSIDER** | 4 |
-| **IGNORE** | 37 |
+| **Median Discount** | -7.21% |
+| **At Discount** | 40 (98%) |
+| **Deep Discount (≤-8%)** | 15 |
+| **CONSIDER** | 2 |
+| **IGNORE** | 39 |
 
 > ⚠️ 10 fund(s) have NAV data older than 45 days.
 
@@ -161,26 +161,23 @@ MIT
 
 | Range | Distribution |
 |-------|-------------|
-|         < -10% | █████████████ 13 |
-|    -10% to -6% | ███████████ 11 |
-|     -6% to -4% | ███████ 7 |
-|      -4% to 0% | ██████████ 10 |
-|           ≥ 0% |  0 |
+|         < -10% | ████████████ 12 |
+|    -10% to -6% | █████████████ 13 |
+|     -6% to -4% | ██████ 6 |
+|      -4% to 0% | █████████ 9 |
+|           ≥ 0% | █ 1 |
 
 ### Active CONSIDER Candidates
 
 | # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak | NAV Δ | Score | Trend |
 |---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|-------|
-| 1 | **NICBF** | NIC ASIA Balanced Fu | -11.56% | 10.38 | 9.18 | 3.2y | medium | 1d | -0.86% | 64.9 | → |
-| 2 | **NICFC** | NIC Asia Flexi Cap F | -10.20% | 10.39 | 9.33 | 3.0y | medium | 10d | -1.24% | 61.2 | ↓ |
-| 3 | **PSF** | Prabhu Select Fund | -12.42% | 13.69 | 11.99 | 2.0y | medium | 14d | -4.60% | 55.7 | ↓ |
-| 4 | **SIGS2** | Siddhartha Investmen | -6.50% | 11.23 | 10.50 | 3.2y | medium | 1d | -2.60% | 43.9 | ↓ |
+| 1 | **PSF** | Prabhu Select Fund | -11.25% | 13.69 | 12.15 | 2.0y | medium | 15d | -4.60% | 60.4 | ↓ |
+| 2 | **SIGS2** | Siddhartha Investmen | -7.39% | 11.23 | 10.40 | 3.2y | medium | 2d | -2.60% | 49.6 | ↓ |
 
 ### Top Picks by Composite Score
 
-- **NICBF** (NIC ASIA Balanced Fund): -11.56% discount, score 64.9
-- **NICFC** (NIC Asia Flexi Cap Fund): -10.20% discount, score 61.2
-- **PSF** (Prabhu Select Fund): -12.42% discount, score 55.7
+- **PSF** (Prabhu Select Fund): -11.25% discount, score 60.4
+- **SIGS2** (Siddhartha Investment Growth Scheme-2): -7.39% discount, score 49.6
 
 ### Interpretation
 
@@ -188,9 +185,9 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 
 ### Data Status
 
-- Latest price data: 2026-06-22
-- NAV data age: median 38 days
-- History depth: 84 trading day(s)
+- Latest price data: 2026-06-23
+- NAV data age: median 39 days
+- History depth: 85 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)
 
