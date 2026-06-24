@@ -147,13 +147,13 @@ MIT
 
 | | |
 |---|---|
-| **Date** | 2026-06-23 |
+| **Date** | 2026-06-24 |
 | **Funds Tracked** | 41 |
-| **Median Discount** | -7.21% |
+| **Median Discount** | -7.92% |
 | **At Discount** | 40 (98%) |
-| **Deep Discount (≤-8%)** | 15 |
-| **CONSIDER** | 2 |
-| **IGNORE** | 39 |
+| **Deep Discount (≤-8%)** | 20 |
+| **CONSIDER** | 3 |
+| **IGNORE** | 38 |
 
 > ⚠️ 10 fund(s) have NAV data older than 45 days.
 
@@ -161,9 +161,9 @@ MIT
 
 | Range | Distribution |
 |-------|-------------|
-|         < -10% | ████████████ 12 |
+|         < -10% | ██████████████ 14 |
 |    -10% to -6% | █████████████ 13 |
-|     -6% to -4% | ██████ 6 |
+|     -6% to -4% | ████ 4 |
 |      -4% to 0% | █████████ 9 |
 |           ≥ 0% | █ 1 |
 
@@ -171,13 +171,15 @@ MIT
 
 | # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak | NAV Δ | Score | Trend |
 |---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|-------|
-| 1 | **PSF** | Prabhu Select Fund | -11.25% | 13.69 | 12.15 | 2.0y | medium | 15d | -4.60% | 60.4 | ↓ |
-| 2 | **SIGS2** | Siddhartha Investmen | -7.39% | 11.23 | 10.40 | 3.2y | medium | 2d | -2.60% | 49.6 | ↓ |
+| 1 | **PSF** | Prabhu Select Fund | -13.73% | 13.69 | 11.81 | 2.0y | high | 16d | -4.60% | 62.6 | ↓ |
+| 2 | **NICFC** | NIC Asia Flexi Cap F | -10.78% | 10.39 | 9.27 | 3.0y | medium | 1d | -1.24% | 57.1 | ↓ |
+| 3 | **SIGS2** | Siddhartha Investmen | -8.99% | 11.23 | 10.22 | 3.2y | medium | 3d | -2.60% | 47.4 | ↓ |
 
 ### Top Picks by Composite Score
 
-- **PSF** (Prabhu Select Fund): -11.25% discount, score 60.4
-- **SIGS2** (Siddhartha Investment Growth Scheme-2): -7.39% discount, score 49.6
+- **PSF** (Prabhu Select Fund): -13.73% discount, score 62.6
+- **NICFC** (NIC Asia Flexi Cap Fund): -10.78% discount, score 57.1
+- **SIGS2** (Siddhartha Investment Growth Scheme-2): -8.99% discount, score 47.4
 
 ### Interpretation
 
@@ -185,9 +187,9 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 
 ### Data Status
 
-- Latest price data: 2026-06-23
-- NAV data age: median 39 days
-- History depth: 85 trading day(s)
+- Latest price data: 2026-06-24
+- NAV data age: median 40 days
+- History depth: 86 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)
 
