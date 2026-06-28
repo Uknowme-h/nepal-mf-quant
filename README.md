@@ -161,8 +161,8 @@ MIT
 
 | Range | Distribution |
 |-------|-------------|
-|         < -10% | █████████████ 13 |
-|    -10% to -6% | █████████████ 13 |
+|         < -10% | ██████████████ 14 |
+|    -10% to -6% | ████████████ 12 |
 |     -6% to -4% | ████ 4 |
 |      -4% to 0% | ██████████ 10 |
 |           ≥ 0% | █ 1 |
@@ -172,14 +172,14 @@ MIT
 | # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak | NAV Δ | Score | Trend |
 |---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|-------|
 | 1 | **PSF** | Prabhu Select Fund | -14.17% | 13.69 | 11.75 | 2.0y | medium | 18d | -4.60% | 60.0 | ↓ |
-| 2 | **SIGS2** | Siddhartha Investmen | -8.73% | 11.23 | 10.25 | 3.2y | medium | 5d | -2.60% | 48.9 | ↓ |
-| 3 | **SFMF** | Sunrise First Mutual | -5.58% | 11.30 | 10.67 | 3.4y | medium | 1d | -2.04% | 48.0 | ↓ |
+| 2 | **SIGS2** | Siddhartha Investmen | -8.73% | 11.23 | 10.25 | 3.2y | medium | 5d | -2.60% | 48.7 | ↓ |
+| 3 | **SFMF** | Sunrise First Mutual | -5.58% | 11.30 | 10.67 | 3.4y | medium | 1d | -2.04% | 47.4 | ↓ |
 
 ### Top Picks by Composite Score
 
 - **PSF** (Prabhu Select Fund): -14.17% discount, score 60.0
-- **SIGS2** (Siddhartha Investment Growth Scheme-2): -8.73% discount, score 48.9
-- **SFMF** (Sunrise First Mutual Fund): -5.58% discount, score 48.0
+- **SIGS2** (Siddhartha Investment Growth Scheme-2): -8.73% discount, score 48.7
+- **SFMF** (Sunrise First Mutual Fund): -5.58% discount, score 47.4
 
 ### Interpretation
 
@@ -188,7 +188,7 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 ### Data Status
 
 - Latest price data: 2026-06-26
-- NAV data age: median 43 days
+- NAV data age: median 44 days
 - History depth: 88 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)

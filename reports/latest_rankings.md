@@ -1,6 +1,6 @@
 # Nepal MF Quant — Full Analysis Report
 
-*Generated: 2026-06-27 11:47*
+*Generated: 2026-06-28 12:00*
 
 ## Market Overview
 
@@ -21,8 +21,8 @@
 
 | Discount Range | Count | % of Universe |
 |---------------|-------|---------------|
-| < -10% | 13 | 31.7% |
-| -10% to -6% | 13 | 31.7% |
+| < -10% | 14 | 34.1% |
+| -10% to -6% | 12 | 29.3% |
 | -6% to -4% | 4 | 9.8% |
 | -4% to 0% | 10 | 24.4% |
 | ≥ 0% (premium) | 1 | 2.4% |
@@ -32,8 +32,8 @@
 | # | Symbol | Name | NAV | LTP | Discount | Maturity | Liquidity | Streak | NAV Δ | Score | Trend | Risk |
 |---|--------|------|-----|-----|----------|----------|-----------|--------|-------|-------|-------|------|
 | 1 | PSF | Prabhu Select Fund | 13.69 | 11.75 | -14.17% | 2.0y | medium | 18d | -4.60% | 60.0 | ↓ widening | — |
-| 2 | SIGS2 | Siddhartha Investment Gro | 11.23 | 10.25 | -8.73% | 3.2y | medium | 5d | -2.60% | 48.9 | ↓ widening | — |
-| 3 | SFMF | Sunrise First Mutual Fund | 11.30 | 10.67 | -5.58% | 3.4y | medium | 1d | -2.04% | 48.0 | ↓ widening | — |
+| 2 | SIGS2 | Siddhartha Investment Gro | 11.23 | 10.25 | -8.73% | 3.2y | medium | 5d | -2.60% | 48.7 | ↓ widening | — |
+| 3 | SFMF | Sunrise First Mutual Fund | 11.30 | 10.67 | -5.58% | 3.4y | medium | 1d | -2.04% | 47.4 | ↓ widening | — |
 
 ## IGNORE Summary
 
@@ -60,26 +60,26 @@
 | LUK | -12.09% | maturity:4.1y |
 | NICFC | -10.88% | liquidity:low |
 | KEF | -10.82% | maturity:4.7y |
+| NSIF2 | -10.56% | maturity:6.2y |
 | RSY | -10.51% | maturity:8.8y |
 | NICBF | -10.40% | liquidity:low |
-| NSIF2 | -9.96% | maturity:6.2y |
 | GBIMESY2 | -9.58% | liquidity:low; maturity:9.1y |
 | MBLEF | -9.36% | maturity:10.8y |
 | RBBF40 | -9.29% | maturity:11.4y |
-| NMBHF2 | -8.99% | maturity:8.7y |
 | H8020 | -8.95% | maturity:7.3y |
+| NMBHF2 | -8.90% | maturity:8.7y |
 | SIGS3 | -8.83% | maturity:6.8y |
 | NIBSF2 | -8.81% | maturity:4.9y |
-| KSY | -8.44% | maturity:7.7y |
+| KSY | -8.70% | maturity:7.7y |
 | C30MF | -7.06% | liquidity:low; maturity:6.9y |
 | SAGF | -7.06% | liquidity:low; maturity:7.4y |
 | MNMF1 | -6.64% | maturity:8.5y |
 | RMF2 | -5.62% | liquidity:low; maturity:6.9y |
 | NIBLSTF | -4.52% | maturity:9.6y |
 | GSY | -4.49% | maturity:8.5y |
+| NMB50 | -3.77% | valuation:small_discount; liquidity:low |
 | CMF2 | -3.62% | valuation:small_discount |
 | RMF1 | -3.46% | valuation:small_discount |
-| NMB50 | -3.23% | valuation:small_discount; liquidity:low |
 | NBF2 | -3.06% | valuation:small_discount |
 | SEF | -2.82% | valuation:small_discount |
 | NBF3 | -2.81% | valuation:small_discount; maturity:5.2y |
@@ -95,7 +95,7 @@
 
 - Symbols checked: 43
 - Symbols with issues: 23
-- NAV data age: median 43 days, max 394 days
+- NAV data age: median 44 days, max 395 days
 
 ## Methodology
 
