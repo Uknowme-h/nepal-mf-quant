@@ -147,39 +147,41 @@ MIT
 
 | | |
 |---|---|
-| **Date** | 2026-06-26 |
+| **Date** | 2026-06-29 |
 | **Funds Tracked** | 41 |
-| **Median Discount** | -8.81% |
+| **Median Discount** | -8.43% |
 | **At Discount** | 40 (98%) |
-| **Deep Discount (≤-8%)** | 23 |
-| **CONSIDER** | 3 |
-| **IGNORE** | 38 |
+| **Deep Discount (≤-8%)** | 22 |
+| **CONSIDER** | 5 |
+| **IGNORE** | 36 |
 
-> ⚠️ 10 fund(s) have NAV data older than 45 days.
+> ⚠️ 13 fund(s) have NAV data older than 45 days.
 
 ### Discount Distribution
 
 | Range | Distribution |
 |-------|-------------|
-|         < -10% | ██████████████ 14 |
-|    -10% to -6% | ████████████ 12 |
+|         < -10% | ████████████████ 16 |
+|    -10% to -6% | █████████████ 13 |
 |     -6% to -4% | ████ 4 |
-|      -4% to 0% | ██████████ 10 |
+|      -4% to 0% | ███████ 7 |
 |           ≥ 0% | █ 1 |
 
 ### Active CONSIDER Candidates
 
 | # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak | NAV Δ | Score | Trend |
 |---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|-------|
-| 1 | **PSF** | Prabhu Select Fund | -14.17% | 13.69 | 11.75 | 2.0y | medium | 18d | -4.60% | 60.0 | ↓ |
-| 2 | **SIGS2** | Siddhartha Investmen | -8.73% | 11.23 | 10.25 | 3.2y | medium | 5d | -2.60% | 48.7 | ↓ |
-| 3 | **SFMF** | Sunrise First Mutual | -5.58% | 11.30 | 10.67 | 3.4y | medium | 1d | -2.04% | 47.4 | ↓ |
+| 1 | **PSF** | Prabhu Select Fund | -14.10% | 13.69 | 11.76 | 2.0y | high | 19d | -4.60% | 64.8 | ↓ |
+| 2 | **NICFC** | NIC Asia Flexi Cap F | -12.70% | 10.39 | 9.07 | 3.0y | medium | 1d | -1.24% | 58.0 | ↓ |
+| 3 | **SIGS2** | Siddhartha Investmen | -6.50% | 11.23 | 10.50 | 3.2y | medium | 6d | -2.60% | 51.0 | → |
+| 4 | **NMB50** | NMB 50 | -4.91% | 10.60 | 10.08 | 0.2y | medium | 1d | 0.57% | 50.2 | ↓ |
+| 5 | **RMF1** | RBB Mutual Fund 1 | -6.34% | 10.41 | 9.75 | 2.1y | high | 1d | -2.16% | 42.9 | ↓ |
 
 ### Top Picks by Composite Score
 
-- **PSF** (Prabhu Select Fund): -14.17% discount, score 60.0
-- **SIGS2** (Siddhartha Investment Growth Scheme-2): -8.73% discount, score 48.7
-- **SFMF** (Sunrise First Mutual Fund): -5.58% discount, score 47.4
+- **PSF** (Prabhu Select Fund): -14.10% discount, score 64.8
+- **NICFC** (NIC Asia Flexi Cap Fund): -12.70% discount, score 58.0
+- **SIGS2** (Siddhartha Investment Growth Scheme-2): -6.50% discount, score 51.0
 
 ### Interpretation
 
@@ -187,9 +189,9 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 
 ### Data Status
 
-- Latest price data: 2026-06-26
-- NAV data age: median 44 days
-- History depth: 88 trading day(s)
+- Latest price data: 2026-06-29
+- NAV data age: median 45 days
+- History depth: 89 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)
 
