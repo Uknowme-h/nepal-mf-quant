@@ -155,7 +155,7 @@ MIT
 | **CONSIDER** | 8 |
 | **IGNORE** | 33 |
 
-> ⚠️ 13 fund(s) have NAV data older than 45 days.
+> ⚠️ 12 fund(s) have NAV data older than 45 days.
 
 ### Discount Distribution
 
@@ -172,18 +172,18 @@ MIT
 | # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak | NAV Δ | Score | Trend |
 |---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|-------|
 | 1 | **PSF** | Prabhu Select Fund | -13.66% | 13.69 | 11.82 | 2.0y | medium | 23d | -4.60% | 65.5 | ↑ |
-| 2 | **NICFC** | NIC Asia Flexi Cap F | -9.53% | 10.39 | 9.40 | 3.0y | medium | 5d | -1.24% | 58.5 | ↑ |
+| 2 | **NICFC** | NIC Asia Flexi Cap F | -9.53% | 10.39 | 9.40 | 3.0y | medium | 5d | -1.24% | 58.3 | ↑ |
 | 3 | **SFMF** | Sunrise First Mutual | -4.51% | 11.30 | 10.79 | 3.3y | high | 1d | -2.04% | 54.1 | ↑ |
 | 4 | **NBF2** | Nabil Balanced Fund  | -5.73% | 10.47 | 9.87 | 2.9y | high | 1d | 0.48% | 52.7 | ↓ |
-| 5 | **NICBF** | NIC ASIA Balanced Fu | -10.40% | 10.38 | 9.30 | 3.1y | medium | 1d | -0.86% | 49.6 | → |
+| 5 | **NICBF** | NIC ASIA Balanced Fu | -10.40% | 10.38 | 9.30 | 3.1y | medium | 1d | -0.86% | 49.4 | → |
 | 6 | **NICSF** | NIC Asia Select-30 | -5.71% | 9.80 | 9.24 | 2.0y | medium | 1d | 1.45% | 47.4 | ↓ |
-| 7 | **RMF1** | RBB Mutual Fund 1 | -6.22% | 10.45 | 9.80 | 2.1y | medium | 1d | 0.38% | 39.6 | ↓ |
-| 8 | **SEF** | Siddhartha Equity Fu | -6.57% | 10.65 | 9.95 | 1.4y | medium | 2d | 0.00% | 38.9 | ↓ |
+| 7 | **RMF1** | RBB Mutual Fund 1 | -6.22% | 10.45 | 9.80 | 2.1y | medium | 1d | 0.38% | 39.4 | ↓ |
+| 8 | **SEF** | Siddhartha Equity Fu | -6.57% | 10.65 | 9.95 | 1.4y | medium | 2d | 0.00% | 38.7 | ↓ |
 
 ### Top Picks by Composite Score
 
 - **PSF** (Prabhu Select Fund): -13.66% discount, score 65.5
-- **NICFC** (NIC Asia Flexi Cap Fund): -9.53% discount, score 58.5
+- **NICFC** (NIC Asia Flexi Cap Fund): -9.53% discount, score 58.3
 - **SFMF** (Sunrise First Mutual Fund): -4.51% discount, score 54.1
 
 ### Interpretation
@@ -193,7 +193,7 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 ### Data Status
 
 - Latest price data: 2026-07-03
-- NAV data age: median 19 days
+- NAV data age: median 20 days
 - History depth: 93 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)

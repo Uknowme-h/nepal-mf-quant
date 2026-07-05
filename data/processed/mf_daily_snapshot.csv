@@ -3226,7 +3226,7 @@ date,symbol,nav,ltp,discount_pct,volume,trades,source
 2026-06-15,RMF1,10.45,9.86,-5.65,700,3,nepse_playwright
 2026-06-15,NICBF,10.38,9.15,-11.85,300,2,nepse_playwright
 2026-06-15,RSY,11.35,10.26,-9.6,7400,29,nepse_playwright
-2026-06-15,SAGF,10.77,10.2,-5.29,1400,10,nepse_playwright
+2026-06-15,SAGF,10.82,10.2,-5.73,1400,10,nepse_playwright
 2026-06-15,SEF,10.65,10.19,-4.32,26725,13,nepse_playwright
 2026-06-15,SFEF,11.43,10.11,-11.55,4500,7,nepse_playwright
 2026-06-15,SFMF,11.3,10.81,-4.34,0,0,nepse_playwright
@@ -3273,7 +3273,7 @@ date,symbol,nav,ltp,discount_pct,volume,trades,source
 2026-06-16,SFMF,11.3,10.9,-3.54,2000,1,nepse_playwright
 2026-06-16,NICFC,10.39,9.39,-9.62,15930,21,nepse_playwright
 2026-06-16,SEF,10.65,10.16,-4.6,36790,17,nepse_playwright
-2026-06-16,SAGF,10.77,10.17,-5.57,200,2,nepse_playwright
+2026-06-16,SAGF,10.82,10.17,-6.01,200,2,nepse_playwright
 2026-06-16,SFEF,11.43,10.06,-11.99,21250,12,nepse_playwright
 2026-06-17,KDBY,12.79,11.26,-11.96,101600,49,nepse_playwright
 2026-06-17,C30MF,10.81,10.0,-7.49,1300,4,nepse_playwright
@@ -3314,7 +3314,7 @@ date,symbol,nav,ltp,discount_pct,volume,trades,source
 2026-06-17,NICFC,10.39,9.45,-9.05,6870,27,nepse_playwright
 2026-06-17,SEF,10.65,10.41,-2.25,54400,14,nepse_playwright
 2026-06-17,SBCF,11.34,10.0,-11.82,18832,24,nepse_playwright
-2026-06-17,SAGF,10.77,10.1,-6.22,300,3,nepse_playwright
+2026-06-17,SAGF,10.82,10.1,-6.65,300,3,nepse_playwright
 2026-06-17,SFEF,11.43,10.08,-11.81,700,3,nepse_playwright
 2026-06-18,KEF,11.95,11.0,-7.95,22896,19,nepse_playwright
 2026-06-18,NIBSF2,9.93,9.1,-8.36,4800,9,nepse_playwright
@@ -3348,7 +3348,7 @@ date,symbol,nav,ltp,discount_pct,volume,trades,source
 2026-06-18,RBBF40,10.15,9.52,-6.21,2200,14,nepse_playwright
 2026-06-18,RMF2,11.06,10.3,-6.87,4700,6,nepse_playwright
 2026-06-18,RMF1,10.45,10.05,-3.83,5135,9,nepse_playwright
-2026-06-18,SAGF,10.77,10.2,-5.29,500,5,nepse_playwright
+2026-06-18,SAGF,10.82,10.2,-5.73,500,5,nepse_playwright
 2026-06-18,SEF,10.65,10.41,-2.25,49175,15,nepse_playwright
 2026-06-18,SIGS3,11.9,11.01,-7.48,10400,7,nepse_playwright
 2026-06-18,SIGS2,11.22,11.06,-1.43,1206,1,nepse_playwright
@@ -3390,7 +3390,7 @@ date,symbol,nav,ltp,discount_pct,volume,trades,source
 2026-06-19,SEF,10.65,10.3,-3.29,200,2,nepse_playwright
 2026-06-19,NICSF,9.8,9.23,-5.82,4150,11,nepse_playwright
 2026-06-19,SBCF,11.34,9.77,-13.84,11501,11,nepse_playwright
-2026-06-19,SAGF,10.77,10.0,-7.15,10675,9,nepse_playwright
+2026-06-19,SAGF,10.82,10.0,-7.58,10675,9,nepse_playwright
 2026-06-19,NICGF2,10.47,9.55,-8.79,15900,16,nepse_playwright
 2026-06-19,SLCF,10.36,10.1,-2.51,13920,12,nepse_playwright
 2026-06-19,SIGS3,11.9,10.51,-11.68,1001170,34,nepse_playwright
@@ -3429,7 +3429,7 @@ date,symbol,nav,ltp,discount_pct,volume,trades,source
 2026-06-22,RMF1,10.45,10.05,-3.83,16910,22,nepse_playwright
 2026-06-22,SEF,10.65,10.3,-3.29,23898,12,nepse_playwright
 2026-06-22,NMBHF2,10.56,9.61,-9.0,66330,33,nepse_playwright
-2026-06-22,SAGF,10.77,10.2,-5.29,6500,6,nepse_playwright
+2026-06-22,SAGF,10.82,10.2,-5.73,6500,6,nepse_playwright
 2026-06-22,SBCF,11.34,9.6,-15.34,13500,22,nepse_playwright
 2026-06-22,SFEF,11.43,10.08,-11.81,500,4,nepse_playwright
 2026-06-22,SFMF,11.3,10.7,-5.31,570,2,nepse_playwright
@@ -3472,7 +3472,7 @@ date,symbol,nav,ltp,discount_pct,volume,trades,source
 2026-06-23,RMF1,10.45,10.02,-4.11,12875,13,nepse_playwright
 2026-06-23,NICBF,10.38,9.16,-11.75,2400,3,nepse_playwright
 2026-06-23,RSY,11.35,10.15,-10.57,3560,25,nepse_playwright
-2026-06-23,SAGF,10.77,10.11,-6.13,5900,9,nepse_playwright
+2026-06-23,SAGF,10.82,10.11,-6.56,5900,9,nepse_playwright
 2026-06-23,SBCF,11.34,10.09,-11.02,6017,13,nepse_playwright
 2026-06-23,SFEF,11.43,10.0,-12.51,13020,9,nepse_playwright
 2026-06-23,SFMF,11.3,11.0,-2.65,3400,5,nepse_playwright
@@ -3519,7 +3519,7 @@ date,symbol,nav,ltp,discount_pct,volume,trades,source
 2026-06-24,SFMF,11.3,11.0,-2.65,0,0,nepse_playwright
 2026-06-24,NICFC,10.39,9.27,-10.78,1900,13,nepse_playwright
 2026-06-24,SEF,10.65,10.3,-3.29,3221,4,nepse_playwright
-2026-06-24,SAGF,10.77,10.01,-7.06,6200,12,nepse_playwright
+2026-06-24,SAGF,10.82,10.01,-7.49,6200,12,nepse_playwright
 2026-06-24,SFEF,11.43,10.1,-11.64,20800,6,nepse_playwright
 2026-06-25,KDBY,12.79,10.87,-15.01,22500,23,nepse_playwright
 2026-06-25,C30MF,10.81,10.0,-7.49,300,3,nepse_playwright
@@ -3560,7 +3560,7 @@ date,symbol,nav,ltp,discount_pct,volume,trades,source
 2026-06-25,SLCF,10.36,9.94,-4.05,1500,8,nepse_playwright
 2026-06-25,SEF,10.65,10.16,-4.6,3100,4,nepse_playwright
 2026-06-25,SBCF,11.34,9.7,-14.46,900,5,nepse_playwright
-2026-06-25,SAGF,10.77,10.08,-6.41,900,8,nepse_playwright
+2026-06-25,SAGF,10.82,10.08,-6.84,900,8,nepse_playwright
 2026-06-25,SFEF,11.43,10.01,-12.42,20000,6,nepse_playwright
 2026-06-26,KDBY,12.79,10.95,-14.39,4500,16,nepse_playwright
 2026-06-26,C30MF,10.81,10.0,-7.49,100,1,nepse_playwright
@@ -3595,7 +3595,7 @@ date,symbol,nav,ltp,discount_pct,volume,trades,source
 2026-06-26,RMF1,10.45,10.05,-3.83,10000,5,nepse_playwright
 2026-06-26,NICBF,10.38,9.3,-10.4,100,1,nepse_playwright
 2026-06-26,RSY,11.35,10.13,-10.75,2900,23,nepse_playwright
-2026-06-26,SAGF,10.77,10.01,-7.06,400,4,nepse_playwright
+2026-06-26,SAGF,10.82,10.01,-7.49,400,4,nepse_playwright
 2026-06-26,NICFC,10.39,9.26,-10.88,600,6,nepse_playwright
 2026-06-26,SEF,10.65,10.35,-2.82,2300,8,nepse_playwright
 2026-06-26,SFEF,11.43,10.0,-12.51,130300,14,nepse_playwright
@@ -3642,7 +3642,7 @@ date,symbol,nav,ltp,discount_pct,volume,trades,source
 2026-06-29,SFMF,11.3,10.5,-7.08,1000,1,nepse_playwright
 2026-06-29,NICFC,10.39,9.07,-12.7,3750,19,nepse_playwright
 2026-06-29,SEF,10.65,10.47,-1.69,225,2,nepse_playwright
-2026-06-29,SAGF,10.77,10.0,-7.15,12000,14,nepse_playwright
+2026-06-29,SAGF,10.82,10.0,-7.58,12000,14,nepse_playwright
 2026-06-29,SFEF,11.43,10.0,-12.51,259035,17,nepse_playwright
 2026-06-30,C30MF,10.81,9.96,-7.86,400,3,nepse_playwright
 2026-06-30,KDBY,12.79,10.79,-15.64,734450,31,nepse_playwright
@@ -3677,7 +3677,7 @@ date,symbol,nav,ltp,discount_pct,volume,trades,source
 2026-06-30,RMF1,10.45,9.8,-6.22,1487,6,nepse_playwright
 2026-06-30,NIBSF2,9.93,9.2,-7.35,7900,14,nepse_playwright
 2026-06-30,RSY,11.35,10.0,-11.89,2300,17,nepse_playwright
-2026-06-30,SAGF,10.77,10.07,-6.5,1270,8,nepse_playwright
+2026-06-30,SAGF,10.82,10.07,-6.93,1270,8,nepse_playwright
 2026-06-30,SEF,10.65,10.2,-4.23,3500,3,nepse_playwright
 2026-06-30,SFEF,11.43,9.9,-13.39,700,6,nepse_playwright
 2026-06-30,SFMF,11.3,10.8,-4.42,100,1,nepse_playwright
@@ -3718,7 +3718,7 @@ date,symbol,nav,ltp,discount_pct,volume,trades,source
 2026-07-01,RMF1,10.45,10.0,-4.31,2070,6,nepse_playwright
 2026-07-01,NICBF,10.38,9.03,-13.01,250,2,nepse_playwright
 2026-07-01,RSY,11.35,10.14,-10.66,1100,6,nepse_playwright
-2026-07-01,SAGF,10.77,10.2,-5.29,1950,9,nepse_playwright
+2026-07-01,SAGF,10.82,10.2,-5.73,1950,9,nepse_playwright
 2026-07-01,SEF,10.65,10.25,-3.76,46000,6,nepse_playwright
 2026-07-01,SFEF,11.43,10.19,-10.85,10595,9,nepse_playwright
 2026-07-01,SFMF,11.3,10.8,-4.42,0,0,nepse_playwright
@@ -3765,7 +3765,7 @@ date,symbol,nav,ltp,discount_pct,volume,trades,source
 2026-07-02,SFMF,11.3,10.8,-4.42,1100,2,nepse_playwright
 2026-07-02,NICFC,10.39,9.45,-9.05,4600,13,nepse_playwright
 2026-07-02,SEF,10.65,9.95,-6.57,22300,8,nepse_playwright
-2026-07-02,SAGF,10.77,10.49,-2.6,2200,8,nepse_playwright
+2026-07-02,SAGF,10.82,10.49,-3.05,2200,8,nepse_playwright
 2026-07-02,SFEF,11.43,10.02,-12.34,500,5,nepse_playwright
 2026-07-03,KDBY,12.79,11.07,-13.45,65627,28,nepse_playwright
 2026-07-03,CMF2,10.17,9.9,-2.65,0,0,nepse_playwright
@@ -3799,7 +3799,7 @@ date,symbol,nav,ltp,discount_pct,volume,trades,source
 2026-07-03,SIGS3,11.9,10.6,-10.92,800,6,nepse_playwright
 2026-07-03,NICFC,10.39,9.4,-9.53,1430,13,nepse_playwright
 2026-07-03,RSY,11.35,10.01,-11.81,400,4,nepse_playwright
-2026-07-03,SAGF,10.77,10.49,-2.6,0,0,nepse_playwright
+2026-07-03,SAGF,10.82,10.49,-3.05,0,0,nepse_playwright
 2026-07-03,SBCF,11.34,9.8,-13.58,9600,5,nepse_playwright
 2026-07-03,SEF,10.65,9.95,-6.57,1000,1,nepse_playwright
 2026-07-03,SFEF,11.43,10.02,-12.34,100,1,nepse_playwright
