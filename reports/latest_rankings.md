@@ -1,19 +1,19 @@
 # Nepal MF Quant — Full Analysis Report
 
-*Generated: 2026-07-05 11:49*
+*Generated: 2026-07-06 14:03*
 
 ## Market Overview
 
 | Metric | Value |
 |--------|-------|
-| Analysis Date | 2026-07-03 |
+| Analysis Date | 2026-07-06 |
 | Funds Tracked | 41 |
 | At Discount (price < NAV) | 41 |
 | At Premium (price ≥ NAV) | 0 |
-| Deep Discount (≤ -8%) | 20 |
-| Median Discount | -7.76% |
-| CONSIDER | 8 |
-| IGNORE | 33 |
+| Deep Discount (≤ -8%) | 23 |
+| Median Discount | -8.68% |
+| CONSIDER | 6 |
+| IGNORE | 35 |
 
 > ⚠️ **NAV Staleness Warning**: 12 fund(s) have NAV data older than 45 days. Discount calculations may be less reliable.
 
@@ -21,81 +21,81 @@
 
 | Discount Range | Count | % of Universe |
 |---------------|-------|---------------|
-| < -10% | 12 | 29.3% |
+| < -10% | 13 | 31.7% |
 | -10% to -6% | 15 | 36.6% |
 | -6% to -4% | 6 | 14.6% |
-| -4% to 0% | 8 | 19.5% |
+| -4% to 0% | 7 | 17.1% |
 | ≥ 0% (premium) | 0 | 0.0% |
 
 ## CONSIDER Candidates
 
 | # | Symbol | Name | NAV | LTP | Discount | Maturity | Liquidity | Streak | NAV Δ | Score | Trend | Risk |
 |---|--------|------|-----|-----|----------|----------|-----------|--------|-------|-------|-------|------|
-| 1 | PSF | Prabhu Select Fund | 13.69 | 11.82 | -13.66% | 2.0y | medium | 23d | -4.60% | 65.5 | ↑ narrowing | — |
-| 2 | NICFC | NIC Asia Flexi Cap Fund | 10.39 | 9.40 | -9.53% | 3.0y | medium | 5d | -1.24% | 58.3 | ↑ narrowing | — |
-| 3 | SFMF | Sunrise First Mutual Fund | 11.30 | 10.79 | -4.51% | 3.3y | high | 1d | -2.04% | 54.1 | ↑ narrowing | — |
-| 4 | NBF2 | Nabil Balanced Fund - 2 | 10.47 | 9.87 | -5.73% | 2.9y | high | 1d | 0.48% | 52.7 | ↓ widening | — |
-| 5 | NICBF | NIC ASIA Balanced Fund | 10.38 | 9.30 | -10.40% | 3.1y | medium | 1d | -0.86% | 49.4 | → stable | high_vol |
-| 6 | NICSF | NIC Asia Select-30 | 9.80 | 9.24 | -5.71% | 2.0y | medium | 1d | 1.45% | 47.4 | ↓ widening | — |
-| 7 | RMF1 | RBB Mutual Fund 1 | 10.45 | 9.80 | -6.22% | 2.1y | medium | 1d | 0.38% | 39.4 | ↓ widening | high_vol |
-| 8 | SEF | Siddhartha Equity Fund | 10.65 | 9.95 | -6.57% | 1.4y | medium | 2d | 0.00% | 38.7 | ↓ widening | — |
+| 1 | NICFC | NIC Asia Flexi Cap Fund | 10.39 | 9.39 | -9.62% | 3.0y | high | 6d | -1.24% | 69.3 | ↑ narrowing | — |
+| 2 | PSF | Prabhu Select Fund | 13.69 | 11.76 | -14.10% | 2.0y | high | 24d | -4.60% | 68.9 | → stable | — |
+| 3 | NICBF | NIC ASIA Balanced Fund | 10.38 | 9.09 | -12.43% | 3.1y | medium | 2d | -0.86% | 60.5 | → stable | high_vol |
+| 4 | RMF1 | RBB Mutual Fund 1 | 10.45 | 9.94 | -4.88% | 2.0y | medium | 2d | 0.38% | 53.9 | ↑ narrowing | high_vol |
+| 5 | NICSF | NIC Asia Select-30 | 9.80 | 9.35 | -4.59% | 2.0y | high | 2d | 1.45% | 53.8 | → stable | — |
+| 6 | SEF | Siddhartha Equity Fund | 10.65 | 10.00 | -6.10% | 1.3y | high | 3d | 0.00% | 44.3 | ↓ widening | — |
 
 ## IGNORE Summary
 
-*33 funds are flagged IGNORE. Top reasons:*
+*35 funds are flagged IGNORE. Top reasons:*
 
 | Gate Failed | Count |
 |-------------|-------|
 | maturity | 29 |
 | liquidity | 10 |
-| valuation | 8 |
+| valuation | 7 |
 
 <details>
 <summary>Full IGNORE list (click to expand)</summary>
 
 | Symbol | Discount | Reason |
 |--------|----------|--------|
-| PRSF | -15.03% | maturity:5.7y |
-| LUK | -14.15% | maturity:4.1y |
-| SBCF | -13.58% | maturity:4.7y |
-| KDBY | -13.45% | maturity:6.1y |
-| LVF2 | -12.36% | maturity:7.2y |
-| SFEF | -12.34% | liquidity:low; maturity:5.6y |
-| NICGF2 | -12.03% | maturity:4.4y |
-| RSY | -11.81% | liquidity:low; maturity:8.8y |
-| GIBF1 | -11.28% | liquidity:low; maturity:6.1y |
+| PRSF | -15.50% | maturity:5.7y |
+| KDBY | -15.17% | maturity:6.1y |
+| SBCF | -14.81% | maturity:4.7y |
+| LVF2 | -14.55% | liquidity:low; maturity:7.2y |
+| SFEF | -12.51% | liquidity:low; maturity:5.6y |
+| NIBLSTF | -12.24% | maturity:9.6y |
+| NICGF2 | -12.13% | maturity:4.4y |
+| RSY | -11.89% | maturity:8.8y |
 | SIGS3 | -10.92% | maturity:6.8y |
-| GBIMESY2 | -9.78% | maturity:9.1y |
-| KEF | -9.71% | maturity:4.7y |
-| RMF2 | -9.58% | liquidity:low; maturity:6.9y |
+| KEF | -10.88% | maturity:4.7y |
+| RBBF40 | -10.34% | maturity:11.4y |
+| GBIMESY2 | -9.98% | liquidity:low; maturity:9.0y |
+| LUK | -9.95% | maturity:4.1y |
 | NSIF2 | -9.56% | maturity:6.2y |
-| MBLEF | -9.26% | liquidity:low; maturity:10.7y |
-| RBBF40 | -8.87% | maturity:11.4y |
-| NIBSF2 | -8.36% | maturity:4.9y |
-| KSY | -7.76% | maturity:7.7y |
-| NMBHF2 | -7.39% | maturity:8.7y |
-| NIBLGF | -7.31% | liquidity:low; maturity:6.5y |
-| MNMF1 | -7.25% | maturity:8.5y |
-| GSY | -6.77% | maturity:8.5y |
-| C30MF | -5.83% | maturity:6.9y |
-| H8020 | -5.31% | liquidity:low; maturity:7.2y |
-| NIBLSTF | -5.10% | maturity:9.6y |
+| MBLEF | -9.26% | maturity:10.7y |
+| NIBSF2 | -9.16% | maturity:4.9y |
+| MNMF1 | -8.95% | maturity:8.5y |
+| RMF2 | -8.68% | maturity:6.9y |
+| KSY | -8.51% | liquidity:low; maturity:7.7y |
+| C30MF | -8.23% | liquidity:low; maturity:6.9y |
+| GIBF1 | -7.94% | liquidity:low; maturity:6.1y |
+| H8020 | -7.92% | liquidity:low; maturity:7.2y |
+| NMBHF2 | -7.20% | maturity:8.7y |
+| SIGS2 | -6.42% | liquidity:low |
+| GSY | -5.62% | maturity:8.5y |
+| SAGF | -4.90% | maturity:7.4y |
+| NIBLGF | -4.81% | maturity:6.5y |
+| SFMF | -4.51% | liquidity:low |
+| NMB50 | -3.87% | valuation:small_discount |
+| SLCF | -3.38% | valuation:small_discount |
+| MMF1 | -3.17% | valuation:small_discount; maturity:5.2y |
 | NBF3 | -3.10% | valuation:small_discount; maturity:5.2y |
-| SAGF | -3.05% | valuation:small_discount; liquidity:low; maturity:7.4y |
-| SLCF | -2.99% | valuation:small_discount |
 | CMF2 | -2.65% | valuation:small_discount; liquidity:low |
-| SIGS2 | -2.41% | valuation:small_discount |
-| HLICF | -1.79% | valuation:small_discount; maturity:9.2y |
-| NMB50 | -0.94% | valuation:small_discount; liquidity:low |
-| MMF1 | -0.31% | valuation:small_discount; maturity:5.2y |
+| NBF2 | -1.62% | valuation:small_discount |
+| HLICF | -0.67% | valuation:small_discount; maturity:9.2y |
 
 </details>
 
 ## Data Quality
 
 - Symbols checked: 43
-- Symbols with issues: 28
-- NAV data age: median 20 days, max 402 days
+- Symbols with issues: 23
+- NAV data age: median 21 days, max 403 days
 
 ## Methodology
 
