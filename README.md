@@ -149,13 +149,13 @@ MIT
 |---|---|
 | **Date** | 2026-07-17 |
 | **Funds Tracked** | 40 |
-| **Median Discount** | -9.03% |
+| **Median Discount** | -8.73% |
 | **At Discount** | 37 (92%) |
 | **Deep Discount (≤-8%)** | 21 |
 | **CONSIDER** | 6 |
 | **IGNORE** | 34 |
 
-> ⚠️ 12 fund(s) have NAV data older than 45 days.
+> ⚠️ 9 fund(s) have NAV data older than 45 days.
 
 ### Discount Distribution
 
@@ -173,16 +173,16 @@ MIT
 |---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|-------|
 | 1 | **PSF** | Prabhu Select Fund | -12.93% | 13.69 | 11.92 | 1.9y | high | 32d | -4.60% | 67.5 | ↑ |
 | 2 | **SFMF** | Sunrise First Mutual | -9.73% | 11.30 | 10.20 | 3.3y | medium | 5d | -2.04% | 56.7 | → |
-| 3 | **RMF1** | RBB Mutual Fund 1 | -6.60% | 10.45 | 9.76 | 2.0y | high | 1d | 0.38% | 51.5 | → |
-| 4 | **NICFC** | NIC Asia Flexi Cap F | -12.42% | 10.39 | 9.10 | 2.9y | medium | 1d | -1.24% | 50.4 | ↓ |
+| 3 | **NICFC** | NIC Asia Flexi Cap F | -11.65% | 10.30 | 9.10 | 2.9y | medium | 1d | 0.88% | 55.1 | ↓ |
+| 4 | **RMF1** | RBB Mutual Fund 1 | -6.60% | 10.45 | 9.76 | 2.0y | high | 1d | 0.38% | 50.8 | → |
 | 5 | **NICSF** | NIC Asia Select-30 | -5.51% | 9.80 | 9.26 | 2.0y | medium | 10d | 1.45% | 46.5 | ↓ |
-| 6 | **SEF** | Siddhartha Equity Fu | -6.29% | 10.65 | 9.98 | 1.3y | medium | 11d | 0.00% | 45.0 | ↓ |
+| 6 | **SEF** | Siddhartha Equity Fu | -6.29% | 10.65 | 9.98 | 1.3y | medium | 11d | 0.00% | 44.2 | ↓ |
 
 ### Top Picks by Composite Score
 
 - **PSF** (Prabhu Select Fund): -12.93% discount, score 67.5
 - **SFMF** (Sunrise First Mutual Fund): -9.73% discount, score 56.7
-- **RMF1** (RBB Mutual Fund 1): -6.60% discount, score 51.5
+- **NICFC** (NIC Asia Flexi Cap Fund): -11.65% discount, score 55.1
 
 ### Interpretation
 
@@ -191,7 +191,7 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 ### Data Status
 
 - Latest price data: 2026-07-17
-- NAV data age: median 33 days
+- NAV data age: median 34 days
 - History depth: 102 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)
