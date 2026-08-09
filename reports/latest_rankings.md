@@ -1,6 +1,6 @@
 # Nepal MF Quant — Full Analysis Report
 
-*Generated: 2026-08-08 10:50*
+*Generated: 2026-08-09 10:52*
 
 ## Market Overview
 
@@ -10,19 +10,19 @@
 | Funds Tracked | 40 |
 | At Discount (price < NAV) | 39 |
 | At Premium (price ≥ NAV) | 1 |
-| Deep Discount (≤ -8%) | 17 |
+| Deep Discount (≤ -8%) | 15 |
 | Median Discount | -7.45% |
 | CONSIDER | 6 |
 | IGNORE | 34 |
 
-> ⚠️ **NAV Staleness Warning**: 13 fund(s) have NAV data older than 45 days. Discount calculations may be less reliable.
+> ⚠️ **NAV Staleness Warning**: 11 fund(s) have NAV data older than 45 days. Discount calculations may be less reliable.
 
 ## Discount Distribution
 
 | Discount Range | Count | % of Universe |
 |---------------|-------|---------------|
-| < -10% | 7 | 17.5% |
-| -10% to -6% | 19 | 47.5% |
+| < -10% | 5 | 12.5% |
+| -10% to -6% | 21 | 52.5% |
 | -6% to -4% | 8 | 20.0% |
 | -4% to 0% | 5 | 12.5% |
 | ≥ 0% (premium) | 1 | 2.5% |
@@ -31,9 +31,9 @@
 
 | # | Symbol | Name | NAV | LTP | Discount | Maturity | Liquidity | Streak | NAV Δ | Score | Trend | Risk |
 |---|--------|------|-----|-----|----------|----------|-----------|--------|-------|-------|-------|------|
-| 1 | PSF | Prabhu Select Fund | 13.69 | 12.00 | -12.34% | 1.9y | medium | 46d | -4.60% | 64.5 | ↑ narrowing | — |
-| 2 | NICFC | NIC Asia Flexi Cap Fund | 10.30 | 9.37 | -9.03% | 2.9y | medium | 2d | 0.88% | 64.5 | ↑ narrowing | — |
-| 3 | SFMF | Sunrise First Mutual Fund | 11.30 | 10.20 | -9.73% | 3.2y | medium | 5d | -2.04% | 62.2 | → stable | — |
+| 1 | NICFC | NIC Asia Flexi Cap Fund | 10.30 | 9.37 | -9.03% | 2.9y | medium | 2d | 0.88% | 66.0 | ↑ narrowing | — |
+| 2 | SFMF | Sunrise First Mutual Fund | 11.30 | 10.20 | -9.73% | 3.2y | medium | 5d | -2.04% | 63.8 | → stable | — |
+| 3 | PSF | Prabhu Select Fund | 13.04 | 12.00 | -7.98% | 1.9y | medium | 46d | -4.26% | 56.4 | ↑ narrowing | — |
 | 4 | NICSF | NIC Asia Select-30 | 9.55 | 8.90 | -6.81% | 1.9y | medium | 1d | -2.55% | 56.1 | ↑ narrowing | — |
 | 5 | RMF1 | RBB Mutual Fund 1 | 10.28 | 9.67 | -5.93% | 2.0y | high | 15d | -1.63% | 51.1 | ↑ narrowing | high_vol |
 | 6 | SEF | Siddhartha Equity Fund | 10.36 | 9.91 | -4.34% | 1.2y | medium | 8d | -2.72% | 45.5 | ↑ narrowing | — |
@@ -55,7 +55,6 @@
 |--------|----------|--------|
 | LVF2 | -20.60% | maturity:7.1y |
 | SBCF | -16.67% | maturity:4.6y |
-| PRSF | -13.01% | maturity:5.6y |
 | SFEF | -12.69% | maturity:5.5y |
 | NICGF2 | -11.73% | liquidity:low; maturity:4.3y |
 | NIBSF2 | -10.15% | liquidity:low; maturity:4.8y |
@@ -67,6 +66,7 @@
 | GBIMESY2 | -8.26% | maturity:8.9y |
 | KEF | -8.22% | maturity:4.6y |
 | RSY | -8.06% | maturity:8.7y |
+| PRSF | -7.98% | maturity:5.6y |
 | SIGS3 | -7.78% | liquidity:low; maturity:6.7y |
 | KSY | -7.48% | maturity:7.6y |
 | NBF3 | -7.46% | maturity:5.1y |
@@ -92,9 +92,9 @@
 
 ## Data Quality
 
-- Symbols checked: 45
+- Symbols checked: 47
 - Symbols with issues: 28
-- NAV data age: median 5 days, max 436 days
+- NAV data age: median 6 days, max 437 days
 
 ## Methodology
 
