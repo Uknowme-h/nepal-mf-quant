@@ -38,4 +38,4 @@ date,symbol,nav,ltp,discount_pct,volume,years_to_maturity,days_to_maturity,valua
 2026-08-14,NICFC,10.3,9.1,-11.65,1300,2.84,1036,deep_discount,medium,CONSIDER,,65.56,1.0,widening,,0.88
 2026-08-14,PSF,13.04,12.01,-7.9,2200,1.85,677,moderate_discount,medium,CONSIDER,,57.25,3.0,stable,,-4.26
 2026-08-14,RMF1,10.28,9.6,-6.61,23325,1.94,709,moderate_discount,high,CONSIDER,,55.5,4.0,widening,high_vol,-1.63
-2026-08-14,NICSF,9.55,9.0,-5.76,1790,1.89,691,moderate_discount,medium,CONSIDER,,55.13,5.0,narrowing,,-2.55
+2026-08-14,NICSF,9.55,9.0,-5.76,1790,1.89,691,moderate_discount,medium,CONSIDER,,55.12,5.0,narrowing,,-2.55
