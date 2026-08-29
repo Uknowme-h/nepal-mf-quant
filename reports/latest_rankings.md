@@ -1,19 +1,19 @@
 # Nepal MF Quant — Full Analysis Report
 
-*Generated: 2026-08-26 10:51*
+*Generated: 2026-08-29 15:04*
 
 ## Market Overview
 
 | Metric | Value |
 |--------|-------|
-| Analysis Date | 2026-08-26 |
-| Funds Tracked | 40 |
-| At Discount (price < NAV) | 40 |
+| Analysis Date | 2026-08-27 |
+| Funds Tracked | 39 |
+| At Discount (price < NAV) | 39 |
 | At Premium (price ≥ NAV) | 0 |
-| Deep Discount (≤ -8%) | 28 |
-| Median Discount | -10.21% |
-| CONSIDER | 8 |
-| IGNORE | 32 |
+| Deep Discount (≤ -8%) | 30 |
+| Median Discount | -11.01% |
+| CONSIDER | 6 |
+| IGNORE | 33 |
 
 > ⚠️ **NAV Staleness Warning**: 11 fund(s) have NAV data older than 45 days. Discount calculations may be less reliable.
 
@@ -21,33 +21,31 @@
 
 | Discount Range | Count | % of Universe |
 |---------------|-------|---------------|
-| < -10% | 21 | 52.5% |
-| -10% to -6% | 13 | 32.5% |
-| -6% to -4% | 5 | 12.5% |
-| -4% to 0% | 1 | 2.5% |
+| < -10% | 23 | 59.0% |
+| -10% to -6% | 12 | 30.8% |
+| -6% to -4% | 3 | 7.7% |
+| -4% to 0% | 1 | 2.6% |
 | ≥ 0% (premium) | 0 | 0.0% |
 
 ## CONSIDER Candidates
 
 | # | Symbol | Name | NAV | LTP | Discount | Maturity | Liquidity | Streak | NAV Δ | Score | Trend | Risk |
 |---|--------|------|-----|-----|----------|----------|-----------|--------|-------|-------|-------|------|
-| 1 | NICFC | NIC Asia Flexi Cap Fund | 10.30 | 8.92 | -13.40% | 2.8y | medium | 6d | 0.88% | 69.1 | ↓ widening | — |
-| 2 | SEF | Siddhartha Equity Fund | 10.36 | 9.49 | -8.40% | 1.2y | high | 7d | -2.72% | 62.5 | ↑ narrowing | — |
-| 3 | NICSF | NIC Asia Select-30 | 9.55 | 8.36 | -12.46% | 1.9y | medium | 11d | -2.55% | 61.9 | ↑ narrowing | — |
-| 4 | NMB50 | NMB 50 | 10.45 | 9.68 | -7.37% | 0.0y | medium | 8d | -1.42% | 61.9 | ↓ widening | — |
-| 5 | PSF | Prabhu Select Fund | 13.04 | 12.10 | -7.21% | 1.8y | high | 59d | -4.26% | 59.2 | ↑ narrowing | — |
-| 6 | NBF2 | Nabil Balanced Fund - 2 | 10.47 | 9.67 | -7.64% | 2.8y | medium | 1d | 0.48% | 53.8 | ↓ widening | — |
-| 7 | SLCF | Sanima Large Cap Fund | 10.08 | 9.05 | -10.22% | 1.5y | medium | 1d | -2.70% | 46.9 | ↓ widening | — |
-| 8 | RMF1 | RBB Mutual Fund 1 | 10.28 | 9.45 | -8.07% | 1.9y | medium | 1d | -1.63% | 41.8 | ↓ widening | high_vol |
+| 1 | SEF | Siddhartha Equity Fund | 10.36 | 9.20 | -11.20% | 1.2y | high | 8d | -2.72% | 67.0 | ↓ widening | — |
+| 2 | PSF | Prabhu Select Fund | 13.04 | 12.17 | -6.67% | 1.8y | high | 60d | -4.26% | 59.1 | ↑ narrowing | — |
+| 3 | NBF2 | Nabil Balanced Fund - 2 | 10.47 | 9.72 | -7.16% | 2.8y | medium | 2d | 0.48% | 55.4 | ↓ widening | — |
+| 4 | NICSF | NIC Asia Select-30 | 9.55 | 8.48 | -11.20% | 1.9y | medium | 12d | -2.55% | 50.5 | ↓ widening | — |
+| 5 | RMF1 | RBB Mutual Fund 1 | 10.28 | 9.30 | -9.53% | 1.9y | medium | 2d | -1.63% | 45.3 | ↓ widening | high_vol |
+| 6 | SIGS2 | Siddhartha Investment Gro | 10.85 | 10.27 | -5.35% | 3.0y | medium | 1d | -3.30% | 44.1 | ↓ widening | — |
 
 ## IGNORE Summary
 
-*32 funds are flagged IGNORE. Top reasons:*
+*33 funds are flagged IGNORE. Top reasons:*
 
 | Gate Failed | Count |
 |-------------|-------|
 | maturity | 28 |
-| liquidity | 10 |
+| liquidity | 9 |
 | valuation | 1 |
 
 <details>
@@ -55,46 +53,47 @@
 
 | Symbol | Discount | Reason |
 |--------|----------|--------|
-| LVF2 | -21.12% | maturity:7.0y |
-| SBCF | -18.78% | maturity:4.6y |
-| KDBY | -18.19% | maturity:5.9y |
-| KEF | -17.74% | maturity:4.6y |
-| NICGF2 | -15.96% | liquidity:low; maturity:4.2y |
-| SFEF | -15.75% | maturity:5.5y |
-| LUK | -15.69% | liquidity:low |
-| NMBHF2 | -15.65% | maturity:8.5y |
+| LVF2 | -21.12% | liquidity:low; maturity:7.0y |
+| KDBY | -20.47% | maturity:5.9y |
+| SBCF | -18.25% | maturity:4.6y |
+| NMBHF2 | -17.94% | maturity:8.5y |
+| LUK | -17.92% | liquidity:low |
+| NICGF2 | -16.44% | maturity:4.2y |
+| SFEF | -15.57% | maturity:5.5y |
+| RSY | -15.41% | maturity:8.7y |
+| KEF | -15.38% | maturity:4.6y |
 | SFMF | -15.04% | liquidity:low |
-| NSIF2 | -14.67% | maturity:6.0y |
-| NIBSF2 | -12.82% | maturity:4.8y |
+| NSIF2 | -14.75% | maturity:6.0y |
+| NICFC | -13.79% | liquidity:low |
+| KSY | -13.31% | maturity:7.6y |
+| NIBSF2 | -12.82% | liquidity:low; maturity:4.8y |
 | NIBLGF | -12.50% | maturity:6.4y |
-| MBLEF | -11.71% | maturity:10.6y |
-| RSY | -11.02% | maturity:8.7y |
-| NIBLSTF | -11.01% | liquidity:low; maturity:9.5y |
-| KSY | -10.69% | liquidity:low; maturity:7.6y |
-| GBIMESY2 | -10.37% | liquidity:low; maturity:8.9y |
-| PRSF | -10.19% | maturity:5.5y |
-| NICBF | -9.88% | liquidity:low |
+| NICBF | -12.40% | liquidity:low |
+| MBLEF | -12.35% | maturity:10.6y |
+| NIBLSTF | -11.01% | maturity:9.4y |
+| GBIMESY2 | -10.47% | maturity:8.9y |
+| GSY | -10.14% | maturity:8.4y |
+| RMF2 | -10.13% | liquidity:low; maturity:6.7y |
 | GIBF1 | -9.85% | maturity:5.9y |
-| RMF2 | -9.67% | liquidity:low; maturity:6.7y |
-| MNMF1 | -9.10% | maturity:8.3y |
-| GSY | -8.13% | maturity:8.4y |
-| C30MF | -7.41% | maturity:6.7y |
-| NBF3 | -7.17% | maturity:5.1y |
-| RBBF40 | -6.53% | maturity:11.2y |
-| SIGS3 | -5.16% | maturity:6.7y |
-| HLICF | -4.93% | maturity:9.1y |
-| SIGS2 | -4.52% | liquidity:low |
-| MMF1 | -4.32% | maturity:5.0y |
-| SAGF | -4.17% | liquidity:low; maturity:7.3y |
-| H8020 | -3.31% | valuation:small_discount; maturity:7.1y |
+| SLCF | -9.72% | liquidity:low |
+| NBF3 | -9.50% | maturity:5.1y |
+| PRSF | -9.12% | maturity:5.5y |
+| MNMF1 | -9.00% | maturity:8.3y |
+| MMF1 | -8.23% | maturity:5.0y |
+| C30MF | -7.31% | liquidity:low; maturity:6.7y |
+| RBBF40 | -7.04% | maturity:11.2y |
+| SAGF | -6.55% | maturity:7.3y |
+| HLICF | -5.15% | maturity:9.1y |
+| H8020 | -5.09% | maturity:7.1y |
+| SIGS3 | -3.93% | valuation:small_discount; maturity:6.7y |
 
 </details>
 
 ## Data Quality
 
 - Symbols checked: 47
-- Symbols with issues: 27
-- NAV data age: median 23 days, max 454 days
+- Symbols with issues: 26
+- NAV data age: median 26 days, max 457 days
 
 ## Methodology
 
