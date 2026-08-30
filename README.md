@@ -174,8 +174,8 @@ MIT
 | 1 | **SEF** | Siddhartha Equity Fu | -11.20% | 10.36 | 9.20 | 1.2y | high | 8d | -2.72% | 67.0 | ↓ |
 | 2 | **PSF** | Prabhu Select Fund | -6.67% | 13.04 | 12.17 | 1.8y | high | 60d | -4.26% | 59.1 | ↑ |
 | 3 | **NBF2** | Nabil Balanced Fund  | -7.16% | 10.47 | 9.72 | 2.8y | medium | 2d | 0.48% | 55.4 | ↓ |
-| 4 | **NICSF** | NIC Asia Select-30 | -11.20% | 9.55 | 8.48 | 1.9y | medium | 12d | -2.55% | 50.5 | ↓ |
-| 5 | **RMF1** | RBB Mutual Fund 1 | -9.53% | 10.28 | 9.30 | 1.9y | medium | 2d | -1.63% | 45.3 | ↓ |
+| 4 | **NICSF** | NIC Asia Select-30 | -11.20% | 9.55 | 8.48 | 1.9y | medium | 12d | -2.55% | 50.3 | ↓ |
+| 5 | **RMF1** | RBB Mutual Fund 1 | -9.53% | 10.28 | 9.30 | 1.9y | medium | 2d | -1.63% | 45.0 | ↓ |
 | 6 | **SIGS2** | Siddhartha Investmen | -5.35% | 10.85 | 10.27 | 3.0y | medium | 1d | -3.30% | 44.1 | ↓ |
 
 ### Top Picks by Composite Score
@@ -191,7 +191,7 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 ### Data Status
 
 - Latest price data: 2026-08-27
-- NAV data age: median 26 days
+- NAV data age: median 27 days
 - History depth: 130 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)

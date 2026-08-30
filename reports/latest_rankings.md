@@ -1,6 +1,6 @@
 # Nepal MF Quant — Full Analysis Report
 
-*Generated: 2026-08-29 15:04*
+*Generated: 2026-08-30 14:53*
 
 ## Market Overview
 
@@ -34,8 +34,8 @@
 | 1 | SEF | Siddhartha Equity Fund | 10.36 | 9.20 | -11.20% | 1.2y | high | 8d | -2.72% | 67.0 | ↓ widening | — |
 | 2 | PSF | Prabhu Select Fund | 13.04 | 12.17 | -6.67% | 1.8y | high | 60d | -4.26% | 59.1 | ↑ narrowing | — |
 | 3 | NBF2 | Nabil Balanced Fund - 2 | 10.47 | 9.72 | -7.16% | 2.8y | medium | 2d | 0.48% | 55.4 | ↓ widening | — |
-| 4 | NICSF | NIC Asia Select-30 | 9.55 | 8.48 | -11.20% | 1.9y | medium | 12d | -2.55% | 50.5 | ↓ widening | — |
-| 5 | RMF1 | RBB Mutual Fund 1 | 10.28 | 9.30 | -9.53% | 1.9y | medium | 2d | -1.63% | 45.3 | ↓ widening | high_vol |
+| 4 | NICSF | NIC Asia Select-30 | 9.55 | 8.48 | -11.20% | 1.9y | medium | 12d | -2.55% | 50.3 | ↓ widening | — |
+| 5 | RMF1 | RBB Mutual Fund 1 | 10.28 | 9.30 | -9.53% | 1.9y | medium | 2d | -1.63% | 45.0 | ↓ widening | high_vol |
 | 6 | SIGS2 | Siddhartha Investment Gro | 10.85 | 10.27 | -5.35% | 3.0y | medium | 1d | -3.30% | 44.1 | ↓ widening | — |
 
 ## IGNORE Summary
@@ -65,7 +65,7 @@
 | SFMF | -15.04% | liquidity:low |
 | NSIF2 | -14.75% | maturity:6.0y |
 | NICFC | -13.79% | liquidity:low |
-| KSY | -13.31% | maturity:7.6y |
+| KSY | -13.57% | maturity:7.6y |
 | NIBSF2 | -12.82% | liquidity:low; maturity:4.8y |
 | NIBLGF | -12.50% | maturity:6.4y |
 | NICBF | -12.40% | liquidity:low |
@@ -93,7 +93,7 @@
 
 - Symbols checked: 47
 - Symbols with issues: 26
-- NAV data age: median 26 days, max 457 days
+- NAV data age: median 27 days, max 458 days
 
 ## Methodology
 
