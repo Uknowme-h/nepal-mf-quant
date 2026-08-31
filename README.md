@@ -147,22 +147,22 @@ MIT
 
 | | |
 |---|---|
-| **Date** | 2026-08-27 |
+| **Date** | 2026-08-31 |
 | **Funds Tracked** | 39 |
-| **Median Discount** | -11.01% |
+| **Median Discount** | -12.82% |
 | **At Discount** | 39 (100%) |
-| **Deep Discount (≤-8%)** | 30 |
-| **CONSIDER** | 6 |
-| **IGNORE** | 33 |
+| **Deep Discount (≤-8%)** | 33 |
+| **CONSIDER** | 7 |
+| **IGNORE** | 32 |
 
-> ⚠️ 11 fund(s) have NAV data older than 45 days.
+> ⚠️ 17 fund(s) have NAV data older than 45 days.
 
 ### Discount Distribution
 
 | Range | Distribution |
 |-------|-------------|
-|         < -10% | ███████████████████████ 23 |
-|    -10% to -6% | ████████████ 12 |
+|         < -10% | ███████████████████████████ 27 |
+|    -10% to -6% | ████████ 8 |
 |     -6% to -4% | ███ 3 |
 |      -4% to 0% | █ 1 |
 |           ≥ 0% |  0 |
@@ -171,18 +171,19 @@ MIT
 
 | # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak | NAV Δ | Score | Trend |
 |---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|-------|
-| 1 | **SEF** | Siddhartha Equity Fu | -11.20% | 10.36 | 9.20 | 1.2y | high | 8d | -2.72% | 67.0 | ↓ |
-| 2 | **PSF** | Prabhu Select Fund | -6.67% | 13.04 | 12.17 | 1.8y | high | 60d | -4.26% | 59.1 | ↑ |
-| 3 | **NBF2** | Nabil Balanced Fund  | -7.16% | 10.47 | 9.72 | 2.8y | medium | 2d | 0.48% | 55.4 | ↓ |
-| 4 | **NICSF** | NIC Asia Select-30 | -11.20% | 9.55 | 8.48 | 1.9y | medium | 12d | -2.55% | 50.3 | ↓ |
-| 5 | **RMF1** | RBB Mutual Fund 1 | -9.53% | 10.28 | 9.30 | 1.9y | medium | 2d | -1.63% | 45.0 | ↓ |
-| 6 | **SIGS2** | Siddhartha Investmen | -5.35% | 10.85 | 10.27 | 3.0y | medium | 1d | -3.30% | 44.1 | ↓ |
+| 1 | **LUK** | Laxmi Unnati Kosh | -21.78% | 11.66 | 9.12 | 4.0y | high | 1d | -1.17% | 70.0 | ↓ |
+| 2 | **NBF2** | Nabil Balanced Fund  | -7.16% | 10.47 | 9.72 | 2.8y | medium | 3d | 0.48% | 53.3 | ↓ |
+| 3 | **SEF** | Siddhartha Equity Fu | -11.10% | 10.36 | 9.21 | 1.2y | medium | 9d | -2.72% | 53.1 | ↓ |
+| 4 | **NICSF** | NIC Asia Select-30 | -14.14% | 9.55 | 8.20 | 1.9y | medium | 13d | -2.55% | 52.4 | ↓ |
+| 5 | **PSF** | Prabhu Select Fund | -8.67% | 13.04 | 11.91 | 1.8y | medium | 61d | -4.26% | 51.0 | → |
+| 6 | **RMF1** | RBB Mutual Fund 1 | -9.53% | 10.28 | 9.30 | 1.9y | medium | 3d | -1.63% | 47.4 | ↓ |
+| 7 | **SIGS2** | Siddhartha Investmen | -8.76% | 10.85 | 9.90 | 3.0y | high | 2d | -3.30% | 47.0 | ↓ |
 
 ### Top Picks by Composite Score
 
-- **SEF** (Siddhartha Equity Fund): -11.20% discount, score 67.0
-- **PSF** (Prabhu Select Fund): -6.67% discount, score 59.1
-- **NBF2** (Nabil Balanced Fund - 2): -7.16% discount, score 55.4
+- **LUK** (Laxmi Unnati Kosh): -21.78% discount, score 70.0
+- **NBF2** (Nabil Balanced Fund - 2): -7.16% discount, score 53.3
+- **SEF** (Siddhartha Equity Fund): -11.10% discount, score 53.1
 
 ### Interpretation
 
@@ -190,9 +191,9 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 
 ### Data Status
 
-- Latest price data: 2026-08-27
-- NAV data age: median 27 days
-- History depth: 130 trading day(s)
+- Latest price data: 2026-08-31
+- NAV data age: median 28 days
+- History depth: 131 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)
 
