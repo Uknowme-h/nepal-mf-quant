@@ -194,7 +194,7 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 ### Data Status
 
 - Latest price data: 2026-09-03
-- NAV data age: median 20 days
+- NAV data age: median 21 days
 - History depth: 134 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)
