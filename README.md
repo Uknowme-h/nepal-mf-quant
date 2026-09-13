@@ -155,7 +155,7 @@ MIT
 | **CONSIDER** | 6 |
 | **IGNORE** | 33 |
 
-> ⚠️ 12 fund(s) have NAV data older than 45 days.
+> ⚠️ 11 fund(s) have NAV data older than 45 days.
 
 ### Discount Distribution
 
@@ -171,17 +171,17 @@ MIT
 
 | # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak | NAV Δ | Score | Trend |
 |---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|-------|
-| 1 | **LUK** | Laxmi Unnati Kosh | -18.61% | 11.66 | 9.49 | 3.9y | medium | 1d | -1.17% | 65.8 | ↓ |
-| 2 | **PSF** | Prabhu Select Fund | -17.27% | 13.09 | 10.83 | 1.8y | medium | 68d | 0.38% | 64.2 | ↓ |
+| 1 | **LUK** | Laxmi Unnati Kosh | -18.61% | 11.66 | 9.49 | 3.9y | medium | 1d | -1.17% | 65.5 | ↓ |
+| 2 | **PSF** | Prabhu Select Fund | -17.27% | 13.09 | 10.83 | 1.8y | medium | 68d | 0.38% | 64.1 | ↓ |
 | 3 | **SEF** | Siddhartha Equity Fu | -7.34% | 10.36 | 9.60 | 1.2y | high | 16d | -2.72% | 56.8 | ↑ |
-| 4 | **RMF1** | RBB Mutual Fund 1 | -6.01% | 10.31 | 9.69 | 1.9y | high | 10d | -1.63% | 54.4 | ↑ |
+| 4 | **RMF1** | RBB Mutual Fund 1 | -6.01% | 10.31 | 9.69 | 1.9y | high | 10d | -1.63% | 54.1 | ↑ |
 | 5 | **NBF2** | Nabil Balanced Fund  | -7.16% | 10.47 | 9.72 | 2.7y | medium | 1d | 0.48% | 50.1 | ↓ |
 | 6 | **NICSF** | NIC Asia Select-30 | -13.50% | 9.48 | 8.20 | 1.8y | medium | 2d | -3.27% | 40.8 | ↓ |
 
 ### Top Picks by Composite Score
 
-- **LUK** (Laxmi Unnati Kosh): -18.61% discount, score 65.8
-- **PSF** (Prabhu Select Fund): -17.27% discount, score 64.2
+- **LUK** (Laxmi Unnati Kosh): -18.61% discount, score 65.5
+- **PSF** (Prabhu Select Fund): -17.27% discount, score 64.1
 - **SEF** (Siddhartha Equity Fund): -7.34% discount, score 56.8
 
 ### Interpretation
@@ -191,7 +191,7 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 ### Data Status
 
 - Latest price data: 2026-09-11
-- NAV data age: median 28 days
+- NAV data age: median 29 days
 - History depth: 138 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)

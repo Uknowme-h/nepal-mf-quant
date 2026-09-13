@@ -1,6 +1,6 @@
 # Nepal MF Quant — Full Analysis Report
 
-*Generated: 2026-09-12 13:37*
+*Generated: 2026-09-13 14:22*
 
 ## Market Overview
 
@@ -15,7 +15,7 @@
 | CONSIDER | 6 |
 | IGNORE | 33 |
 
-> ⚠️ **NAV Staleness Warning**: 12 fund(s) have NAV data older than 45 days. Discount calculations may be less reliable.
+> ⚠️ **NAV Staleness Warning**: 11 fund(s) have NAV data older than 45 days. Discount calculations may be less reliable.
 
 ## Discount Distribution
 
@@ -31,10 +31,10 @@
 
 | # | Symbol | Name | NAV | LTP | Discount | Maturity | Liquidity | Streak | NAV Δ | Score | Trend | Risk |
 |---|--------|------|-----|-----|----------|----------|-----------|--------|-------|-------|-------|------|
-| 1 | LUK | Laxmi Unnati Kosh | 11.66 | 9.49 | -18.61% | 3.9y | medium | 1d | -1.17% | 65.8 | ↓ widening | — |
-| 2 | PSF | Prabhu Select Fund | 13.09 | 10.83 | -17.27% | 1.8y | medium | 68d | 0.38% | 64.2 | ↓ widening | — |
+| 1 | LUK | Laxmi Unnati Kosh | 11.66 | 9.49 | -18.61% | 3.9y | medium | 1d | -1.17% | 65.5 | ↓ widening | — |
+| 2 | PSF | Prabhu Select Fund | 13.09 | 10.83 | -17.27% | 1.8y | medium | 68d | 0.38% | 64.1 | ↓ widening | — |
 | 3 | SEF | Siddhartha Equity Fund | 10.36 | 9.60 | -7.34% | 1.2y | high | 16d | -2.72% | 56.8 | ↑ narrowing | — |
-| 4 | RMF1 | RBB Mutual Fund 1 | 10.31 | 9.69 | -6.01% | 1.9y | high | 10d | -1.63% | 54.4 | ↑ narrowing | high_vol |
+| 4 | RMF1 | RBB Mutual Fund 1 | 10.31 | 9.69 | -6.01% | 1.9y | high | 10d | -1.63% | 54.1 | ↑ narrowing | high_vol |
 | 5 | NBF2 | Nabil Balanced Fund - 2 | 10.47 | 9.72 | -7.16% | 2.7y | medium | 1d | 0.48% | 50.1 | ↓ widening | — |
 | 6 | NICSF | NIC Asia Select-30 | 9.48 | 8.20 | -13.50% | 1.8y | medium | 2d | -3.27% | 40.8 | ↓ widening | — |
 
@@ -76,7 +76,7 @@
 | SIGS2 | -11.78% | liquidity:low |
 | GBIMESY2 | -11.38% | maturity:8.8y |
 | SLCF | -11.24% | liquidity:low |
-| SAGF | -10.82% | maturity:7.2y |
+| SAGF | -11.15% | maturity:7.2y |
 | RBBF40 | -10.63% | maturity:11.2y |
 | RMF2 | -10.63% | maturity:6.7y |
 | GSY | -10.14% | maturity:8.3y |
@@ -93,7 +93,7 @@
 
 - Symbols checked: 47
 - Symbols with issues: 31
-- NAV data age: median 28 days, max 471 days
+- NAV data age: median 29 days, max 472 days
 
 ## Methodology
 
