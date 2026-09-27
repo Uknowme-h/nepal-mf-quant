@@ -5879,6 +5879,7 @@ date,symbol,discount_pct,days_to_maturity,liquidity_bucket,decision_flag
 2026-09-24,GSY,-7.13,3022,low,IGNORE
 2026-09-24,H8020,-11.48,2564,high,IGNORE
 2026-09-24,HLICF,-0.35,3278,high,IGNORE
+2026-09-24,KDBY,-14.81,2131,low,IGNORE
 2026-09-24,KEF,-16.92,1636,medium,IGNORE
 2026-09-24,KSY,-7.66,2733,low,IGNORE
 2026-09-24,LUK,-18.7,1420,low,IGNORE

@@ -5920,3 +5920,4 @@ date,symbol,ltp,open,high,low,volume,trades,source
 2026-09-24,SIGS2,9.46,9.49,9.49,9.46,5000,2,nepse_playwright
 2026-09-24,SIGS3,10.35,10.27,10.35,10.27,22060,7,nepse_playwright
 2026-09-24,SLCF,9.2,9.1,9.2,9.1,400,2,nepse_playwright
+2026-09-24,KDBY,10.24,10.1,10.24,10.1,1250,10,nepse_playwright
