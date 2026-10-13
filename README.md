@@ -147,9 +147,9 @@ MIT
 
 | | |
 |---|---|
-| **Date** | 2026-10-09 |
+| **Date** | 2026-10-13 |
 | **Funds Tracked** | 39 |
-| **Median Discount** | -9.70% |
+| **Median Discount** | -9.90% |
 | **At Discount** | 39 (100%) |
 | **Deep Discount (≤-8%)** | 30 |
 | **CONSIDER** | 8 |
@@ -161,8 +161,8 @@ MIT
 
 | Range | Distribution |
 |-------|-------------|
-|         < -10% | ██████████████████ 18 |
-|    -10% to -6% | █████████████████ 17 |
+|         < -10% | ███████████████████ 19 |
+|    -10% to -6% | ████████████████ 16 |
 |     -6% to -4% | ███ 3 |
 |      -4% to 0% | █ 1 |
 |           ≥ 0% |  0 |
@@ -171,20 +171,20 @@ MIT
 
 | # | Symbol | Name | Discount | NAV | LTP | Maturity | Liquidity | Streak | NAV Δ | Score | Trend |
 |---|--------|------|----------|-----|-----|----------|-----------|--------|-------|-------|-------|
-| 1 | **SFMF** | Sunrise First Mutual | -16.81% | 11.30 | 9.40 | 3.1y | high | 1d | -2.04% | 81.2 | ↑ |
-| 2 | **LUK** | Laxmi Unnati Kosh | -19.81% | 11.66 | 9.35 | 3.9y | medium | 2d | -1.17% | 72.2 | → |
-| 3 | **NBF2** | Nabil Balanced Fund  | -13.09% | 10.47 | 9.10 | 2.6y | high | 2d | 0.48% | 70.9 | ↓ |
-| 4 | **RMF1** | RBB Mutual Fund 1 | -10.86% | 10.22 | 9.11 | 1.8y | medium | 10d | -0.87% | 59.7 | ↑ |
-| 5 | **SEF** | Siddhartha Equity Fu | -7.44% | 10.49 | 9.71 | 1.1y | medium | 3d | 1.06% | 57.8 | ↑ |
-| 6 | **PSF** | Prabhu Select Fund | -8.33% | 12.00 | 11.00 | 1.7y | high | 2d | -8.33% | 54.2 | ↑ |
-| 7 | **NICFC** | NIC Asia Flexi Cap F | -8.25% | 9.94 | 9.12 | 2.7y | medium | 1d | -1.29% | 53.7 | ↑ |
-| 8 | **NICSF** | NIC Asia Select-30 | -8.41% | 9.28 | 8.50 | 1.7y | medium | 12d | -2.11% | 43.2 | → |
+| 1 | **NBF2** | Nabil Balanced Fund  | -12.23% | 10.47 | 9.19 | 2.6y | medium | 3d | 0.48% | 78.7 | ↑ |
+| 2 | **SFMF** | Sunrise First Mutual | -18.58% | 11.30 | 9.20 | 3.1y | high | 2d | -2.04% | 72.8 | → |
+| 3 | **RMF1** | RBB Mutual Fund 1 | -9.49% | 10.22 | 9.25 | 1.8y | medium | 11d | -0.87% | 60.8 | ↑ |
+| 4 | **LUK** | Laxmi Unnati Kosh | -18.52% | 11.66 | 9.50 | 3.8y | medium | 3d | -1.17% | 60.3 | ↓ |
+| 5 | **NICSF** | NIC Asia Select-30 | -12.18% | 9.28 | 8.15 | 1.7y | high | 13d | -2.11% | 59.1 | ↓ |
+| 6 | **SEF** | Siddhartha Equity Fu | -7.82% | 10.49 | 9.67 | 1.1y | high | 4d | 1.06% | 58.6 | ↑ |
+| 7 | **NICFC** | NIC Asia Flexi Cap F | -12.27% | 9.94 | 8.72 | 2.7y | medium | 2d | -1.29% | 57.6 | ↓ |
+| 8 | **PSF** | Prabhu Select Fund | -8.17% | 12.00 | 11.02 | 1.7y | medium | 3d | -8.33% | 46.7 | ↑ |
 
 ### Top Picks by Composite Score
 
-- **SFMF** (Sunrise First Mutual Fund): -16.81% discount, score 81.2
-- **LUK** (Laxmi Unnati Kosh): -19.81% discount, score 72.2
-- **NBF2** (Nabil Balanced Fund - 2): -13.09% discount, score 70.9
+- **NBF2** (Nabil Balanced Fund - 2): -12.23% discount, score 78.7
+- **SFMF** (Sunrise First Mutual Fund): -18.58% discount, score 72.8
+- **RMF1** (RBB Mutual Fund 1): -9.49% discount, score 60.8
 
 ### Interpretation
 
@@ -192,9 +192,9 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 
 ### Data Status
 
-- Latest price data: 2026-10-09
-- NAV data age: median 26 days
-- History depth: 155 trading day(s)
+- Latest price data: 2026-10-13
+- NAV data age: median 28 days
+- History depth: 156 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)
 
