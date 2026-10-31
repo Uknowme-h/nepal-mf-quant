@@ -155,7 +155,7 @@ MIT
 | **CONSIDER** | 9 |
 | **IGNORE** | 30 |
 
-> ⚠️ 9 fund(s) have NAV data older than 45 days.
+> ⚠️ 38 fund(s) have NAV data older than 45 days.
 
 ### Discount Distribution
 
@@ -194,7 +194,7 @@ CONSIDER = discount ≤ -4% AND liquidity ≠ low AND maturity ≤ 4 years. Fund
 ### Data Status
 
 - Latest price data: 2026-10-30
-- NAV data age: median 45 days
+- NAV data age: median 46 days
 - History depth: 164 trading day(s)
 - Full report: [reports/latest_rankings.md](reports/latest_rankings.md)
 - Metrics CSV: [reports/metrics_table.csv](reports/metrics_table.csv)

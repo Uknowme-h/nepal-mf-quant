@@ -1,6 +1,6 @@
 # Nepal MF Quant — Full Analysis Report
 
-*Generated: 2026-10-30 16:43*
+*Generated: 2026-10-31 15:45*
 
 ## Market Overview
 
@@ -15,7 +15,7 @@
 | CONSIDER | 9 |
 | IGNORE | 30 |
 
-> ⚠️ **NAV Staleness Warning**: 9 fund(s) have NAV data older than 45 days. Discount calculations may be less reliable.
+> ⚠️ **NAV Staleness Warning**: 38 fund(s) have NAV data older than 45 days. Discount calculations may be less reliable.
 
 ## Discount Distribution
 
@@ -92,8 +92,8 @@
 ## Data Quality
 
 - Symbols checked: 47
-- Symbols with issues: 27
-- NAV data age: median 45 days, max 519 days
+- Symbols with issues: 41
+- NAV data age: median 46 days, max 520 days
 
 ## Methodology
 
