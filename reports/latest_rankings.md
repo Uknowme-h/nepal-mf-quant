@@ -1,19 +1,19 @@
 # Nepal MF Quant — Full Analysis Report
 
-*Generated: 2026-11-04 18:00*
+*Generated: 2026-11-05 18:01*
 
 ## Market Overview
 
 | Metric | Value |
 |--------|-------|
-| Analysis Date | 2026-11-04 |
+| Analysis Date | 2026-11-05 |
 | Funds Tracked | 39 |
 | At Discount (price < NAV) | 38 |
 | At Premium (price ≥ NAV) | 1 |
 | Deep Discount (≤ -8%) | 25 |
-| Median Discount | -8.63% |
-| CONSIDER | 7 |
-| IGNORE | 32 |
+| Median Discount | -9.14% |
+| CONSIDER | 8 |
+| IGNORE | 31 |
 
 > ⚠️ **NAV Staleness Warning**: 15 fund(s) have NAV data older than 45 days. Discount calculations may be less reliable.
 
@@ -22,78 +22,78 @@
 | Discount Range | Count | % of Universe |
 |---------------|-------|---------------|
 | < -10% | 10 | 25.6% |
-| -10% to -6% | 23 | 59.0% |
+| -10% to -6% | 22 | 56.4% |
 | -6% to -4% | 2 | 5.1% |
-| -4% to 0% | 3 | 7.7% |
+| -4% to 0% | 4 | 10.3% |
 | ≥ 0% (premium) | 1 | 2.6% |
 
 ## CONSIDER Candidates
 
 | # | Symbol | Name | NAV | LTP | Discount | Maturity | Liquidity | Streak | NAV Δ | Score | Trend | Risk |
 |---|--------|------|-----|-----|----------|----------|-----------|--------|-------|-------|-------|------|
-| 1 | NBF2 | Nabil Balanced Fund - 2 | 10.47 | 9.10 | -13.09% | 2.6y | medium | 5d | 0.48% | 64.4 | → stable | — |
-| 2 | RMF1 | RBB Mutual Fund 1 | 10.21 | 9.14 | -10.48% | 1.7y | medium | 21d | -0.10% | 61.7 | ↑ narrowing | high_vol |
-| 3 | LUK | Laxmi Unnati Kosh | 11.66 | 9.51 | -18.44% | 3.8y | medium | 1d | -1.17% | 61.5 | → stable | — |
-| 4 | NICFC | NIC Asia Flexi Cap Fund | 9.94 | 9.28 | -6.64% | 2.6y | medium | 1d | -1.29% | 56.3 | ↑ narrowing | — |
-| 5 | NICBF | NIC ASIA Balanced Fund | 10.01 | 9.31 | -6.99% | 2.8y | high | 3d | -0.99% | 54.9 | ↑ narrowing | — |
-| 6 | SEF | Siddhartha Equity Fund | 10.78 | 9.95 | -7.70% | 1.0y | medium | 14d | 2.76% | 52.8 | → stable | — |
-| 7 | NICSF | NIC Asia Select-30 | 9.50 | 8.71 | -8.32% | 1.7y | high | 23d | 2.37% | 52.6 | ↓ widening | high_vol |
+| 1 | LUK | Laxmi Unnati Kosh | 11.66 | 9.60 | -17.67% | 3.8y | medium | 2d | -1.17% | 69.0 | → stable | — |
+| 2 | SEF | Siddhartha Equity Fund | 10.78 | 10.00 | -7.24% | 1.0y | high | 15d | 2.76% | 68.3 | ↑ narrowing | — |
+| 3 | RMF1 | RBB Mutual Fund 1 | 10.21 | 9.15 | -10.38% | 1.7y | medium | 22d | -0.10% | 64.1 | ↑ narrowing | high_vol |
+| 4 | NBF2 | Nabil Balanced Fund - 2 | 10.47 | 9.16 | -12.51% | 2.6y | medium | 6d | 0.48% | 63.3 | ↓ widening | — |
+| 5 | SLCF | Sanima Large Cap Fund | 10.10 | 9.15 | -9.41% | 1.3y | medium | 1d | 0.60% | 62.6 | → stable | — |
+| 6 | NICSF | NIC Asia Select-30 | 9.50 | 8.69 | -8.53% | 1.7y | medium | 24d | 2.37% | 61.1 | ↑ narrowing | high_vol |
+| 7 | SIGS2 | Siddhartha Investment Gro | 10.65 | 9.66 | -9.30% | 2.8y | medium | 1d | 3.30% | 55.1 | ↓ widening | — |
+| 8 | NICFC | NIC Asia Flexi Cap Fund | 9.94 | 9.27 | -6.74% | 2.6y | medium | 2d | -1.29% | 53.2 | ↑ narrowing | — |
 
 ## IGNORE Summary
 
-*32 funds are flagged IGNORE. Top reasons:*
+*31 funds are flagged IGNORE. Top reasons:*
 
 | Gate Failed | Count |
 |-------------|-------|
 | maturity | 28 |
 | liquidity | 10 |
-| valuation | 4 |
+| valuation | 5 |
 
 <details>
 <summary>Full IGNORE list (click to expand)</summary>
 
 | Symbol | Discount | Reason |
 |--------|----------|--------|
-| SFEF | -20.38% | maturity:5.3y |
-| SBCF | -18.69% | maturity:4.4y |
-| LVF2 | -17.62% | maturity:6.8y |
+| SFEF | -20.38% | liquidity:low; maturity:5.3y |
+| SBCF | -18.17% | maturity:4.4y |
+| LVF2 | -17.62% | liquidity:low; maturity:6.8y |
 | SFMF | -12.39% | liquidity:low |
-| NIBSF2 | -10.36% | maturity:4.6y |
-| RMF2 | -10.18% | maturity:6.5y |
-| NBF3 | -10.08% | maturity:4.9y |
-| NIBLGF | -9.85% | maturity:6.2y |
-| KSY | -9.71% | maturity:7.4y |
-| GBIMESY2 | -9.44% | liquidity:low; maturity:8.7y |
-| NICGF2 | -9.42% | liquidity:low; maturity:4.0y |
-| SIGS2 | -9.30% | liquidity:low |
-| MNMF1 | -9.21% | maturity:8.1y |
-| GSY | -9.14% | maturity:8.2y |
+| NBF3 | -12.11% | maturity:4.9y |
+| MBLEF | -10.28% | maturity:10.4y |
+| RMF2 | -10.18% | liquidity:low; maturity:6.5y |
+| MMF1 | -9.86% | maturity:4.8y |
+| NIBLGF | -9.75% | maturity:6.2y |
+| MNMF1 | -9.70% | maturity:8.1y |
+| RBBF40 | -9.54% | maturity:11.0y |
+| NMBHF2 | -9.51% | liquidity:low; maturity:8.3y |
+| NIBLSTF | -9.39% | maturity:9.3y |
+| NICGF2 | -9.32% | liquidity:low; maturity:4.0y |
+| NIBSF2 | -9.14% | maturity:4.6y |
+| C30MF | -9.09% | maturity:6.5y |
+| GBIMESY2 | -9.05% | maturity:8.7y |
+| GSY | -9.04% | maturity:8.2y |
 | RSY | -8.65% | maturity:8.5y |
-| RBBF40 | -8.65% | liquidity:low; maturity:11.0y |
-| MBLEF | -8.63% | liquidity:low; maturity:10.4y |
-| MMF1 | -8.62% | maturity:4.8y |
-| NMBHF2 | -8.42% | maturity:8.3y |
-| SLCF | -8.32% | liquidity:low |
-| KEF | -8.17% | maturity:4.4y |
-| NIBLSTF | -7.93% | maturity:9.3y |
-| KDBY | -7.87% | liquidity:low; maturity:5.7y |
-| SAGF | -7.70% | maturity:7.1y |
-| C30MF | -7.49% | maturity:6.5y |
-| NSIF2 | -6.05% | liquidity:low; maturity:5.8y |
-| GIBF1 | -5.34% | liquidity:low; maturity:5.7y |
-| SIGS3 | -4.73% | maturity:6.5y |
-| PSF | -3.58% | valuation:small_discount |
-| PRSF | -2.92% | valuation:small_discount; maturity:5.4y |
-| HLICF | -0.35% | valuation:small_discount; maturity:8.9y |
-| H8020 | 2.43% | valuation:premium; maturity:6.9y |
+| NICBF | -7.99% | liquidity:low |
+| SAGF | -7.40% | liquidity:low; maturity:7.1y |
+| KSY | -7.04% | maturity:7.4y |
+| KDBY | -6.17% | maturity:5.7y |
+| NSIF2 | -6.05% | maturity:5.8y |
+| KEF | -5.77% | maturity:4.4y |
+| GIBF1 | -4.96% | liquidity:low; maturity:5.7y |
+| PSF | -3.50% | valuation:small_discount |
+| SIGS3 | -2.82% | valuation:small_discount; maturity:6.5y |
+| PRSF | -2.61% | valuation:small_discount; maturity:5.4y |
+| HLICF | -1.51% | valuation:small_discount; liquidity:low; maturity:8.9y |
+| H8020 | 1.53% | valuation:premium; maturity:6.9y |
 
 </details>
 
 ## Data Quality
 
 - Symbols checked: 47
-- Symbols with issues: 32
-- NAV data age: median 20 days, max 524 days
+- Symbols with issues: 29
+- NAV data age: median 21 days, max 525 days
 
 ## Methodology
 
