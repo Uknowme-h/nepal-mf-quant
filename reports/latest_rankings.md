@@ -1,6 +1,6 @@
 # Nepal MF Quant — Full Analysis Report
 
-*Generated: 2026-11-07 16:25*
+*Generated: 2026-11-08 16:41*
 
 ## Market Overview
 
@@ -12,10 +12,10 @@
 | At Premium (price ≥ NAV) | 1 |
 | Deep Discount (≤ -8%) | 21 |
 | Median Discount | -8.65% |
-| CONSIDER | 7 |
-| IGNORE | 32 |
+| CONSIDER | 8 |
+| IGNORE | 31 |
 
-> ⚠️ **NAV Staleness Warning**: 15 fund(s) have NAV data older than 45 days. Discount calculations may be less reliable.
+> ⚠️ **NAV Staleness Warning**: 13 fund(s) have NAV data older than 45 days. Discount calculations may be less reliable.
 
 ## Discount Distribution
 
@@ -23,31 +23,32 @@
 |---------------|-------|---------------|
 | < -10% | 10 | 25.6% |
 | -10% to -6% | 19 | 48.7% |
-| -6% to -4% | 5 | 12.8% |
-| -4% to 0% | 4 | 10.3% |
+| -6% to -4% | 7 | 17.9% |
+| -4% to 0% | 2 | 5.1% |
 | ≥ 0% (premium) | 1 | 2.6% |
 
 ## CONSIDER Candidates
 
 | # | Symbol | Name | NAV | LTP | Discount | Maturity | Liquidity | Streak | NAV Δ | Score | Trend | Risk |
 |---|--------|------|-----|-----|----------|----------|-----------|--------|-------|-------|-------|------|
-| 1 | NBF2 | Nabil Balanced Fund - 2 | 10.47 | 9.12 | -12.89% | 2.6y | medium | 7d | 0.48% | 66.3 | ↓ widening | — |
-| 2 | SEF | Siddhartha Equity Fund | 10.78 | 10.00 | -7.24% | 1.0y | medium | 16d | 2.76% | 61.3 | ↑ narrowing | — |
-| 3 | SIGS2 | Siddhartha Investment Gro | 10.65 | 9.70 | -8.92% | 2.8y | medium | 2d | 3.30% | 59.7 | ↓ widening | — |
-| 4 | NICSF | NIC Asia Select-30 | 9.50 | 8.91 | -6.21% | 1.7y | medium | 25d | 2.37% | 58.7 | ↑ narrowing | high_vol |
-| 5 | NICFC | NIC Asia Flexi Cap Fund | 9.94 | 9.35 | -5.94% | 2.6y | high | 3d | -1.29% | 54.5 | ↑ narrowing | — |
-| 6 | SLCF | Sanima Large Cap Fund | 10.10 | 9.15 | -9.41% | 1.3y | medium | 2d | 0.60% | 52.6 | ↓ widening | — |
-| 7 | RMF1 | RBB Mutual Fund 1 | 10.21 | 9.10 | -10.87% | 1.7y | medium | 23d | -0.10% | 51.0 | ↓ widening | high_vol |
+| 1 | PSF | Prabhu Select Fund | 12.40 | 11.80 | -4.84% | 1.6y | high | 0d | 3.33% | 67.3 | ↑ narrowing | — |
+| 2 | NBF2 | Nabil Balanced Fund - 2 | 10.47 | 9.12 | -12.89% | 2.6y | medium | 7d | 0.48% | 65.8 | ↓ widening | — |
+| 3 | SEF | Siddhartha Equity Fund | 10.78 | 10.00 | -7.24% | 1.0y | medium | 16d | 2.76% | 60.8 | ↑ narrowing | — |
+| 4 | SIGS2 | Siddhartha Investment Gro | 10.65 | 9.70 | -8.92% | 2.8y | medium | 2d | 3.30% | 59.5 | ↓ widening | — |
+| 5 | NICSF | NIC Asia Select-30 | 9.50 | 8.91 | -6.21% | 1.7y | medium | 25d | 2.37% | 58.2 | ↑ narrowing | high_vol |
+| 6 | NICFC | NIC Asia Flexi Cap Fund | 9.94 | 9.35 | -5.94% | 2.6y | high | 3d | -1.29% | 54.0 | ↑ narrowing | — |
+| 7 | SLCF | Sanima Large Cap Fund | 10.10 | 9.15 | -9.41% | 1.3y | medium | 2d | 0.60% | 52.0 | ↓ widening | — |
+| 8 | RMF1 | RBB Mutual Fund 1 | 10.21 | 9.10 | -10.87% | 1.7y | medium | 23d | -0.10% | 50.5 | ↓ widening | high_vol |
 
 ## IGNORE Summary
 
-*32 funds are flagged IGNORE. Top reasons:*
+*31 funds are flagged IGNORE. Top reasons:*
 
 | Gate Failed | Count |
 |-------------|-------|
 | maturity | 28 |
 | liquidity | 8 |
-| valuation | 5 |
+| valuation | 3 |
 
 <details>
 <summary>Full IGNORE list (click to expand)</summary>
@@ -81,9 +82,8 @@
 | NSIF2 | -5.77% | maturity:5.8y |
 | SAGF | -5.30% | maturity:7.1y |
 | GIBF1 | -4.96% | liquidity:low; maturity:5.7y |
+| PRSF | -4.69% | maturity:5.4y |
 | SIGS3 | -2.73% | valuation:small_discount; maturity:6.5y |
-| PSF | -1.67% | valuation:small_discount |
-| PRSF | -1.61% | valuation:small_discount; maturity:5.4y |
 | HLICF | -0.35% | valuation:small_discount; maturity:8.9y |
 | H8020 | 2.88% | valuation:premium; maturity:6.9y |
 
@@ -91,9 +91,9 @@
 
 ## Data Quality
 
-- Symbols checked: 47
-- Symbols with issues: 35
-- NAV data age: median 23 days, max 527 days
+- Symbols checked: 49
+- Symbols with issues: 33
+- NAV data age: median 24 days, max 528 days
 
 ## Methodology
 
